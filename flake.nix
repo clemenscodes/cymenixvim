@@ -24,8 +24,8 @@
   };
 
   outputs = {
+    self,
     nixpkgs,
-    nixvim,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -34,12 +34,12 @@
       overlays = [inputs.neovim-nightly-overlay.overlays.default];
     };
     inherit (pkgs) lib;
-    nixvim' = nixvim.legacyPackages.${system};
-    nvim = nixvim'.makeNixvim (import ./config {inherit inputs pkgs lib;});
+    nvim = inputs.nixvim.legacyPackages.${system}.makeNixvim (import ./config {inherit inputs pkgs lib;});
   in {
     packages = {
       ${system} = {
-        default = nvim;
+        inherit nvim;
+        default = self.packages.${system}.nvim;
       };
     };
     formatter = pkgs.alejandra;
