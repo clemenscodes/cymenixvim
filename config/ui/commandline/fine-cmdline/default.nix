@@ -9,73 +9,69 @@
     };
   };
 in {
-  programs = {
-    nixvim = {
-      opts = {
-        cmdheight = 1;
-      };
-      extraPlugins = with pkgs; [
-        vimPlugins.nui-nvim
-        fine-cmdline
-      ];
-      extraConfigLuaPost =
+  opts = {
+    cmdheight = 1;
+  };
+  extraPlugins = [
+    pkgs.vimPlugins.nui-nvim
+    fine-cmdline
+  ];
+  extraConfigLuaPost =
+    /*
+    lua
+    */
+    ''
+      require('fine-cmdline').setup({
+        cmdline = {
+          enable_keymaps = true,
+          smart_history = true,
+          prompt = ':'
+        },
+        popup = {
+          position = {
+            row = '50%',
+            col = '50%',
+          },
+          size = {
+            width = '60%',
+          },
+          border = {
+            style = 'rounded',
+          },
+          win_options = {
+            winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',
+          },
+        },
+        hooks = {
+          before_mount = function(input)
+            -- code
+          end,
+          after_mount = function(input)
+            -- code
+          end,
+          set_keymaps = function(imap, feedkeys)
+            -- code
+          end
+        }
+      })
+    '';
+  keymaps = [
+    {
+      action.__raw =
         /*
         lua
         */
         ''
-          require('fine-cmdline').setup({
-            cmdline = {
-              enable_keymaps = true,
-              smart_history = true,
-              prompt = ':'
-            },
-            popup = {
-              position = {
-                row = '50%',
-                col = '50%',
-              },
-              size = {
-                width = '60%',
-              },
-              border = {
-                style = 'rounded',
-              },
-              win_options = {
-                winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',
-              },
-            },
-            hooks = {
-              before_mount = function(input)
-                -- code
-              end,
-              after_mount = function(input)
-                -- code
-              end,
-              set_keymaps = function(imap, feedkeys)
-                -- code
-              end
-            }
-          })
+          function()
+            require("fine-cmdline").open({default_value = ""})
+          end
         '';
-      keymaps = [
-        {
-          action.__raw =
-            /*
-            lua
-            */
-            ''
-              function()
-                require("fine-cmdline").open({default_value = ""})
-              end
-            '';
-          key = ":";
-          mode = "n";
-          options = {
-            silent = true;
-            desc = "Open FineCmdLine";
-          };
-        }
-      ];
-    };
-  };
+      key = ":";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Open FineCmdLine";
+      };
+    }
+  ];
 }

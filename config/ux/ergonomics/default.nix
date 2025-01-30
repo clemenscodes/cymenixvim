@@ -1,30 +1,15 @@
 {
-  config,
+  inputs,
+  pkgs,
   lib,
   ...
-}: let
-  cfg = config.modules.editor.nixvim.ux;
-in
-  with lib; {
-    imports = [
-      ./auto-save
-      ./better-escape
-      ./nix-develop
-      ./nvim-autopairs
-      ./project-nvim
-      ./surround
-    ];
-    options = {
-      modules = {
-        editor = {
-          nixvim = {
-            ux = {
-              ergonomics = {
-                enable = mkEnableOption "Enable amazing ergonomics" // {default = cfg.enable;};
-              };
-            };
-          };
-        };
-      };
-    };
-  }
+}: {
+  imports = [
+    (import ./auto-save {inherit inputs pkgs lib;})
+    (import ./better-escape {inherit inputs pkgs lib;})
+    (import ./nix-develop {inherit inputs pkgs lib;})
+    (import ./nvim-autopairs {inherit inputs pkgs lib;})
+    (import ./project-nvim {inherit inputs pkgs lib;})
+    (import ./surround {inherit inputs pkgs lib;})
+  ];
+}

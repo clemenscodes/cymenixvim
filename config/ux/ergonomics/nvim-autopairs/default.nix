@@ -1,13 +1,9 @@
 {...}: {
-  programs = {
-    nixvim = {
-      plugins = {
-        nvim-autopairs = {
-          enable = true;
-          settings = {
-            checkTs = true;
-          };
-        };
+  plugins = {
+    nvim-autopairs = {
+      enable = true;
+      settings = {
+        checkTs = true;
       };
     };
   };

@@ -8,7 +8,7 @@
     (import ./core {inherit inputs pkgs lib;})
     (import ./development {inherit inputs pkgs lib;})
     (import ./ui {inherit inputs pkgs lib;})
-    # (import ./ux {inherit inputs pkgs lib;})
+    (import ./ux {inherit inputs pkgs lib;})
     (import ./vcs {inherit inputs pkgs lib;})
   ];
   package = pkgs.neovim;

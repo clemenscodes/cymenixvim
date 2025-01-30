@@ -1,19 +1,15 @@
 {...}: {
-  programs = {
-    nixvim = {
-      plugins = {
+  plugins = {
+    cursorline = {
+      enable = true;
+      extraOptions = {
         cursorline = {
-          enable = true;
-          extraOptions = {
-            cursorline = {
-              timeout = 0;
-            };
-            cursorword = {
-              enable = false;
-              hl = {
-                underline = false;
-              };
-            };
+          timeout = 0;
+        };
+        cursorword = {
+          enable = false;
+          hl = {
+            underline = false;
           };
         };
       };

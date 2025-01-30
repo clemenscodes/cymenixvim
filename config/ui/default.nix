@@ -5,12 +5,12 @@
   ...
 }: {
   imports = [
-    # (import ./commandline {inherit inputs pkgs lib;})
-    # (import ./cursor {inherit inputs pkgs lib;})
-    # (import ./explorer {inherit inputs pkgs lib;})
-    # (import ./icons {inherit inputs pkgs lib;})
-    # (import ./notifications {inherit inputs pkgs lib;})
-    # (import ./prompts {inherit inputs pkgs lib;})
+    (import ./commandline {inherit inputs pkgs lib;})
+    (import ./cursor {inherit inputs pkgs lib;})
+    (import ./explorer {inherit inputs pkgs lib;})
+    (import ./icons {inherit inputs pkgs lib;})
+    (import ./notifications {inherit inputs pkgs lib;})
+    (import ./prompts {inherit inputs pkgs lib;})
     # (import ./scope {inherit inputs pkgs lib;})
     # (import ./search {inherit inputs pkgs lib;})
     # (import ./startup {inherit inputs pkgs lib;})
