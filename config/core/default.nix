@@ -1,28 +1,16 @@
 {
-  config,
+  inputs,
+  pkgs,
   lib,
   ...
-}: let
-  cfg = config.modules.editor.nixvim;
-in {
+}: {
   imports = [
-    ./autocommands
-    ./clipboard
-    ./editorconfig
-    ./filetypes
-    ./globals
-    ./keymaps
-    ./options
+    (import ./autocommands {inherit inputs pkgs lib;})
+    (import ./clipboard {inherit inputs pkgs lib;})
+    (import ./editorconfig {inherit inputs pkgs lib;})
+    (import ./filetypes {inherit inputs pkgs lib;})
+    (import ./globals {inherit inputs pkgs lib;})
+    (import ./keymaps {inherit inputs pkgs lib;})
+    (import ./options {inherit inputs pkgs lib;})
   ];
-  options = {
-    modules = {
-      editor = {
-        nixvim = {
-          core = {
-            enable = lib.mkEnableOption "Enable core neovim configuration" // {default = cfg.enable;};
-          };
-        };
-      };
-    };
-  };
 }
