@@ -13,6 +13,6 @@
     (import ./lsp {inherit inputs pkgs lib;})
     (import ./snippets {inherit inputs pkgs lib;})
     (import ./testing {inherit inputs pkgs lib;})
-    # (import ./utils {inherit inputs pkgs lib;})
+    (import ./utils {inherit inputs pkgs lib;})
   ];
 }

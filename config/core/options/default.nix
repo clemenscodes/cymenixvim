@@ -6,7 +6,7 @@
     smartcase = true;
     ignorecase = true;
     number = true;
-    undodir = "~/.local/share/nvim/undo";
+    undodir = "$HOME/.local/share/nvim/undo";
     signcolumn = "yes";
     wrap = false;
     undofile = true;

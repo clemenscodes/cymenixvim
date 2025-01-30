@@ -1,14 +1,10 @@
 {...}: {
-  programs = {
-    nixvim = {
-      plugins = {
-        lualine = {
-          enable = true;
-          settings = {
-            options = {
-              globalstatus = true;
-            };
-          };
+  plugins = {
+    lualine = {
+      enable = true;
+      settings = {
+        options = {
+          globalstatus = true;
         };
       };
     };

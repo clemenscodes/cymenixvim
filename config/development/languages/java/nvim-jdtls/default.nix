@@ -51,9 +51,9 @@
                   '--add-opens', 'java.base/java.util=ALL-UNNAMED',
                   '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
                   "-configuration",
-                  vim.fs.normalize("~/.cache/jdtls/config"),
+                  vim.fs.normalize("$HOME/.cache/jdtls/config"),
                   "-data",
-                  vim.fs.normalize("~/.cache/jdtls") .. "/" .. workspace_dir
+                  vim.fs.normalize("$HOME/.cache/jdtls") .. "/" .. workspace_dir
                 },
                 root_dir = vim.fs.root(0, {".git", "mvnw", "gradlew"}),
                 init_options = {

@@ -1,12 +1,8 @@
 {...}: {
-  programs = {
-    nixvim = {
-      plugins = {
-        rainbow-delimiters = {
-          enable = true;
-          extraOptions = {};
-        };
-      };
+  plugins = {
+    rainbow-delimiters = {
+      enable = true;
+      extraOptions = {};
     };
   };
 }

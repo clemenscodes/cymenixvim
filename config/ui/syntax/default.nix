@@ -1,27 +1,12 @@
 {
-  config,
+  inputs,
+  pkgs,
   lib,
   ...
-}: let
-  cfg = config.modules.editor.nixvim.ui;
-in
-  with lib; {
-    imports = [
-      ./indent-blankline
-      ./colorizer
-      ./rainbow-delimiters
-    ];
-    options = {
-      modules = {
-        editor = {
-          nixvim = {
-            ui = {
-              syntax = {
-                enable = mkEnableOption "Enable pretty syntax" // {default = cfg.enable;};
-              };
-            };
-          };
-        };
-      };
-    };
-  }
+}: {
+  imports = [
+    (import ./indent-blankline {inherit inputs pkgs lib;})
+    (import ./colorizer {inherit inputs pkgs lib;})
+    (import ./rainbow-delimiters {inherit inputs pkgs lib;})
+  ];
+}
