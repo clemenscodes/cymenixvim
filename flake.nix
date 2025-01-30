@@ -1,5 +1,5 @@
 {
-  description = "A standalone nixvim configuration";
+  description = "A sane standalone nixvim configuration";
 
   inputs = {
     nixpkgs = {
@@ -34,12 +34,12 @@
       overlays = [inputs.neovim-nightly-overlay.overlays.default];
     };
     inherit (pkgs) lib;
-    nvim = inputs.nixvim.legacyPackages.${system}.makeNixvim (import ./config {inherit inputs pkgs lib;});
+    cymenixvim = inputs.nixvim.legacyPackages.${system}.makeNixvim (import ./config {inherit inputs pkgs lib;});
   in {
     packages = {
       ${system} = {
-        inherit nvim;
-        default = self.packages.${system}.nvim;
+        inherit cymenixvim;
+        default = self.packages.${system}.cymenixvim;
       };
     };
     formatter = pkgs.alejandra;
