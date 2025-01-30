@@ -1,29 +1,14 @@
 {
-  config,
+  inputs,
+  pkgs,
   lib,
   ...
-}: let
-  cfg = config.modules.editor.nixvim.development;
-in
-  with lib; {
-    imports = [
-      ./haskell
-      ./java
-      ./kotlin
-      ./latex
-      ./rust
-    ];
-    options = {
-      modules = {
-        editor = {
-          nixvim = {
-            development = {
-              languages = {
-                enable = mkEnableOption "Enable support for various languages" // {default = cfg.enable;};
-              };
-            };
-          };
-        };
-      };
-    };
-  }
+}: {
+  imports = [
+    (import ./haskell {inherit inputs pkgs lib;})
+    (import ./java {inherit inputs pkgs lib;})
+    (import ./kotlin {inherit inputs pkgs lib;})
+    (import ./latex {inherit inputs pkgs lib;})
+    (import ./rust {inherit inputs pkgs lib;})
+  ];
+}

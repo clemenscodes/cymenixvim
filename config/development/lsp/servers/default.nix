@@ -1,47 +1,30 @@
 {
-  config,
+  inputs,
+  pkgs,
   lib,
   ...
-}: let
-  cfg = config.modules.editor.nixvim.development.lsp;
-in
-  with lib; {
-    imports = [
-      ./aiken
-      ./angular
-      ./bash
-      ./c
-      ./cmake
-      ./css
-      ./docker
-      ./emmet
-      ./html
-      ./htmx
-      ./json
-      ./eslint
-      ./lua
-      ./markdown
-      ./nix
-      ./nx
-      ./tailwind
-      ./typescript
-      ./yaml
-      ./python
-      ./tex
-    ];
-    options = {
-      modules = {
-        editor = {
-          nixvim = {
-            development = {
-              lsp = {
-                servers = {
-                  enable = mkEnableOption "Enable custom language servers" // {default = cfg.enable;};
-                };
-              };
-            };
-          };
-        };
-      };
-    };
-  }
+}: {
+  imports = [
+    (import ./aiken {inherit inputs pkgs lib;})
+    (import ./angular {inherit inputs pkgs lib;})
+    (import ./bash {inherit inputs pkgs lib;})
+    (import ./c {inherit inputs pkgs lib;})
+    (import ./cmake {inherit inputs pkgs lib;})
+    (import ./css {inherit inputs pkgs lib;})
+    (import ./docker {inherit inputs pkgs lib;})
+    (import ./emmet {inherit inputs pkgs lib;})
+    (import ./html {inherit inputs pkgs lib;})
+    (import ./htmx {inherit inputs pkgs lib;})
+    (import ./json {inherit inputs pkgs lib;})
+    (import ./eslint {inherit inputs pkgs lib;})
+    (import ./lua {inherit inputs pkgs lib;})
+    (import ./markdown {inherit inputs pkgs lib;})
+    (import ./nix {inherit inputs pkgs lib;})
+    (import ./nx {inherit inputs pkgs lib;})
+    (import ./tailwind {inherit inputs pkgs lib;})
+    (import ./typescript {inherit inputs pkgs lib;})
+    (import ./yaml {inherit inputs pkgs lib;})
+    (import ./python {inherit inputs pkgs lib;})
+    (import ./tex {inherit inputs pkgs lib;})
+  ];
+}

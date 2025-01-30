@@ -1,14 +1,10 @@
 {...}: {
-  programs = {
-    nixvim = {
-      plugins = {
-        lsp = {
-          servers = {
-            pyright = {
-              enable = true;
-              extraOptions = {};
-            };
-          };
+  plugins = {
+    lsp = {
+      servers = {
+        pyright = {
+          enable = true;
+          extraOptions = {};
         };
       };
     };

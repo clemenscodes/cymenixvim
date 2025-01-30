@@ -1,9 +1,4 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}: let
+{pkgs, ...}: let
   aiken-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "aiken-nvim";
     src = pkgs.fetchFromGitHub {
@@ -13,48 +8,21 @@
       hash = "sha256-GFJmpE5J8DNjvmoGdDpy9JWhd2g+oKoEKVphbvuBAFQ=";
     };
   };
-  cfg = config.modules.editor.nixvim.development.lsp.servers;
-in
-  with lib; {
-    options = {
-      modules = {
-        editor = {
-          nixvim = {
-            development = {
-              lsp = {
-                servers = {
-                  aiken = {
-                    enable = mkEnableOption "Enable aiken support" // {default = false;};
-                  };
-                };
-              };
-            };
-          };
-        };
-      };
+in {
+  extraPackages = [pkgs.aiken];
+  extraPlugins = [aiken-nvim];
+  plugins = {
+    lsp = {
+      postConfig =
+        /*
+        lua
+        */
+        ''
+          require('lspconfig')["aiken"].setup({
+            cmd = { "aiken", "lsp" },
+            file_types = { "aiken" },
+          })
+        '';
     };
-    config = mkIf (cfg.enable && cfg.aiken.enable) {
-      programs = {
-        nixvim = {
-          extraPackages = [
-            pkgs.aiken
-          ];
-          extraPlugins = [aiken-nvim];
-          plugins = {
-            lsp = {
-              postConfig =
-                /*
-                lua
-                */
-                ''
-                  require('lspconfig')["aiken"].setup({
-                    cmd = { "aiken", "lsp" },
-                    file_types = { "aiken" },
-                  })
-                '';
-            };
-          };
-        };
-      };
-    };
-  }
+  };
+}

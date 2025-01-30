@@ -1,4 +1,4 @@
-{pkgs ? import <nixpkgs> {}, ...}:
+{pkgs, ...}:
 pkgs.vimUtils.buildVimPlugin {
   name = "neotest-java";
   doCheck = false;

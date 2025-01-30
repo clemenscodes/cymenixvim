@@ -1,17 +1,19 @@
-{...}: {
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
-    ./ts-autotag
-    ./ts-context-commentstring
+    (import ./ts-autotag {inherit inputs pkgs lib;})
+    (import ./ts-context-commentstring {inherit inputs pkgs lib;})
   ];
-  programs = {
-    nixvim = {
-      plugins = {
-        treesitter = {
-          enable = true;
-          nixvimInjections = true;
-          nixGrammars = true;
-        };
-      };
+
+  plugins = {
+    treesitter = {
+      enable = true;
+      nixvimInjections = true;
+      nixGrammars = true;
     };
   };
 }

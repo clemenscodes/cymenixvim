@@ -1,27 +1,10 @@
 {
-  config,
+  inputs,
+  pkgs,
   lib,
   ...
-}: let
-  cfg = config.modules.editor.nixvim.development.languages;
-in
-  with lib; {
-    imports = [
-      ./vimtex
-    ];
-    options = {
-      modules = {
-        editor = {
-          nixvim = {
-            development = {
-              languages = {
-                latex = {
-                  enable = mkEnableOption "Enable latex support" // {default = cfg.enable;};
-                };
-              };
-            };
-          };
-        };
-      };
-    };
-  }
+}: {
+  imports = [
+    (import ./vimtex {inherit inputs pkgs lib;})
+  ];
+}

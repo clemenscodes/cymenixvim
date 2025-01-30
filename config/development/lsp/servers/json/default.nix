@@ -1,14 +1,10 @@
 {...}: {
-  programs = {
-    nixvim = {
-      plugins = {
-        lsp = {
-          servers = {
-            jsonls = {
-              enable = true;
-              extraOptions = {};
-            };
-          };
+  plugins = {
+    lsp = {
+      servers = {
+        jsonls = {
+          enable = true;
+          extraOptions = {};
         };
       };
     };

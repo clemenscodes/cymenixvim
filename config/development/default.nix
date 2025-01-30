@@ -1,31 +1,18 @@
 {
-  config,
+  inputs,
+  pkgs,
   lib,
   ...
-}: let
-  cfg = config.modules.editor.nixvim;
-in
-  with lib; {
-    imports = [
-      ./completion
-      ./debugging
-      ./formatting
-      ./languages
-      ./linting
-      ./lsp
-      ./snippets
-      ./testing
-      ./utils
-    ];
-    options = {
-      modules = {
-        editor = {
-          nixvim = {
-            development = {
-              enable = mkEnableOption "Enable powerful development capabilities" // {default = cfg.enable;};
-            };
-          };
-        };
-      };
-    };
-  }
+}: {
+  imports = [
+    (import ./completion {inherit inputs pkgs lib;})
+    (import ./debugging {inherit inputs pkgs lib;})
+    (import ./formatting {inherit inputs pkgs lib;})
+    (import ./languages {inherit inputs pkgs lib;})
+    (import ./linting {inherit inputs pkgs lib;})
+    (import ./lsp {inherit inputs pkgs lib;})
+    (import ./snippets {inherit inputs pkgs lib;})
+    (import ./testing {inherit inputs pkgs lib;})
+    # (import ./utils {inherit inputs pkgs lib;})
+  ];
+}
