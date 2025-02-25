@@ -34,11 +34,15 @@
       overlays = [inputs.neovim-nightly-overlay.overlays.default];
     };
     inherit (pkgs) lib;
-    cymenixvim = inputs.nixvim.legacyPackages.${system}.makeNixvim (import ./config {inherit inputs pkgs lib;});
+    mkNvim = inputs.nixvim.legacyPackages.${system}.makeNixvim;
+    profiles = import ./profiles {inherit inputs pkgs lib;};
+    cymenixvim = mkNvim profiles.default;
+    languages = mkNvim profiles.languages;
+    cardano = mkNvim profiles.cardano;
   in {
     packages = {
       ${system} = {
-        inherit cymenixvim;
+        inherit cymenixvim languages cardano;
         default = self.packages.${system}.cymenixvim;
       };
     };
