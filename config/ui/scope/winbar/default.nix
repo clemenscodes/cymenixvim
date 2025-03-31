@@ -18,10 +18,6 @@
         click = true;
         highlight = true;
         lazyUpdateContext = true;
-        lsp = {
-          autoAttach = true;
-          preference = ["typescript" "html" "tailwind"];
-        };
       };
     };
   };
