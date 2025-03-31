@@ -2,7 +2,7 @@
   plugins = {
     cursorline = {
       enable = true;
-      extraOptions = {
+      settings = {
         cursorline = {
           timeout = 0;
         };
