@@ -11,7 +11,6 @@
     (import ./icons {inherit inputs pkgs lib;})
     (import ./notifications {inherit inputs pkgs lib;})
     (import ./prompts {inherit inputs pkgs lib;})
-    (import ./scope {inherit inputs pkgs lib;})
     (import ./search {inherit inputs pkgs lib;})
     (import ./startup {inherit inputs pkgs lib;})
     (import ./status {inherit inputs pkgs lib;})
