@@ -2,22 +2,11 @@
   plugins = {
     barbecue = {
       enable = true;
-      settings = {
-        attachNavic = true;
-      };
     };
     navbuddy = {
       enable = true;
       lsp = {
         autoAttach = true;
-      };
-    };
-    navic = {
-      enable = false;
-      settings = {
-        click = true;
-        highlight = true;
-        lazyUpdateContext = true;
       };
     };
     trouble = {
