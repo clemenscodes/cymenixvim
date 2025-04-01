@@ -13,26 +13,13 @@
       };
     };
     navic = {
-      enable = true;
+      enable = false;
       settings = {
         click = true;
         highlight = true;
         lazyUpdateContext = true;
       };
     };
-  };
-  keymaps = [
-    {
-      action = ":Navbuddy<CR>";
-      key = "<leader>tn";
-      mode = "n";
-      options = {
-        silent = true;
-        desc = "Toggle Navbuddy";
-      };
-    }
-  ];
-  plugins = {
     trouble = {
       enable = true;
     };
@@ -47,4 +34,15 @@
       };
     };
   };
+  keymaps = [
+    {
+      action = ":Navbuddy<CR>";
+      key = "<leader>tn";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Toggle Navbuddy";
+      };
+    }
+  ];
 }
