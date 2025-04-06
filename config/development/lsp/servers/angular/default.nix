@@ -7,11 +7,7 @@
         */
         ''
           local lsp = require('lspconfig')
-          lsp["angularls"].setup({
-            cmd = { "ngserver", "--stdio", "--tsProbeLocations", "", "--ngProbeLocations", "" },
-            file_types = { "component.html", "component.ts"  },
-            root_dir = lsp.util.root_pattern(".angular"),
-          })
+          lsp["angularls"].setup({})
         '';
     };
   };
