@@ -37,12 +37,12 @@
     mkNvim = inputs.nixvim.legacyPackages.${system}.makeNixvim;
     profiles = import ./profiles {inherit inputs pkgs lib;};
     cymenixvim = mkNvim profiles.default;
-    languages = mkNvim profiles.languages;
+    development= mkNvim profiles.development;
     cardano = mkNvim profiles.cardano;
   in {
     packages = {
       ${system} = {
-        inherit cymenixvim languages cardano;
+        inherit cymenixvim development cardano;
         default = self.packages.${system}.cymenixvim;
       };
     };
