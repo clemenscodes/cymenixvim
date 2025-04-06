@@ -1,6 +1,41 @@
 {pkgs, ...}: {
   extraPlugins = [pkgs.vimPlugins.nvim-nio];
   plugins = {
+    dap-ui = {
+      enable = true;
+      controls = {
+        element = "console";
+      };
+      layouts = [
+        {
+          elements = [
+            {
+              id = "scopes";
+              size = 1;
+            }
+          ];
+          position = "right";
+          size = 100;
+        }
+        {
+          elements = [
+            {
+              id = "repl";
+              size = 0.50;
+            }
+            {
+              id = "console";
+              size = 0.50;
+            }
+          ];
+          position = "bottom";
+          size = 15;
+        }
+      ];
+    };
+    dap-virtual-text = {
+      enable = true;
+    };
     dap = {
       enable = true;
       adapters = {
@@ -19,43 +54,6 @@
       };
       configurations = {
         rust = [];
-      };
-      extensions = {
-        dap-ui = {
-          enable = true;
-          controls = {
-            element = "console";
-          };
-          layouts = [
-            {
-              elements = [
-                {
-                  id = "scopes";
-                  size = 1;
-                }
-              ];
-              position = "right";
-              size = 100;
-            }
-            {
-              elements = [
-                {
-                  id = "repl";
-                  size = 0.50;
-                }
-                {
-                  id = "console";
-                  size = 0.50;
-                }
-              ];
-              position = "bottom";
-              size = 15;
-            }
-          ];
-        };
-        dap-virtual-text = {
-          enable = true;
-        };
       };
     };
     which-key = {
