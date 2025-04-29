@@ -46,6 +46,8 @@
         default = self.packages.${system}.cymenixvim;
       };
     };
-    formatter = pkgs.alejandra;
+    formatter = {
+      ${system} = pkgs.alejandra;
+    };
   };
 }
