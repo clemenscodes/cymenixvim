@@ -1,7 +1,7 @@
 {...}: {
   plugins = {
     lualine = {
-      enable = true;
+      enable = false;
       settings = {
         options = {
           globalstatus = true;
