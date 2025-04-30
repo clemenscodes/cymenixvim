@@ -11,6 +11,7 @@
     (import ./ux {inherit inputs pkgs lib;})
   ];
   package = pkgs.neovim;
+  extraPackages = with pkgs; [git ripgrep];
   enableMan = true;
   vimAlias = false;
   viAlias = false;
