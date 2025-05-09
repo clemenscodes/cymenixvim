@@ -18,7 +18,6 @@
     (import ./eslint {inherit inputs pkgs lib;})
     (import ./lua {inherit inputs pkgs lib;})
     (import ./markdown {inherit inputs pkgs lib;})
-    (import ./nx {inherit inputs pkgs lib;})
     (import ./tailwind {inherit inputs pkgs lib;})
     (import ./typescript {inherit inputs pkgs lib;})
     (import ./yaml {inherit inputs pkgs lib;})
