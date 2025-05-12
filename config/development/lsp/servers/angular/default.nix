@@ -1,10 +1,20 @@
 {pkgs, ...}: {
-  plugins = {
-    lsp = {
-      servers = {
-        angularls = {
-          enable = true;
-        };
+  lsp = {
+    servers = {
+      angularls = {
+        enable = true;
+        package = null;
+        # settings = {
+        #   cmd = [
+        #     "ngserver"
+        #   ];
+        #   filetypes = [
+        #     "htmlangular"
+        #   ];
+        #   root_markers = [
+        #     "nx.json"
+        #   ];
+        # };
       };
     };
   };
