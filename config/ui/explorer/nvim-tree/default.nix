@@ -46,8 +46,8 @@
         dotfiles = false;
       };
       git = {
-        enable = false;
         ignore = false;
+        timeout = 100;
       };
       onAttach = {
         __raw =
