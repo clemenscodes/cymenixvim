@@ -25,10 +25,11 @@
       autoReloadOnWrite = true;
       disableNetrw = true;
       hijackCursor = true;
-      syncRootWithCwd = true;
-      respectBufCwd = true;
+      syncRootWithCwd = false;
+      respectBufCwd = false;
       reloadOnBufenter = true;
       preferStartupRoot = true;
+      openOnSetup = true;
       updateFocusedFile = {
         enable = true;
         updateRoot = true;
