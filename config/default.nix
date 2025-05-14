@@ -15,5 +15,5 @@
   enableMan = true;
   vimAlias = false;
   viAlias = false;
-  colorscheme = "onedark";
+  colorscheme = "catppuccin";
 }
