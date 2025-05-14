@@ -32,7 +32,7 @@
       openOnSetup = false;
       updateFocusedFile = {
         enable = true;
-        updateRoot = true;
+        updateRoot = false;
       };
       systemOpen = {
         cmd = "xdg-open";
