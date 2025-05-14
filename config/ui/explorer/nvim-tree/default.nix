@@ -47,6 +47,7 @@
       };
       git = {
         ignore = false;
+        timeout = 30000;
       };
       onAttach = {
         __raw =
