@@ -29,7 +29,7 @@
       respectBufCwd = false;
       reloadOnBufenter = true;
       preferStartupRoot = true;
-      openOnSetup = true;
+      openOnSetup = false;
       updateFocusedFile = {
         enable = true;
         updateRoot = true;
