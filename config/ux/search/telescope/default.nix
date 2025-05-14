@@ -3,15 +3,6 @@
     pkgs.ripgrep
     pkgs.fd
   ];
-  extraPlugins = [pkgs.vimPlugins.telescope-manix];
-  extraConfigLuaPost =
-    /*
-    lua
-    */
-    ''
-      local telescope = require('telescope')
-      telescope.load_extension('manix')
-    '';
   plugins = {
     telescope = {
       enable = true;
@@ -56,31 +47,6 @@
     };
   };
   keymaps = [
-    {
-      action.__raw =
-        /*
-        lua
-        */
-        ''
-          function()
-            require('telescope').extensions.manix.manix({
-              manix_args = {
-              '--source','nixpkgs-doc',
-              '--source','nixpkgs-comments',
-              '--source','nixpkgs-tree',
-              '--source','hm-options',
-              '--source','nixos-options',
-              },
-              cword = false
-            })
-          end'';
-      key = "<leader>fn";
-      mode = "n";
-      options = {
-        silent = true;
-        desc = "Nix documentation";
-      };
-    }
     {
       action = ":Telescope find_files<CR>";
       key = "<leader>ff";

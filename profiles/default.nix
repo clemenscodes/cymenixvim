@@ -16,7 +16,7 @@
       (import ../config/development/testing {inherit inputs pkgs lib;})
       (import ../config/development/debugging {inherit inputs pkgs lib;})
       (import ../config/development/linting {inherit inputs pkgs lib;})
-      (import ../config/vcs {inherit inputs pkgs lib;})
+      (import ../config/development/vcs {inherit inputs pkgs lib;})
     ];
   };
   cardano = {...}: {
@@ -26,8 +26,8 @@
       (import ../config/development/testing {inherit inputs pkgs lib;})
       (import ../config/development/debugging {inherit inputs pkgs lib;})
       (import ../config/development/linting {inherit inputs pkgs lib;})
+      (import ../config/development/vcs {inherit inputs pkgs lib;})
       (import ../config/development/lsp/servers/aiken {inherit inputs pkgs lib;})
-      (import ../config/vcs {inherit inputs pkgs lib;})
     ];
   };
 }

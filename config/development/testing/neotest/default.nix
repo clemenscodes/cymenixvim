@@ -15,7 +15,6 @@ in {
       require('neotest').setup {
         adapters = {
           require('rustaceanvim.neotest'),
-          require('neotest-haskell'),
           require('neotest-java')({
             junit_jar = "${junit_jar}/share/java/junit-platform-console-standalone-1.10.1.jar"
           }),
@@ -30,8 +29,9 @@ in {
       }
     '';
   extraPlugins = [
-    pkgs.vimPlugins.neotest
-    pkgs.vimPlugins.neotest-haskell
+    (pkgs.vimPlugins.neotest.overrideAttrs (oldAttrs: {
+      doCheck = false;
+    }))
     pkgs.vimPlugins.neotest-jest
     neotest-java
   ];
