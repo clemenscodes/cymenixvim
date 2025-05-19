@@ -37,6 +37,15 @@ in {
   ];
   keymaps = [
     {
+      action = ":Neotest output-panel clear<CR>";
+      key = "<leader>rr";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Run nearest test";
+      };
+    }
+    {
       action = ":Neotest run<CR>";
       key = "<leader>rr";
       mode = "n";
