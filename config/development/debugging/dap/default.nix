@@ -58,8 +58,8 @@
             inherit port;
             host = "127.0.0.1";
             executable = {
-              command = "${pkgs.nodejs_22}/bin/node";
-              args = ["${pkgs.vscode-js-debug}/bin/js-debug" "${builtins.toString port}"];
+              command = "${pkgs.vscode-js-debug}/bin/js-debug";
+              args = ["${builtins.toString port}"];
             };
           };
           pwa-node = let
@@ -68,8 +68,8 @@
             inherit port;
             host = "127.0.0.1";
             executable = {
-              command = "${pkgs.nodejs_22}/bin/node";
-              args = ["${pkgs.vscode-js-debug}/bin/js-debug" "${builtins.toString port}"];
+              command = "${pkgs.vscode-js-debug}/bin/js-debug";
+              args = ["${builtins.toString port}"];
             };
           };
         };
