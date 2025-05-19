@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  extraPlugins = [pkgs.vimPlugins.nvim-nio];
+  extraPlugins = [
+    pkgs.vimPlugins.nvim-nio
+    pkgs.vimPlugins.nvim-dap-vscode-js
+  ];
   plugins = {
     dap-ui = {
       enable = true;
@@ -52,39 +55,11 @@
               args = ["--port" "${builtins.toString port}"];
             };
           };
-          node = let
-            port = 9229;
-          in {
-            inherit port;
-            host = "127.0.0.1";
-            executable = {
-              command = "${pkgs.vscode-js-debug}/bin/js-debug";
-              args = ["${builtins.toString port}"];
-            };
-          };
-          pwa-node = let
-            port = 9229;
-          in {
-            inherit port;
-            host = "127.0.0.1";
-            executable = {
-              command = "${pkgs.vscode-js-debug}/bin/js-debug";
-              args = ["${builtins.toString port}"];
-            };
-          };
         };
       };
       configurations = {
         rust = [];
-        typescript = [
-          {
-            type = "pwa-node";
-            request = "launch";
-            name = "Launch file";
-            program = ''''${file}'';
-            cwd = ''''${workspaceFolder}'';
-          }
-        ];
+        typescript = [];
       };
     };
     which-key = {
@@ -158,6 +133,27 @@
       vim.fn.sign_define('DapBreakpointRejected', { text='•', texthl='orange', numhl='DapBreakpoint' })
       vim.fn.sign_define('DapStopped', { text='•', texthl='green', numhl='DapBreakpoint' })
       vim.fn.sign_define('DapLogPoint', { text='•', texthl='yellow', numhl='DapBreakpoint' })
+
+      local dap = require("dap")
+      local dap_vscode_js = require("dap-vscode-js")
+      local languages = { "javascript" }
+
+      dap_vscode_js.setup({
+        debugger_path = "${pkgs.vscode-js-debug}",
+        adapters = { 'pwa-node' }
+      })
+
+      dap.adapters['pwa-node'] = {
+        type = 'server',
+        host = 'localhost',
+        port = "''${port}",
+        executable = {
+          command = '${pkgs.vscode-js-debug}/bin/js-debug',
+          args = {
+            "''${port}"
+          },
+        },
+      }
     '';
   keymaps = [
     {
