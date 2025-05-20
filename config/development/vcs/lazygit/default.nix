@@ -35,7 +35,7 @@
     }
     {
       action = ":LazyGitFilter<CR>";
-      key = "<leader>gg";
+      key = "<leader>gc";
       mode = "n";
       options = {
         silent = true;
