@@ -15,5 +15,6 @@
     virtualedit = "block";
     termguicolors = true;
     syntax = "on";
+    sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions";
   };
 }
