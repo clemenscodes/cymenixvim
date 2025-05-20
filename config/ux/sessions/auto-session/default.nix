@@ -4,22 +4,23 @@
     local function close_nvim_tree()
       require('nvim-tree.view').close()
     end
-    local function open_nvim_tree()
-      require('nvim-tree.api').tree.open()
+    local function close_all_floating_wins()
+      for _, win in ipairs(vim.api.nvim_list_wins()) do
+        local config = vim.api.nvim_win_get_config(win)
+        if config.relative ~= "" then
+          vim.api.nvim_win_close(win, false)
+        end
+      end
     end
     require("auto-session").setup {
       log_level = "error",
       git_use_branch_name = true,
       git_auto_restore_on_branch_change = true,
-      pre_save_cmds = {close_nvim_tree},
-      post_save_cmds = {open_nvim_tree},
-      post_open_cmds = {open_nvim_tree},
-      post_restore_cmds = {open_nvim_tree},
+      pre_save_cmds = {close_nvim_tree, close_all_floating_wins},
       bypass_save_filetypes = { 'alpha', 'dashboard' },
       cwd_change_handling =  true,
       pre_cwd_changed_cmds = {close_nvim_tree},
       post_cwd_changed_cmds = {
-        open_nvim_tree,
         function()
           require("lualine").refresh() -- example refreshing the lualine status line _after_ the cwd changes
         end
