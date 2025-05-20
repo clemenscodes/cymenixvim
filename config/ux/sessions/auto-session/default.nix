@@ -1,8 +1,12 @@
 {pkgs, ...}: {
   extraPlugins = [pkgs.vimPlugins.auto-session];
   extraConfigLuaPost = ''
+    local nvim_tree_api = require('nvim-tree.api')
     local function close_nvim_tree()
       require('nvim-tree.view').close()
+    end
+    local function open_nvim_tree()
+      nvim_tree_api.tree.open()
     end
     local function close_all_floating_wins()
       for _, win in ipairs(vim.api.nvim_list_wins()) do
@@ -17,14 +21,21 @@
       git_use_branch_name = true,
       git_auto_restore_on_branch_change = true,
       pre_save_cmds = {close_nvim_tree, close_all_floating_wins},
-      bypass_save_filetypes = { 'alpha', 'dashboard' },
-      cwd_change_handling =  true,
-      pre_cwd_changed_cmds = {close_nvim_tree},
+      post_open_cmds = {open_nvim_tree},
+      post_save_cmds = {open_nvim_tree},
+      post_restore_cmds = {open_nvim_tree},
       post_cwd_changed_cmds = {
         function()
-          require("lualine").refresh() -- example refreshing the lualine status line _after_ the cwd changes
+          require("lualine").refresh()
         end
       },
+      args_allow_single_directory = true,
+      bypass_save_filetypes = { 'alpha', 'dashboard' },
+      auto_create = function()
+        local cmd = 'git rev-parse --is-inside-work-tree'
+        return vim.fn.system(cmd) == 'true\n'
+      end,
+      auto_restore_last_session = vim.loop.cwd() == vim.loop.os_homedir(),
     }
     require('lualine').setup{
       sections = {
