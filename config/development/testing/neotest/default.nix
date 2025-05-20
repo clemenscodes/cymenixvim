@@ -24,8 +24,6 @@ in {
           require('neotest-jest')({
             jestCommand = "jest --colors --silent --detectOpenHandles",
             jestConfigFile = "",
-            jest_test_discovery = false,
-            env = { CI = true },
             cwd = function(path)
               return vim.fn.getcwd()
             end,
