@@ -1,10 +1,11 @@
 {...}: {
+  extraPlugins = [pkgs.vimPlugins.auto-session];
   extraConfigLuaPost = ''
     local function close_nvim_tree()
       require('nvim-tree.view').close()
     end
     local function open_nvim_tree()
-      require('nvim-tree').open()
+      require('nvim-tree.api').tree.open()
     end
     require("auto-session").setup {
       log_level = "error",
@@ -35,22 +36,6 @@
     }
   '';
   plugins = {
-    auto-session = {
-      enable = true;
-      settings = {
-        enabled = true;
-        auto_create = true;
-        auto_restore = true;
-        auto_save = true;
-        bypass_save_filetypes = ["alpha"];
-        cwd_change_handling = true;
-        use_git_branch = true;
-        session_lens = {
-          load_on_setup = true;
-          previewer = true;
-        };
-      };
-    };
     which-key = {
       settings = {
         spec = [
