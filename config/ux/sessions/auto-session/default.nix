@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   extraPlugins = [pkgs.vimPlugins.auto-session];
   extraConfigLuaPost = ''
     local function close_nvim_tree()
