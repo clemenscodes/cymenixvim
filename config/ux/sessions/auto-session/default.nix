@@ -86,6 +86,7 @@
 
     local function open_nvim_tree()
       nvim_tree_api.tree.open()
+      nvim_tree_api.node.open.edit()
     end
 
     local function close_all_floating_wins()
@@ -115,7 +116,8 @@
       pre_save_cmds = {close_nvim_tree, close_all_floating_wins},
       pre_delete_cmds = {delete_session_breakpoints},
       post_save_cmds = {save_session_breakpoints},
-      post_restore_cmds = {restore_session_breakpoints},
+      post_open_cmds = {open_nvim_tree},
+      post_restore_cmds = {open_nvim_tree, restore_session_breakpoints},
       post_cwd_changed_cmds = {
         function()
           require("lualine").refresh()
