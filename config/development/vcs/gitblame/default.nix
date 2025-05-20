@@ -2,7 +2,12 @@
   plugins = {
     gitblame = {
       enable = true;
-      settings = {};
+      settings = {
+        delay = 5000;
+        clear_event = "CursorHoldI";
+        schedule_event = "CursorHold";
+        message_when_not_committed = "";
+      };
     };
     which-key = {
       settings = {

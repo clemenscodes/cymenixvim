@@ -16,7 +16,7 @@
             desc = "Open lazygit";
           }
           {
-            __unkeyed-1 = "<leader>gg";
+            __unkeyed-1 = "<leader>gc";
             desc = "Open project commits with lazygit";
           }
         ];
@@ -31,6 +31,15 @@
       options = {
         silent = true;
         desc = "Open lazygit";
+      };
+    }
+    {
+      action = ":LazyGitFilter<CR>";
+      key = "<leader>gg";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Open project commits with lazygit";
       };
     }
   ];
