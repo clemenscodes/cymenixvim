@@ -20,7 +20,9 @@
     local set_root = function()
       local path = vim.api.nvim_buf_get_name(0)
 
-      if path == '''' then return end
+      if path == "" then
+        return
+      end
 
       path = vim.fs.dirname(path)
 
