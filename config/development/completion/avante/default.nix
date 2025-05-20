@@ -1,51 +1,63 @@
-{...}: {
+# This Nix configuration file sets up the Avante.nvim plugin for Neovim.
+# It includes settings for the plugin's package source, provider configurations,
+# window display options, diff handling, and key mappings.
+{pkgs, ...}: {
   plugins = {
     avante = {
-      enable = true;
+      enable = true; # Enable the avante.nvim plugin
+      package = pkgs.vimPlugins.avante-nvim.overrideAttrs (oldAttrs: {
+        # Fetch the plugin source from GitHub
+        src = pkgs.fetchFromGitHub {
+          owner = "yetone";
+          repo = "avante.nvim";
+          rev = "87c4c6b4937d1884960759aba4a0e42645688f2f";
+          hash = "sha256-yDPu3bmOFeNdcD0o+nC6Cq1hij1A8ZoT5uipj7qf7cc=";
+        };
+      });
       settings = {
-        provider = "openai";
+        provider = "openai"; # Set the AI provider to OpenAI
         auto_suggestions_provider = "openai";
         openai = {
-          endpoint = "https://api.openai.com/v1";
-          model = "gpt-4o";
-          timeout = 30000;
-          temperature = 0;
-          max_completion_tokens = 8192;
+          endpoint = "https://api.openai.com/v1"; # OpenAI API endpoint
+          model = "gpt-4o"; # Model to use for completions
+          timeout = 30000; # Timeout for API requests in milliseconds
+          temperature = 0; # Temperature setting for deterministic output
+          max_completion_tokens = 8192; # Maximum tokens for completion
         };
         windows = {
           sidebar_header = {
-            align = "center";
-            rounded = true;
+            align = "center"; # Align sidebar header text to center
+            rounded = true; # Use rounded corners for the sidebar
           };
-          width = 30;
-          wrap = true;
+          width = 30; # Width of the sidebar
+          wrap = true; # Enable text wrapping in the sidebar
         };
         diff = {
-          autojump = true;
-          debug = false;
-          list_opener = "copen";
+          autojump = true; # Automatically jump to diffs
+          debug = false; # Disable debug mode
+          list_opener = "copen"; # Command to open the diff list
         };
         highlights = {
           diff = {
-            current = "DiffText";
-            incoming = "DiffAdd";
+            current = "DiffText"; # Highlight for current diff
+            incoming = "DiffAdd"; # Highlight for incoming diff
           };
         };
         hints = {
-          enabled = true;
+          enabled = true; # Enable hints
         };
         mappings = {
           diff = {
-            both = "cb";
-            next = "]x";
-            none = "c0";
-            ours = "co";
-            prev = "[x";
-            theirs = "ct";
+            both = "cb"; # Key mapping for both diffs
+            next = "]x"; # Key mapping for next diff
+            none = "c0"; # Key mapping for no diffs
+            ours = "co"; # Key mapping for our diffs
+            prev = "[x"; # Key mapping for previous diff
+            theirs = "ct"; # Key mapping for their diffs
           };
           jump = {
-            next = "]]";
-            prev = "[[";
+            next = "]]"; # Key mapping for next jump
+            prev = "[["; # Key mapping for previous jump
           };
         };
       };
@@ -54,8 +66,8 @@
       settings = {
         spec = [
           {
-            __unkeyed-1 = "<leader>a";
-            desc = "+AI";
+            __unkeyed-1 = "<leader>a"; # Leader key mapping for AI
+            desc = "+AI"; # Description for the AI key mapping
           }
         ];
       };

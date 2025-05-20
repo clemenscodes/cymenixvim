@@ -27,6 +27,9 @@
           restrictAboveCwd = true;
           global = true;
         };
+        expandAll = {
+          exclude = [".git" "target" "dist" "build"];
+        };
       };
       autoClose = true;
       autoReloadOnWrite = true;
