@@ -1,4 +1,39 @@
 {...}: {
+  extraConfigLuaPost = ''
+    local function close_nvim_tree()
+      require('nvim-tree.view').close()
+    end
+    local function open_nvim_tree()
+      require('nvim-tree').open()
+    end
+    require("auto-session").setup {
+      log_level = "error",
+      git_use_branch_name = true,
+      git_auto_restore_on_branch_change = true,
+      pre_save_cmds = {close_nvim_tree},
+      post_save_cmds = {open_nvim_tree},
+      post_open_cmds = {open_nvim_tree},
+      post_restore_cmds = {open_nvim_tree},
+      bypass_save_filetypes = { 'alpha', 'dashboard' },
+      cwd_change_handling =  true,
+      pre_cwd_changed_cmds = {close_nvim_tree},
+      post_cwd_changed_cmds = {
+        open_nvim_tree,
+        function()
+          require("lualine").refresh() -- example refreshing the lualine status line _after_ the cwd changes
+        end
+      },
+    }
+    require('lualine').setup{
+      sections = {
+        lualine_c = {
+          function()
+            return require('auto-session.lib').current_session_name(true)
+          end
+        }
+      }
+    }
+  '';
   plugins = {
     auto-session = {
       enable = true;
@@ -6,7 +41,6 @@
         enabled = true;
         auto_create = true;
         auto_restore = true;
-        auto_restore_last_session = true;
         auto_save = true;
         bypass_save_filetypes = ["alpha"];
         cwd_change_handling = true;
