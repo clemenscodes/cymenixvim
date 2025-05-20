@@ -79,6 +79,15 @@
     cmp_luasnip = {
       enable = true;
     };
+    cmp-conventionalcommits = {
+      enable = true;
+    };
+    cmp-dap = {
+      enable = true;
+    };
+    cmp-git = {
+      enable = true;
+    };
     cmp-nvim-lsp = {
       enable = true;
     };
