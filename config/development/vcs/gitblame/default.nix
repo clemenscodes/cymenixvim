@@ -3,9 +3,8 @@
     gitblame = {
       enable = true;
       settings = {
-        delay = 5000;
-        clear_event = "CursorHoldI";
-        schedule_event = "CursorHold";
+        enabled = true;
+        delay = 2000;
         message_when_not_committed = "";
       };
     };

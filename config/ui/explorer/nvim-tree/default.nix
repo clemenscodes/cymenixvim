@@ -46,7 +46,10 @@
         dotfiles = false;
       };
       git = {
-        enable = false;
+        enable = true;
+        showOnDirs = true;
+        showOnOpenDirs = true;
+        timeout = 800;
         ignore = false;
       };
       onAttach = {
