@@ -24,16 +24,12 @@
           {
             elements = [
               {
-                id = "repl";
-                size = 0.50;
-              }
-              {
                 id = "console";
-                size = 0.50;
+                size = 1;
               }
             ];
             position = "bottom";
-            size = 15;
+            size = 25;
           }
         ];
       };
@@ -220,8 +216,17 @@
       };
     }
     {
+      action = ":DapToggleRepl<CR>";
+      key = "<leader>tdr";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Toggle Dap REPL";
+      };
+    }
+    {
       action = ":lua require('dapui').toggle()<CR>";
-      key = "<leader>td";
+      key = "<leader>tdd";
       mode = "n";
       options = {
         silent = true;
