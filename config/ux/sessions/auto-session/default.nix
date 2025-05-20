@@ -4,7 +4,6 @@
       enable = true;
       settings = {
         enabled = true;
-        allowed_dirs = ["~/.local/src"];
         auto_create = true;
         auto_restore = true;
         auto_restore_last_session = true;
