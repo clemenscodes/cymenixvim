@@ -34,7 +34,7 @@
             desc = "Search session";
           }
           {
-            __unkeyed-1 = "<leader>as";
+            __unkeyed-1 = "<leader>ad";
             desc = "Delete session";
           }
           {
