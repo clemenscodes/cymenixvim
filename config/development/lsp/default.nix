@@ -75,23 +75,6 @@
         */
         ''
           function()
-              vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
-          end
-        '';
-      key = "<leader>n";
-      mode = "n";
-      options = {
-        silent = true;
-        desc = "Toggle inlay hints";
-      };
-    }
-    {
-      action.__raw =
-        /*
-        lua
-        */
-        ''
-          function()
             vim.lsp.buf.code_action()
           end
         '';

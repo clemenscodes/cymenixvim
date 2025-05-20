@@ -26,10 +26,6 @@
       settings = {
         spec = [
           {
-            __unkeyed-1 = "<leader>a";
-            desc = "Rust Action";
-          }
-          {
             __unkeyed-1 = "<leader>fr";
             group = "+Rust";
           }
@@ -54,15 +50,6 @@
     };
   };
   keymaps = [
-    {
-      action = ":RustLsp codeAction<CR>";
-      key = "<leader>a";
-      mode = "n";
-      options = {
-        desc = "Rust Action";
-        silent = true;
-      };
-    }
     {
       action = ":RustLsp runnables<CR>";
       key = "<leader>frr";
