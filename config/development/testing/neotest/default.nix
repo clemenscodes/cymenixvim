@@ -23,7 +23,7 @@ in {
           }),
           require('neotest-jest')({
             jestCommand = "jest --colors --silent --detectOpenHandles",
-            jestConfigFile = '''',
+            jestConfigFile = "",
             jest_test_discovery = false,
             env = { CI = true },
             cwd = function(path)
