@@ -140,23 +140,23 @@
       settings = {
         spec = [
           {
-            __unkeyed-1 = "<leader>a";
-            group = "AutoSession";
+            __unkeyed-1 = "<leader>c";
+            group = "Sessions";
           }
           {
-            __unkeyed-1 = "<leader>ar";
+            __unkeyed-1 = "<leader>cr";
             desc = "Restore session";
           }
           {
-            __unkeyed-1 = "<leader>as";
+            __unkeyed-r = "<leader>cl";
             desc = "Search session";
           }
           {
-            __unkeyed-1 = "<leader>ad";
+            __unkeyed-1 = "<leader>cd";
             desc = "Delete session";
           }
           {
-            __unkeyed-1 = "<leader>av";
+            __unkeyed-1 = "<leader>cs";
             desc = "Save session";
           }
         ];
@@ -166,7 +166,7 @@
   keymaps = [
     {
       action = ":SessionRestore<CR>";
-      key = "<leader>ar";
+      key = "<leader>cr";
       mode = "n";
       options = {
         silent = true;
@@ -175,7 +175,7 @@
     }
     {
       action = ":Autosession search<CR>";
-      key = "<leader>as";
+      key = "<leader>cl";
       mode = "n";
       options = {
         silent = true;
@@ -184,7 +184,7 @@
     }
     {
       action = ":Autosession delete<CR>";
-      key = "<leader>ad";
+      key = "<leader>cd";
       mode = "n";
       options = {
         silent = true;
@@ -193,7 +193,7 @@
     }
     {
       action = ":SessionSave<CR>";
-      key = "<leader>av";
+      key = "<leader>cs";
       mode = "n";
       options = {
         silent = true;
