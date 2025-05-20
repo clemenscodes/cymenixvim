@@ -13,14 +13,19 @@ in {
     */
     ''
       require('neotest').setup {
+        discovery = {
+          enabled = false,
+        },
         adapters = {
           require('rustaceanvim.neotest'),
           require('neotest-java')({
             junit_jar = "${junit_jar}/share/java/junit-platform-console-standalone-1.10.1.jar"
           }),
           require('neotest-jest')({
-            jestCommand = "jest",
-            jestConfigFile = "jest.config.ts",
+            jestCommand = "jest --colors --silent --detectOpenHandles",
+            jestConfigFile = '''',
+            jest_test_discovery = false,
+            env = { CI = true },
             cwd = function(path)
               return vim.fn.getcwd()
             end,
