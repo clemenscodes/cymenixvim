@@ -48,7 +48,6 @@
       vim.notify("Saved breakpoints: " .. savepath)
     end
 
-
     local function restore_session_breakpoints()
       local bp_path = get_breakpoints_path()
       if vim.fn.filereadable(bp_path) == 0 then
@@ -116,8 +115,7 @@
       pre_save_cmds = {close_nvim_tree, close_all_floating_wins},
       pre_delete_cmds = {delete_session_breakpoints},
       post_save_cmds = {save_session_breakpoints},
-      post_open_cmds = {open_nvim_tree},
-      post_restore_cmds = {open_nvim_tree, restore_session_breakpoints},
+      post_restore_cmds = {restore_session_breakpoints},
       post_cwd_changed_cmds = {
         function()
           require("lualine").refresh()
