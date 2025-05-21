@@ -136,10 +136,10 @@
 
       dap_vscode_js.setup({
         debugger_path = "${pkgs.vscode-js-debug}",
-        adapters = { 'pwa-node' }
+        adapters = { 'pwa-node', 'node' }
       })
 
-      dap.adapters['pwa-node'] = {
+      local adapter = {
         type = 'server',
         host = 'localhost',
         port = "''${port}",
@@ -150,6 +150,9 @@
           },
         },
       }
+
+      dap.adapters['pwa-node'] = adapter
+      dap.adapters['node'] = adapter
     '';
   keymaps = [
     {
