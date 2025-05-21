@@ -139,7 +139,7 @@
         adapters = { 'pwa-node', 'node' }
       })
 
-      local adapter = {
+      dap.adapters['pwa-node'] = {
         type = 'server',
         host = 'localhost',
         port = "''${port}",
@@ -150,9 +150,6 @@
           },
         },
       }
-
-      dap.adapters['pwa-node'] = adapter
-      dap.adapters['node'] = adapter
     '';
   keymaps = [
     {
