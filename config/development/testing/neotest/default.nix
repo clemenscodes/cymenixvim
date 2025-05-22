@@ -32,9 +32,7 @@ in {
       }
     '';
   extraPlugins = [
-    (pkgs.vimPlugins.neotest.overrideAttrs (oldAttrs: {
-      doCheck = false;
-    }))
+    pkgs.vimPlugins.neotest
     pkgs.vimPlugins.neotest-jest
     neotest-java
   ];
@@ -58,14 +56,12 @@ in {
       };
     }
     {
-      action.__raw =
-        /*
-        lua
-        */
-        ''
+      action = {
+        __raw = ''
           function()
             require('neotest').run.run({strategy = "dap"})
           end'';
+      };
       key = "<leader>rd";
       mode = "n";
       options = {
