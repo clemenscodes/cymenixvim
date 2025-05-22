@@ -3,7 +3,7 @@
     gitblame = {
       enable = true;
       settings = {
-        enabled = true;
+        enabled = false;
         delay = 2000;
         message_when_not_committed = "";
       };
