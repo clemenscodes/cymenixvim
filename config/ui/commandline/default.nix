@@ -4,7 +4,5 @@
   lib,
   ...
 }: {
-  imports = [
-    (import ./fine-cmdline {inherit inputs pkgs lib;})
-  ];
+  imports = [];
 }

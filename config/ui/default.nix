@@ -9,6 +9,7 @@
     (import ./cursor {inherit inputs pkgs lib;})
     (import ./explorer {inherit inputs pkgs lib;})
     (import ./icons {inherit inputs pkgs lib;})
+    (import ./noice {inherit inputs pkgs lib;})
     (import ./notifications {inherit inputs pkgs lib;})
     (import ./prompts {inherit inputs pkgs lib;})
     (import ./scope {inherit inputs pkgs lib;})
