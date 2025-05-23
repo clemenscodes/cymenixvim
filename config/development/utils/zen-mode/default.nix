@@ -26,11 +26,10 @@
       settings = {
         window = {
           height = 1;
-          width = 120;
+          width = 140;
           backdrop = 0.95;
           options = {
             signcolumn = "no";
-            relativenumber = false;
             cursorline = false;
             cursorcolumn = false;
             foldcolumn = "0";
@@ -55,6 +54,7 @@
           ''
             function(win)
               vim.cmd('GitBlameEnable')
+              vim.cmd('IBLEnable')
             end
           '';
         on_open =
@@ -62,6 +62,7 @@
           ''
             function(win)
               vim.cmd('GitBlameDisable')
+              vim.cmd('IBLDisable')
             end
           '';
       };
