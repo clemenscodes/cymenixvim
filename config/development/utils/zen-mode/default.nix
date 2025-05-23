@@ -54,7 +54,6 @@
           ''
             function(win)
               vim.cmd('GitBlameEnable')
-              vim.cmd('IBLEnable')
             end
           '';
         on_open =
@@ -62,7 +61,6 @@
           ''
             function(win)
               vim.cmd('GitBlameDisable')
-              vim.cmd('IBLDisable')
             end
           '';
       };
