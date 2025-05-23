@@ -11,13 +11,23 @@
     }
   ];
   plugins = {
+    which-key = {
+      settings = {
+        spec = [
+          {
+            __unkeyed-1 = "<leader>z";
+            desc = "Zen mode";
+          }
+        ];
+      };
+    };
     zen-mode = {
       enable = true;
       settings = {
         on_close =
           # Lua
           ''
-            function()
+            function(win)
               require("gitsigns.actions").toggle_current_line_blame()
               vim.cmd('IBLEnable')
               vim.opt.relativenumber = true
@@ -28,7 +38,7 @@
         on_open =
           # Lua
           ''
-            function()
+            function(win)
               require("gitsigns.actions").toggle_current_line_blame()
               vim.cmd('IBLDisable')
               vim.opt.relativenumber = false
@@ -58,7 +68,7 @@
           options = {
             signcolumn = "no";
           };
-          width = 0.8;
+          width = 0.6;
         };
       };
     };
