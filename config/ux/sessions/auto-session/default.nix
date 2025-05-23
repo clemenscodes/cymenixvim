@@ -17,7 +17,6 @@
 
     local function get_buffer_number(fpath)
       local bufnr = vim.fn.bufnr(fpath, true)
-      -- Load the file if it wasn't loaded by the session
       if vim.fn.bufloaded(bufnr) == 0 then
         vim.api.nvim_buf_call(bufnr, vim.cmd.edit)
       end
@@ -78,17 +77,6 @@
       vim.fn.delete(bp_path)
     end
 
-    local nvim_tree_api = require('nvim-tree.api')
-
-    local function close_nvim_tree()
-      nvim_tree_api.tree.close()
-    end
-
-    local function open_nvim_tree()
-      nvim_tree_api.tree.open()
-      nvim_tree_api.node.open.edit()
-    end
-
     local function close_all_floating_wins()
       for _, win in ipairs(vim.api.nvim_list_wins()) do
         local config = vim.api.nvim_win_get_config(win)
@@ -113,11 +101,11 @@
         local cmd = 'git rev-parse --is-inside-work-tree'
         return vim.fn.system(cmd) == 'true\n'
       end,
-      pre_save_cmds = {close_nvim_tree, close_all_floating_wins},
+      pre_save_cmds = {close_all_floating_wins},
       pre_delete_cmds = {delete_session_breakpoints},
       post_save_cmds = {save_session_breakpoints},
-      post_open_cmds = {open_nvim_tree},
-      post_restore_cmds = {open_nvim_tree, restore_session_breakpoints},
+      post_open_cmds = {},
+      post_restore_cmds = {restore_session_breakpoints},
       post_cwd_changed_cmds = {
         function()
           require("lualine").refresh()
