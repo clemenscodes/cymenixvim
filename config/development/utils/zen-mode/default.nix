@@ -26,7 +26,7 @@
       settings = {
         window = {
           height = 1;
-          width = 140;
+          width = 100;
           backdrop = 0.95;
           options = {
             signcolumn = "no";
@@ -36,17 +36,11 @@
           };
         };
         plugins = {
-          gitsigns = {
-            enabled = true;
-          };
           options = {
             enabled = true;
             ruler = false;
             showcmd = false;
             laststatus = 0;
-          };
-          twilight = {
-            enabled = true;
           };
         };
         on_close =
