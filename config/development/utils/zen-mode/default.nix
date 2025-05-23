@@ -25,12 +25,17 @@
       enable = true;
       settings = {
         window = {
-          backdrop = 0.95;
           height = 1;
+          width = 100;
+          backdrop = 0.95;
           options = {
             signcolumn = "no";
+            number = false;
+            relativenumber = false;
+            cursorline = false;
+            cursorcolumn = false;
+            foldcolumn = "0";
           };
-          width = 120;
         };
         plugins = {
           gitsigns = {
@@ -40,9 +45,11 @@
             enabled = true;
             ruler = false;
             showcmd = false;
+            laststatus = 0;
           };
-          tmux = {
-            enabled = false;
+          kitty = {
+            enabled = true;
+            font = "+2";
           };
           twilight = {
             enabled = true;
@@ -52,22 +59,16 @@
           # Lua
           ''
             function(win)
-              require("gitsigns.actions").toggle_current_line_blame()
               vim.cmd('IBLEnable')
-              vim.opt.relativenumber = true
-              vim.opt.signcolumn = "yes:2"
-              require("gitsigns.actions").refresh()
+              vim.cmd('GitBlameEnable')
             end
           '';
         on_open =
           # Lua
           ''
             function(win)
-              require("gitsigns.actions").toggle_current_line_blame()
+              vim.cmd('GitBlameDisable')
               vim.cmd('IBLDisable')
-              vim.opt.relativenumber = false
-              vim.opt.signcolumn = "no"
-              require("gitsigns.actions").refresh()
             end
           '';
       };
