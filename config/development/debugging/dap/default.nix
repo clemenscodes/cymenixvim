@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   extraPlugins = [
     pkgs.vimPlugins.nvim-nio
     pkgs.vimPlugins.nvim-dap-vscode-js
@@ -103,7 +107,7 @@
             skipFiles = [
               "<node_internals>/**"
             ];
-            runtimeExecutable = lib.getExe pkgs.nodejs;
+            runtimeExecutable = lib.getExe pkgs.nodejs_22;
             runtimeArgs = [
               "--inspect"
               "./build/server/index.js"
@@ -123,7 +127,7 @@
             skipFiles = [
               "<node_internals>/**"
             ];
-            runtimeExecutable = lib.getExe pkgs.nodejs;
+            runtimeExecutable = lib.getExe pkgs.nodejs_22;
             runtimeArgs = [
               "--inspect-brk"
               "./build/server/index.js"
@@ -143,7 +147,7 @@
             skipFiles = [
               "<node_internals>/**"
             ];
-            runtimeExecutable = lib.getExe pkgs.nodejs;
+            runtimeExecutable = lib.getExe pkgs.nodejs_22;
             runtimeArgs = [
               "--inspect"
               "node_modules/vite/bin/vite.js"
