@@ -1,4 +1,15 @@
 {pkgs, ...}: {
+  keymaps = [
+    {
+      action = ":ZenMode<CR>";
+      key = "<leader>z";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Zen mode";
+      };
+    }
+  ];
   plugins = {
     zen-mode = {
       enable = true;
