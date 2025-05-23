@@ -28,7 +28,7 @@
           global = true;
         };
         expandAll = {
-          exclude = [".git" "target" "dist" "build"];
+          exclude = [".git" "target" "dist" "build" "node_modules"];
         };
       };
       autoClose = true;
@@ -59,7 +59,7 @@
         enable = true;
         showOnDirs = true;
         showOnOpenDirs = true;
-        timeout = 800;
+        timeout = 200;
         ignore = false;
       };
       onAttach = {
@@ -108,8 +108,8 @@
       view = {
         centralizeSelection = true;
         width = {
-          min = 100;
-          max = 100;
+          min = 80;
+          max = 80;
           padding = 1;
         };
       };
