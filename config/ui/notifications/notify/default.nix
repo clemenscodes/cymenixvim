@@ -10,10 +10,21 @@
     notify = {
       enable = true;
       settings = {
-        topDown = false;
         timeout = 3000;
-        maxWidth = 200;
+        top_down = true;
+        max_height = 10;
+        max_width = 80;
+        minimum_width = 50;
+        stages = "fade_in_slide_out";
         render = "minimal";
+        level = "info";
+        icons = {
+          debug = "";
+          error = "";
+          info = "";
+          trace = "✎";
+          warn = "";
+        };
       };
     };
   };

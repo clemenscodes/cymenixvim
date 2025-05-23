@@ -38,6 +38,18 @@
           "__rawKey__vim.diagnostic.severity.HINT" = "DiagnosticHint";
           "__rawKey__vim.diagnostic.severity.INFO" = "DiagnosticInfo";
         };
+        linehl = {
+          "__rawKey__vim.diagnostic.severity.ERROR" = "DiagnosticError";
+          "__rawKey__vim.diagnostic.severity.WARN" = "DiagnosticWarn";
+          "__rawKey__vim.diagnostic.severity.HINT" = "DiagnosticHint";
+          "__rawKey__vim.diagnostic.severity.INFO" = "DiagnosticInfo";
+        };
+        numhl = {
+          "__rawKey__vim.diagnostic.severity.ERROR" = "DiagnosticError";
+          "__rawKey__vim.diagnostic.severity.WARN" = "DiagnosticWarn";
+          "__rawKey__vim.diagnostic.severity.HINT" = "DiagnosticHint";
+          "__rawKey__vim.diagnostic.severity.INFO" = "DiagnosticInfo";
+        };
       };
     };
   };

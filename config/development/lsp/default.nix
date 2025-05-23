@@ -8,21 +8,6 @@
   plugins = {
     lsp = {
       enable = true;
-      keymaps = {
-        diagnostic = {
-          "<leader>j" = "goto_next";
-          "<leader>k" = "goto_prev";
-        };
-        lspBuf = {
-          K = "hover";
-          gD = "declaration";
-          gr = "references";
-          gd = "definition";
-          gi = "implementation";
-          gt = "type_definition";
-        };
-        silent = true;
-      };
     };
     which-key = {
       settings = {
@@ -39,45 +24,15 @@
       };
     };
   };
-  extraConfigLuaPost =
-    /*
-    lua
-    */
-    ''
-      vim.diagnostic.config({
-          signs = {
-              text = {
-                  [vim.diagnostic.severity.ERROR] = '',
-                  [vim.diagnostic.severity.WARN] = '',
-                  [vim.diagnostic.severity.INFO] = '',
-                  [vim.diagnostic.severity.HINT] = '',
-              },
-              linehl = {
-                  [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
-                  [vim.diagnostic.severity.WARN] = 'WarningMsg',
-                  [vim.diagnostic.severity.INFO] = 'InformationMsg',
-                  [vim.diagnostic.severity.HINT] = 'HintMsg',
-              },
-              numhl = {
-                  [vim.diagnostic.severity.WARN] = 'WarningMsg',
-                  [vim.diagnostic.severity.WARN] = 'WarningMsg',
-                  [vim.diagnostic.severity.INFO] = 'InformationMsg',
-                  [vim.diagnostic.severity.HINT] = 'HintMsg',
-              },
-          }
-      })
-    '';
   keymaps = [
     {
-      action.__raw =
-        /*
-        lua
-        */
-        ''
+      action = {
+        __raw = ''
           function()
             vim.lsp.buf.code_action()
           end
         '';
+      };
       key = "ca";
       mode = "n";
       options = {

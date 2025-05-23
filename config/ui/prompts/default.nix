@@ -4,5 +4,7 @@
   lib,
   ...
 }: {
-  imports = [];
+  imports = [
+    (import ./dressing {inherit inputs pkgs lib;})
+  ];
 }

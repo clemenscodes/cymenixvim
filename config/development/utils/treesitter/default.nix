@@ -13,7 +13,24 @@
     treesitter = {
       enable = true;
       nixvimInjections = true;
-      nixGrammars = true;
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        html
+        css
+        scss
+        javascript
+        typescript
+        angular
+        editorconfig
+        comment
+        bash
+        json
+        markdown
+        nix
+        xml
+        yaml
+        dockerfile
+        regex
+      ];
       settings = {
         highlight = {
           additional_vim_regex_highlighting = true;
@@ -36,6 +53,29 @@
         indent = {
           enable = true;
         };
+      };
+    };
+    treesitter-context = {
+      settings = {
+        max_lines = 4;
+        min_window_height = 40;
+        multiwindow = true;
+        separator = "-";
+      };
+    };
+    treesitter-refactor = {
+      highlightDefinitions = {
+        enable = true;
+        clearOnCursorMove = true;
+      };
+      smartRename = {
+        enable = true;
+        keymaps = {
+          smartRename = "grR";
+        };
+      };
+      navigation = {
+        enable = true;
       };
     };
   };

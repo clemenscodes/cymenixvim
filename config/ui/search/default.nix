@@ -4,5 +4,7 @@
   lib,
   ...
 }: {
-  imports = [];
+  imports = [
+    (import ./searchbox {inherit inputs pkgs lib;})
+  ];
 }

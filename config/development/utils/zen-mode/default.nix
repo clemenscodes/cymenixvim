@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   keymaps = [
     {
       action = ":ZenMode<CR>";
@@ -6,7 +6,7 @@
       mode = "n";
       options = {
         silent = true;
-        desc = "Zen mode";
+        desc = "Toggle Zen mode";
       };
     }
   ];
@@ -16,7 +16,7 @@
         spec = [
           {
             __unkeyed-1 = "<leader>z";
-            desc = "Zen mode";
+            desc = "Toggle Zen mode";
           }
         ];
       };
