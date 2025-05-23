@@ -30,7 +30,6 @@
           backdrop = 0.95;
           options = {
             signcolumn = "no";
-            number = false;
             relativenumber = false;
             cursorline = false;
             cursorcolumn = false;
@@ -47,10 +46,6 @@
             showcmd = false;
             laststatus = 0;
           };
-          kitty = {
-            enabled = true;
-            font = "+2";
-          };
           twilight = {
             enabled = true;
           };
@@ -59,7 +54,6 @@
           # Lua
           ''
             function(win)
-              vim.cmd('IBLEnable')
               vim.cmd('GitBlameEnable')
             end
           '';
@@ -68,7 +62,6 @@
           ''
             function(win)
               vim.cmd('GitBlameDisable')
-              vim.cmd('IBLDisable')
             end
           '';
       };
