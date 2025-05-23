@@ -24,6 +24,30 @@
     zen-mode = {
       enable = true;
       settings = {
+        window = {
+          backdrop = 0.95;
+          height = 1;
+          options = {
+            signcolumn = "no";
+          };
+          width = 120;
+        };
+        plugins = {
+          gitsigns = {
+            enabled = true;
+          };
+          options = {
+            enabled = true;
+            ruler = false;
+            showcmd = false;
+          };
+          tmux = {
+            enabled = false;
+          };
+          twilight = {
+            enabled = true;
+          };
+        };
         on_close =
           # Lua
           ''
@@ -46,30 +70,6 @@
               require("gitsigns.actions").refresh()
             end
           '';
-        plugins = {
-          gitsigns = {
-            enabled = true;
-          };
-          options = {
-            enabled = true;
-            ruler = false;
-            showcmd = false;
-          };
-          tmux = {
-            enabled = false;
-          };
-          twilight = {
-            enabled = true;
-          };
-        };
-        window = {
-          backdrop = 0.95;
-          height = 1;
-          options = {
-            signcolumn = "no";
-          };
-          width = 0.6;
-        };
       };
     };
   };
