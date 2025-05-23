@@ -14,10 +14,39 @@
             fuzzy = true;
           };
         };
+        ui-select = {
+          enable = true;
+          settings = {
+            __unkeyed-1 = {
+              __raw = ''require("telescope.themes").get_dropdown{}'';
+            };
+          };
+        };
       };
-      highlightTheme = "catppuccin";
+      highlightTheme = "Catppuccin Macchiato";
       keymaps = {};
-      settings = {};
+      settings = {
+        defaults = {
+          file_ignore_patterns = [
+            "^.git/"
+            "^output/"
+            "^data/"
+            "^node_modules/"
+            "^build/"
+            "^target/"
+            "^dist/"
+          ];
+          set_env = {
+            COLORTERM = "truecolor";
+          };
+        };
+
+        pickers = {
+          colorscheme = {
+            enable_preview = true;
+          };
+        };
+      };
     };
     which-key = {
       settings = {

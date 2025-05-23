@@ -1,4 +1,4 @@
-{...}: {
+{lib, ...}: {
   lsp = {
     servers = {
       nil_ls = {
