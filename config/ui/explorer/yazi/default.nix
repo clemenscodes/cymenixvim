@@ -10,7 +10,7 @@
       key = "<leader>e";
       action = "<CMD>Yazi<CR>";
       options = {
-        desc = "Yazi";
+        desc = "Toggle Yazi";
       };
     }
   ];
