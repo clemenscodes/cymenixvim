@@ -13,5 +13,6 @@
     (import ./globals {inherit inputs pkgs lib;})
     (import ./keymaps {inherit inputs pkgs lib;})
     (import ./options {inherit inputs pkgs lib;})
+    (import ./performance {inherit inputs pkgs lib;})
   ];
 }

@@ -55,6 +55,24 @@
       };
     }
     {
+      action = ":w<CR>";
+      key = "<leader>w";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Write current file";
+      };
+    }
+    {
+      action = ":confirm q<CR>";
+      key = "<leader>q";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Quit";
+      };
+    }
+    {
       action = ":wincmd k<CR>";
       key = "<c-k>";
       mode = "n";
