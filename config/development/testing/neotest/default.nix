@@ -71,7 +71,7 @@ in {
             require("neotest").run.stop(vim.fn.expand("%"))
           end'';
       };
-      key = "<leader>rs";
+      key = "<leader>rk";
       mode = "n";
       options = {
         silent = true;
@@ -184,7 +184,7 @@ in {
             desc = "Run all tests in file";
           }
           {
-            __unkeyed-1 = "<leader>ra";
+            __unkeyed-1 = "<leader>rk";
             desc = "Stop all tests in file";
           }
           {

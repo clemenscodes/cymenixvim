@@ -123,7 +123,7 @@
             desc = "Create a variable from value at cursor/selection";
           }
           {
-            __unkeyed-1 = "<leader>cjreva";
+            __unkeyed-1 = "<leader>cjrea";
             desc = "Create a variable for all occurrences from value at cursor/selection";
           }
           {
@@ -131,7 +131,7 @@
             desc = "Create a constant from the value at cursor/selection";
           }
           {
-            __unkeyed-1 = "<leader>cjreca";
+            __unkeyed-1 = "<leader>cjreb";
             desc = "Create a constant from the value at cursor/selection";
           }
           {
@@ -171,7 +171,7 @@
     }
     {
       action = ":lua require('jdtls').extract_variable(true)<CR>";
-      key = "<leader>cjreva";
+      key = "<leader>cjrea";
       mode = "n";
       options = {
         desc = "Create a variable for all occurrences from value at cursor/selection";
@@ -189,7 +189,7 @@
     }
     {
       action = ":lua require('jdtls').extract_constant(true)<CR>";
-      key = "<leader>cjreca";
+      key = "<leader>cjreb";
       mode = "n";
       options = {
         desc = "Create a constant for all occurrences from the value at cursor/selection";
