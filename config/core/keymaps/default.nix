@@ -188,6 +188,15 @@
       };
     }
     {
+      action = "x";
+      key = "<BS>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Delete character";
+      };
+    }
+    {
       action = ">gv";
       key = "<Tab>";
       mode = "v";
