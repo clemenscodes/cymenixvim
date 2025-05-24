@@ -4,7 +4,10 @@
   lib,
   ...
 }: {
-  imports = [(import ./servers {inherit inputs pkgs lib;})];
+  imports = [
+    (import ./servers {inherit inputs pkgs lib;})
+    (import ./symbols {inherit inputs pkgs lib;})
+  ];
   plugins = {
     lsp = {
       enable = true;
