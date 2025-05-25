@@ -207,7 +207,7 @@
     }
     {
       action = "^";
-      key = "<";
+      key = "q";
       mode = "n";
       options = {
         silent = true;
@@ -225,7 +225,7 @@
     }
     {
       action = "^";
-      key = "<";
+      key = "q";
       mode = "x";
       options = {
         silent = true;
