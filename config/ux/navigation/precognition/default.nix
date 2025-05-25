@@ -20,11 +20,10 @@
       key = "<leader>tp";
       action.__raw = ''
         function()
-          local toggled = vim.cmd("Precognition toggle")
-          if toggled then
-              vim.notify("Precognition on")
+          if require("precognition").toggle() then
+              vim.notify("precognition on")
           else
-              vim.notify("Precognition off")
+              vim.notify("precognition off")
           end
         end
       '';

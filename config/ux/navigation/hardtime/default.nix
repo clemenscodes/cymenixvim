@@ -1,24 +1,14 @@
-{lib, ...}: {
+{pkgs, ...}: {
+  extraPlugins = [pkgs.vimPlugins.hardtime-nvim];
+  extraConfigLuaPost = ''
+    require('hardtime').setup({
+      restricted_keys = {
+        ['j'] = {},
+        ['k'] = {},
+      },
+    })
+  '';
   plugins = {
-    hardtime = {
-      enable = true;
-      settings = {
-        restricted_keys = {
-          "+" = ["n" "x"];
-          "-" = ["n" "x"];
-          "<C-M>" = ["n" "x"];
-          "<C-N>" = ["n" "x"];
-          "<C-P>" = ["n" "x"];
-          "<CR>" = ["n" "x"];
-          gj = ["n" "x"];
-          gk = ["n" "x"];
-          h = lib.mkForce [];
-          j = lib.mkForce [];
-          k = lib.mkForce [];
-          l = lib.mkForce [];
-        };
-      };
-    };
     which-key = {
       settings = {
         spec = [
