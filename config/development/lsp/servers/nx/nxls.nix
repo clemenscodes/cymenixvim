@@ -1,16 +1,16 @@
 {pkgs, ...}:
 pkgs.buildNpmPackage rec {
   name = "nxls";
-  version = "1.7.0";
+  version = "1.8.0";
 
   src = pkgs.fetchFromGitHub {
     owner = "clemenscodes";
     repo = name;
-    rev = "32bbe82b1f65a85960daa56b5d8280ad067a2f0a";
-    hash = "sha256-oLzyqx5q+2p4qoL6PMN3CN/B4Fq7zST1oD3ZqGaKVi4=";
+    rev = "c68a1a63acadf027c3dbe9f97b72931cefb3f625";
+    hash = "sha256-pGFwadGbh4YXCWxTitTHzHo26aMJtfH4kz3kw1GPjBQ=";
   };
 
-  npmDepsHash = "sha256-Uz6/MfeGZSJNoLO6nCxtKcpOVrhWgH7elNFMNuuSg6I=";
+  npmDepsHash = "sha256-10Sm5jFvKOWj2dHErxL8Mr18MFF3Ax/6RxWQIk1Q6Ck=";
 
   dontNpmBuild = true;
 
