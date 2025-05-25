@@ -118,21 +118,7 @@
       post_save_cmds = {save_session_breakpoints},
       post_open_cmds = {open_nvim_tree},
       post_restore_cmds = {open_nvim_tree, restore_session_breakpoints},
-      post_cwd_changed_cmds = {
-        function()
-          require("lualine").refresh()
-        end
-      },
-    }
-
-    require('lualine').setup{
-      sections = {
-        lualine_c = {
-          function()
-            return require('auto-session.lib').current_session_name(true)
-          end
-        }
-      }
+      post_cwd_changed_cmds = {},
     }
   '';
   plugins = {
