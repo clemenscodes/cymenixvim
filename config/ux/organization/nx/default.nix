@@ -21,9 +21,7 @@ in {
 
       -- Command running capabilities,
       -- see nx.m.command-runners for more details
-      command_runner = require('nx.command-runners').toggleterm_runner({
-        close_on_exit = false
-      }),
+      command_runner = require('nx.command-runners').terminal_cmd(),
 
       -- Form rendering capabilities,
       -- see nx.m.form-renderers for more detials

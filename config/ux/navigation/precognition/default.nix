@@ -3,7 +3,7 @@
     precognition = {
       enable = true;
       settings = {
-        enabled = false;
+        startVisible = false;
       };
     };
     which-key = {
