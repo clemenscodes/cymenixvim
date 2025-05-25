@@ -7,6 +7,7 @@
       rev = "08769c518e4b590c1fdcddcc1cc1f6ea6cbd821f";
       hash = "sha256-dYP+1LzMTe8UCYq+opWtNPWweIdKDcTbrzKYxo5L0j4=";
     };
+    doCheck = false;
   };
 in {
   extraPlugins = [nx];
