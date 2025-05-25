@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [
+    (import ./lines {inherit inputs pkgs lib;})
     (import ./servers {inherit inputs pkgs lib;})
     (import ./symbols {inherit inputs pkgs lib;})
   ];
