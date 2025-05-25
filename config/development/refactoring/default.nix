@@ -8,6 +8,12 @@
       settings = {
         spec = [
           {
+            __unkeyed-1 = "<leader>r";
+            mode = "x";
+            group = "+Refactor";
+            icon = " ";
+          }
+          {
             __unkeyed-1 = "<leader>je";
             mode = "x";
             desc = "Extract";
@@ -22,7 +28,6 @@
             mode = "x";
             desc = "Extract var";
           }
-
           {
             __unkeyed-1 = "<leader>ji";
             mode = "n";
@@ -55,16 +60,15 @@
   keymaps = [
     {
       mode = "x";
-      key = "<leader>je";
+      key = "<leader>re";
       action = "<cmd>Refactor extract<cr>";
       options = {
-        silent = true;
         desc = "Extract";
       };
     }
     {
       mode = "x";
-      key = "<leader>jE";
+      key = "<leader>rE";
       action = "<cmd>Refactor extract_to_file<cr>";
       options = {
         desc = "Extract to file";
@@ -72,7 +76,7 @@
     }
     {
       mode = "x";
-      key = "<leader>jv";
+      key = "<leader>rv";
       action = "<cmd>Refactor extract_var<cr>";
       options = {
         desc = "Extract var";
@@ -80,7 +84,7 @@
     }
     {
       mode = "n";
-      key = "<leader>ji";
+      key = "<leader>ri";
       action = "<cmd>Refactor inline_var<CR>";
       options = {
         desc = "Inline var";
@@ -88,7 +92,7 @@
     }
     {
       mode = "n";
-      key = "<leader>jI";
+      key = "<leader>rI";
       action = "<cmd>Refactor inline_func<CR>";
       options = {
         desc = "Inline Func";
@@ -96,7 +100,7 @@
     }
     {
       mode = "n";
-      key = "<leader>jb";
+      key = "<leader>rb";
       action = "<cmd>Refactor extract_block<CR>";
       options = {
         desc = "Extract block";
@@ -104,7 +108,7 @@
     }
     {
       mode = "n";
-      key = "<leader>jB";
+      key = "<leader>rB";
       action = "<cmd>Refactor extract_block_to_file<CR>";
       options = {
         desc = "Extract block to file";
@@ -112,7 +116,7 @@
     }
     {
       mode = "n";
-      key = "<leader>jR";
+      key = "<leader>fR";
       action.__raw = ''
         function()
           require('telescope').extensions.refactoring.refactors()

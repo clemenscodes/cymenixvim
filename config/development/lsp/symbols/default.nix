@@ -142,7 +142,7 @@
           }
           {
             __unkeyed-1 = "<leader>u";
-            desc = "Refresh symbol usages";
+            desc = "Refresh buffer symbol usages";
           }
         ];
       };
