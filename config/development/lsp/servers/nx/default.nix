@@ -3,16 +3,15 @@
 in {
   plugins = {
     lsp = {
-      postConfig =
-        /*
-        lua
-        */
-        ''
-          require('lspconfig')["nxls"].setup({
-            cmd = {"${nxls}/bin/nxls", "--stdio"},
-            root_dir = require('lspconfig')["util"].root_pattern(".git")
-          })
-        '';
+      servers = {
+        nxls = {
+          enable = true;
+          package = nxls;
+          cmd = ["${nxls}/bin/nxls" "--stdio"];
+          filetypes = ["json" "jsonc"];
+          rootMarkers = [".git" "nx.json"];
+        };
+      };
     };
   };
 }

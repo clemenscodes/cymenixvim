@@ -5,6 +5,7 @@
     };
     which-key = {
       settings = {
+        enabled = false;
         spec = [
           {
             __unkeyed-1 = "<leader>tp";
