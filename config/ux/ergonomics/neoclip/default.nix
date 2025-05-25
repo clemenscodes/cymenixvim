@@ -1,6 +1,7 @@
 {...}: {
   extraConfigLuaPost = ''
     require('telescope').extensions.neoclip.default()
+    require('telescope').extensions.macroscope.default()
   '';
   plugins = {
     neoclip = {
@@ -15,6 +16,10 @@
           {
             __unkeyed-1 = "<leader>fc";
             desc = "Find clips";
+          }
+          {
+            __unkeyed-1 = "<leader>fm";
+            desc = "Find macros";
           }
           {
             __unkeyed-1 = "<leader>tc";
@@ -32,6 +37,15 @@
       options = {
         silent = true;
         desc = "Find clips";
+      };
+    }
+    {
+      action = ":Telescope macroscope";
+      key = "<leader>fm";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Find macros";
       };
     }
     {
