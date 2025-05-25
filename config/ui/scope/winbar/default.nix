@@ -1,11 +1,15 @@
 {...}: {
   plugins = {
+    barbecue = {
+      enable = true;
+      settings = {
+        attach_navic = true;
+        show_navic = true;
+      };
+    };
     navic = {
       enable = true;
       settings = {
-        lsp = {
-          auto_attach = true;
-        };
         icons = {
           File = " ";
           Module = " ";
