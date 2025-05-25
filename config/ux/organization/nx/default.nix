@@ -13,7 +13,7 @@ in {
   extraPlugins = [nx];
   extraConfigLuaPost = ''
     require('nx').setup{
-        nx_cmd_root = 'nx',
+        nx_cmd_root = 'npx nx',
         command_runner = require('nx.command-runners').toggleterm_runner()
     }
   '';
