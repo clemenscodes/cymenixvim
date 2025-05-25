@@ -1,11 +1,7 @@
 {...}: {
   plugins = {
-    barbecue = {
+    navic = {
       enable = true;
-      settings = {
-        attach_navic = false;
-        show_navic = false;
-      };
     };
     navbuddy = {
       enable = true;
