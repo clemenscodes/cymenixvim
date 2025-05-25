@@ -3,6 +3,10 @@
     noice = {
       enable = true;
       settings = {
+        hover = {
+          enabled = false;
+          silent = true;
+        };
         lsp = {
           override = {
             "vim.lsp.util.convert_input_to_markdown_lines" = true;

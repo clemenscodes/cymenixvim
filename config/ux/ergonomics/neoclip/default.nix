@@ -31,7 +31,7 @@
   };
   keymaps = [
     {
-      action = ":Telescope neoclip";
+      action = ":Telescope neoclip<CR>";
       key = "<leader>fc";
       mode = "n";
       options = {
@@ -40,7 +40,7 @@
       };
     }
     {
-      action = ":Telescope macroscope";
+      action = ":Telescope macroscope<CR>";
       key = "<leader>fm";
       mode = "n";
       options = {
@@ -49,7 +49,7 @@
       };
     }
     {
-      action = ":lua require('neoclip').toggle()";
+      action = ":lua require('neoclip').toggle()<CR>";
       key = "<leader>tc";
       mode = "n";
       options = {
