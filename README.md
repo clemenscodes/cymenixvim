@@ -1,4 +1,4 @@
-# CYMENIX NeovimA
+# CYMENIX Neovim
 
 Standalone neovim with sane defaults
 

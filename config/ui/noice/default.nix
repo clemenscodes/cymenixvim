@@ -31,6 +31,10 @@
             };
           }
           {
+            filter = {find = "No information available";};
+            opts = {skip = true;};
+          }
+          {
             filter = {
               event = "lsp";
               kind = "progress";
