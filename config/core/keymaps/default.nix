@@ -89,15 +89,6 @@
       };
     }
     {
-      action = "ZZ";
-      key = "<leader>q";
-      mode = "n";
-      options = {
-        silent = true;
-        desc = "Quit";
-      };
-    }
-    {
       action = ":wincmd k<CR>";
       key = "<c-k>";
       mode = "n";
