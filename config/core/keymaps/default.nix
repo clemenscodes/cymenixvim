@@ -89,7 +89,7 @@
       };
     }
     {
-      action = ":confirm q<CR>";
+      action = "ZZ";
       key = "<leader>q";
       mode = "n";
       options = {
