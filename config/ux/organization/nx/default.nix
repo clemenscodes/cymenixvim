@@ -21,7 +21,7 @@ in {
 
       -- Command running capabilities,
       -- see nx.m.command-runners for more details
-      command_runner = require('nx.command-runners').terminal_cmd(),
+      command_runner = require('nx.command-runners').toggleterm_runner(),
       -- Form rendering capabilities,
       -- see nx.m.form-renderers for more detials
       form_renderer = require('nx.form-renderers').telescope(),
