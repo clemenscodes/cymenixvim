@@ -10,6 +10,10 @@
     navic = {
       enable = true;
       settings = {
+        lsp = {
+          auto_attach = true;
+          preference = [];
+        };
         icons = {
           File = " ";
           Module = " ";
