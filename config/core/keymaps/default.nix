@@ -197,6 +197,60 @@
       };
     }
     {
+      action = "$";
+      key = "ü";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Go to end of line";
+      };
+    }
+    {
+      action = "^";
+      key = "<";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Go to start of line";
+      };
+    }
+    {
+      action = "%";
+      key = "-";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Go to other pair";
+      };
+    }
+    {
+      action = "^";
+      key = "<";
+      mode = "x";
+      options = {
+        silent = true;
+        desc = "Go to start of line";
+      };
+    }
+    {
+      action = "%";
+      key = "-";
+      mode = "x";
+      options = {
+        silent = true;
+        desc = "Go to other pair";
+      };
+    }
+    {
+      action = "$";
+      key = "ü";
+      mode = "x";
+      options = {
+        silent = true;
+        desc = "Go to end of line";
+      };
+    }
+    {
       action = ">gv";
       key = "<Tab>";
       mode = "v";
