@@ -2,10 +2,12 @@
   plugins = {
     precognition = {
       enable = true;
+      settings = {
+        enabled = false;
+      };
     };
     which-key = {
       settings = {
-        enabled = false;
         spec = [
           {
             __unkeyed-1 = "<leader>tp";
@@ -19,15 +21,17 @@
     {
       mode = "n";
       key = "<leader>tp";
-      action.__raw = ''
-        function()
-          if require("precognition").toggle() then
-              vim.notify("precognition on")
-          else
-              vim.notify("precognition off")
+      action = {
+        __raw = ''
+          function()
+            if require("precognition").toggle() then
+                vim.notify("precognition on")
+            else
+                vim.notify("precognition off")
+            end
           end
-        end
-      '';
+        '';
+      };
       options = {
         silent = true;
         desc = "Toggle Precognition ";

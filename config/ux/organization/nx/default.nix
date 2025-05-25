@@ -2,10 +2,10 @@
   nx = pkgs.vimUtils.buildVimPlugin {
     name = "nx";
     src = pkgs.fetchFromGitHub {
-      owner = "jugarpeupv";
+      owner = "ergoproxy623";
       repo = "nx.nvim";
-      rev = "09b2d8bdb786379c16b787ef8c95938061d90d7c";
-      hash = "sha256-JxYEPZtlALWfMr8M4VL3ZXpM1gqiaDZhh3vYqV116h8=";
+      rev = "8130aef1d8d37980b4aabb63ebc5128928aebe88";
+      hash = "sha256-dYP+1LzMTe8UCYq+opWtNPWweIdKDcTbrzKYxo5L0j4=";
     };
     doCheck = false;
   };
