@@ -1,23 +1,28 @@
 {...}: {
   plugins = {
     hardtime = {
-      enable = false;
+      enable = true;
+    };
+    which-key = {
       settings = {
-        restrictedKeys = {
-          "h" = ["n" "x"];
-          "j" = ["n" "x"];
-          "k" = ["n" "x"];
-          "l" = ["n" "x"];
-          "-" = ["n" "x"];
-          "+" = ["n" "x"];
-          "gj" = ["n" "x"];
-          "gk" = ["n" "x"];
-          "<CR>" = ["n" "x"];
-          "<C-M>" = ["n" "x"];
-          "<C-N>" = ["n" "x"];
-          "<C-P>" = ["n" "x"];
-        };
+        spec = [
+          {
+            __unkeyed-1 = "<leader>th";
+            desc = "Toggle Hardtime";
+          }
+        ];
       };
     };
   };
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>th";
+      action = ":Hardtime toggle";
+      options = {
+        silent = true;
+        desc = "Toggle Hardtime";
+      };
+    }
+  ];
 }

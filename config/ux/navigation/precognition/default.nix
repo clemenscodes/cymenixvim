@@ -11,7 +11,7 @@
         spec = [
           {
             __unkeyed-1 = "<leader>tp";
-            desc = "Precognition Toggle";
+            desc = "Toggle Precognition ";
           }
         ];
       };
@@ -33,7 +33,7 @@
       '';
       options = {
         silent = true;
-        desc = "Precognition Toggle";
+        desc = "Toggle Precognition ";
       };
     }
   ];
