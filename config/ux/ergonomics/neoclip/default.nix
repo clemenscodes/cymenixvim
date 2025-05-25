@@ -1,14 +1,7 @@
 {...}: {
-  extraConfigLuaPost = ''
-    require('telescope').extensions.neoclip.default()
-    require('telescope').extensions.macroscope.default()
-  '';
   plugins = {
     neoclip = {
       enable = true;
-      settings = {
-        enable_persistent_history = true;
-      };
     };
     which-key = {
       settings = {
