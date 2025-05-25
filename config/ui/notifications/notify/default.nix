@@ -12,8 +12,8 @@
       settings = {
         timeout = 3000;
         top_down = true;
-        max_height = 10;
-        max_width = 80;
+        max_height = 40;
+        max_width = 300;
         minimum_width = 50;
         stages = "fade_in_slide_out";
         render = "minimal";
