@@ -1,5 +1,5 @@
 {
-  description = "A sane standalone nixvim configuration";
+  description = "A sane standalone nixvim confiuration";
 
   inputs = {
     nixpkgs = {

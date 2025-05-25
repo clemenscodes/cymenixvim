@@ -24,10 +24,7 @@ in {
     settings = {
       options = {
         disabled_filetypes = {
-          __unkeyed-1 = "startify";
           __unkeyed-2 = "neo-tree";
-          __unkeyed-3 = "copilot-chat";
-          __unkeyed-4 = "ministarter";
           __unkeyed-5 = "Avante";
           __unkeyed-6 = "AvanteInput";
           __unkeyed-7 = "trouble";
@@ -37,10 +34,8 @@ in {
           __unkeyed-11 = "dapui_watches";
           __unkeyed-12 = "dapui_console";
           __unkeyed-13 = "dashboard";
-          __unkeyed-14 = "snacks_dashboard";
           __unkeyed-15 = "AvanteSelectedFiles";
           winbar = [
-            "aerial"
             "dap-repl"
             "dap-view"
             "dap-view-term"
@@ -63,7 +58,6 @@ in {
         ];
 
         lualine_x = [
-          {__raw = ''Snacks.profiler.status()'';}
           {
             __unkeyed-1 = "diagnostics";
             # TODO: figure out how this works
