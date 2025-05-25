@@ -18,5 +18,6 @@
     (import ./docker {inherit inputs pkgs lib;})
     (import ./yaml {inherit inputs pkgs lib;})
     (import ./nix {inherit inputs pkgs lib;})
+    (import ./nx {inherit inputs pkgs lib;})
   ];
 }
