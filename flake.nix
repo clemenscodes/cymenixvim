@@ -21,6 +21,9 @@
         };
       };
     };
+    telescope-manix = {
+      url = "github:mrcjkb/telescope-manix";
+    };
   };
 
   outputs = {
@@ -31,7 +34,10 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
-      overlays = [inputs.neovim-nightly-overlay.overlays.default];
+      overlays = [
+        inputs.neovim-nightly-overlay.overlays.default
+        inputs.telescope-manix.overlays.default
+      ];
     };
     inherit (pkgs) lib;
     mkNvim = inputs.nixvim.legacyPackages.${system}.makeNixvim;

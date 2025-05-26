@@ -2,7 +2,12 @@
   extraPackages = [
     pkgs.ripgrep
     pkgs.fd
+    pkgs.manix
   ];
+  extraPlugins = [pkgs.telescope-manix];
+  extraConfigLuaPost = ''
+    require('telescope').load_extension('manix)
+  '';
   plugins = {
     telescope = {
       enable = true;
@@ -84,6 +89,10 @@
           {
             __unkeyed-1 = "gr";
             desc = "LSP references";
+          }
+          {
+            __unkeyed-1 = "<leader>fm";
+            desc = "Find manix documentation (Nix)";
           }
         ];
       };
@@ -184,6 +193,21 @@
       options = {
         silent = true;
         desc = "LSP references";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>fm";
+      action = {
+        __raw = ''
+          function()
+            require('telescope-manix').search()
+          end
+        '';
+      };
+      options = {
+        silent = true;
+        desc = "Find manix documentation (Nix)";
       };
     }
   ];
