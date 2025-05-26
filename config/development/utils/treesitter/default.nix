@@ -25,8 +25,11 @@
         bash
         json
         markdown
+        markdown_inline
         nix
         xml
+        typst
+        latex
         yaml
         dockerfile
         regex
