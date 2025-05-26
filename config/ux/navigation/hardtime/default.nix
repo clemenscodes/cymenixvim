@@ -3,8 +3,10 @@
   extraConfigLuaPost = ''
     require('hardtime').setup({
       restricted_keys = {
+        ['h'] = {},
         ['j'] = {},
         ['k'] = {},
+        ['l'] = {},
       },
     })
   '';
