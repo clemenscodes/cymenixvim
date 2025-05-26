@@ -59,7 +59,7 @@
         enable = true;
         showOnDirs = true;
         showOnOpenDirs = true;
-        timeout = 200;
+        timeout = 800;
         ignore = false;
       };
       onAttach = {
