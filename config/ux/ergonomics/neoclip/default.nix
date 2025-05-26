@@ -7,8 +7,8 @@
       settings = {
         spec = [
           {
-            __unkeyed-1 = "<leader>fc";
-            desc = "Find clips";
+            __unkeyed-1 = "<leader>fy";
+            desc = "Find yanks ";
           }
           {
             __unkeyed-1 = "<leader>fm";
@@ -25,7 +25,7 @@
   keymaps = [
     {
       action = ":Telescope neoclip<CR>";
-      key = "<leader>fc";
+      key = "<leader>fy";
       mode = "n";
       options = {
         silent = true;

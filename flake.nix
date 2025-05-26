@@ -36,7 +36,11 @@
       inherit system;
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default
-        inputs.telescope-manix.overlays.default
+        (final: prev: {
+          telescope-manix = inputs.telescope-manix.packages.${system}.telescope-manix.overrideAttrs (oldAttrs: {
+            doCheck = false;
+          });
+        })
       ];
     };
     inherit (pkgs) lib;
@@ -49,6 +53,7 @@
     packages = {
       ${system} = {
         inherit cymenixvim development cardano;
+        inherit (pkgs) telescope-manix;
         default = self.packages.${system}.cymenixvim;
       };
     };

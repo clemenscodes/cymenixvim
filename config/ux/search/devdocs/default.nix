@@ -3,16 +3,18 @@
     devdocs = {
       enable = true;
     };
-
-    which-key.settings.spec = [
-      {
-        __unkeyed = "<leader>D";
-        group = "DevDocs";
-        icon = " ";
-      }
-    ];
+    which-key = {
+      settings = {
+        spec = [
+          {
+            __unkeyed = "<leader>D";
+            group = "DevDocs";
+            icon = " ";
+          }
+        ];
+      };
+    };
   };
-
   keymaps = [
     {
       mode = "n";
@@ -25,20 +27,21 @@
     {
       mode = "n";
       key = "<leader>Df";
-      action.__raw = ''
-        function()
-          local devdocs = require("devdocs")
-          local installedDocs = devdocs.GetInstalledDocs()
-          vim.ui.select(installedDocs, {}, function(selected)
-            if not selected then
-              return
-            end
-            local docDir = devdocs.GetDocDir(selected)
-            -- prettify the filename as you wish
-            Snacks.picker.files({ cwd = docDir })
-          end)
-        end
-      '';
+      action = {
+        __raw = ''
+          function()
+            local devdocs = require("devdocs")
+            local installedDocs = devdocs.GetInstalledDocs()
+            vim.ui.select(installedDocs, {}, function(selected)
+              if not selected then
+                return
+              end
+              local docDir = devdocs.GetDocDir(selected)
+              Snacks.picker.files({ cwd = docDir })
+            end)
+          end
+        '';
+      };
       options = {
         desc = "Find DevDocs";
       };
