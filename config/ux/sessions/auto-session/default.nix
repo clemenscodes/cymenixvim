@@ -89,12 +89,8 @@
 
       vim.cmd("wincmd l")
 
-      local bufname = vim.api.nvim_buf_get_name(0)
-      vim.notify(bufname)
-
-      if bufname:match("COMMIT_EDITMSG") then
+      if vim.api.nvim_buf_get_name(0):match("COMMIT_EDITMSG") then
         vim.cmd("Bdelete")
-        vim.notify("Closed COMMIT_EDITMSG buffer")
       end
     end
 
