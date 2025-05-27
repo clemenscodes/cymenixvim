@@ -1,16 +1,5 @@
-{pkgs, ...}: let
-  nx = pkgs.vimUtils.buildVimPlugin {
-    name = "nx";
-    src = pkgs.fetchFromGitHub {
-      owner = "ergoproxy623";
-      repo = "nx.nvim";
-      rev = "8130aef1d8d37980b4aabb63ebc5128928aebe88";
-      hash = "sha256-dYP+1LzMTe8UCYq+opWtNPWweIdKDcTbrzKYxo5L0j4=";
-    };
-    doCheck = false;
-  };
-in {
-  extraPlugins = [nx];
+{inputs, ...}: {
+  extraPlugins = [inputs.nx-nvim.packages.x86_64-linux.default];
   extraConfigLuaPost = ''
     require('nx').setup{
       -- Base command to run all other nx commands, some other values may be:

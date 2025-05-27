@@ -24,6 +24,9 @@
     telescope-manix = {
       url = "github:mrcjkb/telescope-manix";
     };
+    nx-nvim = {
+      url = "github:clemenscodes/nx.nvim";
+    };
   };
 
   outputs = {
