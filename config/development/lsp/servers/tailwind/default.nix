@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  extraPlugins = [pkgs.vimPlugins.tailwind-tools];
+  extraPlugins = [pkgs.vimPlugins.tailwind-tools-nvim];
   extraConfigLuaPost = ''
     require('tailwind-tools').setup({
       server = {
