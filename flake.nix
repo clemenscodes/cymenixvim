@@ -27,6 +27,10 @@
     nx-nvim = {
       url = "github:clemenscodes/nx.nvim";
     };
+    modes-nvim = {
+      url = "github:mvllow/modes.nvim/v0.3.0";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -43,6 +47,12 @@
           telescope-manix = inputs.telescope-manix.packages.${system}.telescope-manix.overrideAttrs (oldAttrs: {
             doCheck = false;
           });
+          modes-nvim = pkgs.vimUtils.buildVimPlugin {
+            pname = "modes.nvim";
+            version = "0.3.0";
+            src = inputs.modes-nvim;
+            doCheck = false;
+          };
         })
       ];
     };
@@ -56,7 +66,7 @@
     packages = {
       ${system} = {
         inherit cymenixvim development cardano;
-        inherit (pkgs) telescope-manix;
+        inherit (pkgs) telescope-manix modes-nvim;
         default = self.packages.${system}.cymenixvim;
       };
     };

@@ -1008,6 +1008,23 @@
         "type": "github"
       }
     },
+    "modes-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1748287304,
+        "narHash": "sha256-2gvne46/aHzVxcxXXBsdg6wVtlnhowYCKfAn4Wero+8=",
+        "owner": "mvllow",
+        "repo": "modes.nvim",
+        "rev": "fc7bc0141500d9cf7c14f46fca846f728545a781",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mvllow",
+        "ref": "v0.3.0",
+        "repo": "modes.nvim",
+        "type": "github"
+      }
+    },
     "neorocks": {
       "inputs": {
         "flake-compat": "flake-compat_4",
@@ -1543,6 +1560,7 @@
     },
     "root": {
       "inputs": {
+        "modes-nvim": "modes-nvim",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
