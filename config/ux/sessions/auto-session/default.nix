@@ -85,14 +85,17 @@
     end
 
     local function open_nvim_tree()
+      nvim_tree_api.tree.open()
+
+      vim.cmd("wincmd l")
+
       local bufname = vim.api.nvim_buf_get_name(0)
+      vim.notify(bufname)
 
       if bufname:match("COMMIT_EDITMSG") then
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<leader>q", true, false, true), "n", true)
+        vim.cmd("Bdelete")
+        vim.notify("Closed COMMIT_EDITMSG buffer")
       end
-
-      nvim_tree_api.tree.open()
-      nvim_tree_api.node.open.edit()
     end
 
     local function close_all_floating_wins()
