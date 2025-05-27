@@ -1,4 +1,18 @@
 {pkgs, ...}: {
+  plugins = {
+    lsp = {
+      servers = {
+        tailwindcss = {
+          enable = true;
+          package = null;
+          autostart = true;
+          cmd = ["tailwindcss-language-server" "--stdio"];
+          filetypes = ["html" "htmlangular" "css" "tsx" "typescript"];
+          rootMarkers = [".git" "nx.json"];
+        };
+      };
+    };
+  };
   extraPlugins = [pkgs.vimPlugins.tailwind-tools-nvim];
   extraConfigLuaPost = ''
     require('tailwind-tools').setup({
@@ -15,7 +29,7 @@
         },
         on_attach = function(client, bufnr) end, -- callback executed when the language server gets attached to a buffer
         root_dir = function(fname)
-          require('lspconfig').util.root_pattern(".git", "nx.json")
+          return vim.fn.getcwd()
         end, -- overrides the default function for resolving the root directory
       },
       document_color = {
