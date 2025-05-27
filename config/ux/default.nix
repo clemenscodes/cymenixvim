@@ -17,6 +17,10 @@
   ];
   extraPackages = [
     pkgs.ghostscript
+    pkgs.tectonic
+    pkgs.texliveSmall
+    pkgs.mermaid-cli
+    pkgs.sqlite
   ];
   plugins = {
     snacks = {
@@ -207,10 +211,6 @@
             desc = "Find Git Files";
           }
           {
-            __unkeyed-1 = "<leader>g";
-            group = "Git";
-          }
-          {
             __unkeyed-1 = "<leader>gB";
             desc = "Find git branches";
           }
@@ -249,30 +249,6 @@
           {
             __unkeyed-1 = "<leader>fD";
             desc = "Find workspace diagnostics";
-          }
-          {
-            __unkeyed-1 = "<leader>l";
-            group = "LSP";
-          }
-          {
-            __unkeyed-1 = "<leader>ls";
-            desc = "Find lsp document symbols";
-          }
-          {
-            __unkeyed-1 = "<leader>ld";
-            desc = "Go to definition";
-          }
-          {
-            __unkeyed-1 = "<leader>li";
-            desc = "Go to implementation";
-          }
-          {
-            __unkeyed-1 = "<leader>lD";
-            desc = "Find references";
-          }
-          {
-            __unkeyed-1 = "<leader>lt";
-            desc = "Go to type definition";
           }
           {
             __unkeyed-1 = "gd";
@@ -644,38 +620,6 @@
       action = ''<cmd>lua Snacks.picker.lsp_symbols()<cr>'';
       options = {
         desc = "Find lsp document symbols";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>ld";
-      action = ''<cmd>lua Snacks.picker.lsp_definitions()<cr>'';
-      options = {
-        desc = "Go to definition";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>li";
-      action = ''<cmd>lua Snacks.picker.lsp_implementations()<cr>'';
-      options = {
-        desc = "Go to implementation";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>lD";
-      action = ''<cmd>lua Snacks.picker.lsp_references()<cr>'';
-      options = {
-        desc = "Find references";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>lt";
-      action = ''<cmd>lua Snacks.picker.lsp_type_definitions()<cr>'';
-      options = {
-        desc = "Go to type definition";
       };
     }
     {

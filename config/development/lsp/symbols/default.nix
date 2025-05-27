@@ -140,10 +140,6 @@
             __unkeyed-1 = "<leader>tu";
             desc = "Toggle symbol usages";
           }
-          {
-            __unkeyed-1 = "<leader>u";
-            desc = "Refresh buffer symbol usages";
-          }
         ];
       };
     };
@@ -162,21 +158,6 @@
       options = {
         silent = true;
         desc = "Toggle symbol usages";
-      };
-    }
-    {
-      action = {
-        __raw = ''
-          function()
-            require('symbol-usage').refresh()
-          end
-        '';
-      };
-      key = "<leader>u";
-      mode = "n";
-      options = {
-        silent = true;
-        desc = "Refresh symbol usages";
       };
     }
   ];

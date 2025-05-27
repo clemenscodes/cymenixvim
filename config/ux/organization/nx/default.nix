@@ -65,7 +65,7 @@
         spec = [
           {
             __unkeyed-1 = "<leader>x";
-            group = "+Nx";
+            group = "+Find nx monorepo functions";
           }
           {
             __unkeyed-1 = "<leader>xa";

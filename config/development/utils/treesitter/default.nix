@@ -3,12 +3,16 @@
   pkgs,
   lib,
   ...
-}: {
+}: let
+  norg-meta = pkgs.tree-sitter-grammars.tree-sitter-norg-meta;
+  norg = pkgs.tree-sitter-grammars.tree-sitter-norg;
+in {
   imports = [
     (import ./ts-autotag {inherit inputs pkgs lib;})
     (import ./ts-context-commentstring {inherit inputs pkgs lib;})
   ];
   extraPackages = with pkgs; [tree-sitter nodejs_22 gcc];
+  extraPlugins = [norg norg-meta];
   plugins = {
     treesitter = {
       enable = true;
@@ -33,6 +37,12 @@
         yaml
         dockerfile
         regex
+        svelte
+        tsx
+        vue
+        rust
+        norg
+        norg-meta
       ];
       settings = {
         highlight = {
