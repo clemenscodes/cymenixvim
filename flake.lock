@@ -1505,11 +1505,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1748327489,
-        "narHash": "sha256-tWYzqTiMrriPE8N47gqpvOi8RY9tregK4mFDLLhIWzI=",
+        "lastModified": 1748327741,
+        "narHash": "sha256-RWshfjh4WdIBONox6U+aY9hDhHIxuTFubothVNc0PyQ=",
         "owner": "clemenscodes",
         "repo": "nx.nvim",
-        "rev": "52a108bd70c8536f23b0c875b2ecd36077efecd9",
+        "rev": "5621446d2567c21434bf083ee31bd187e7b11068",
         "type": "github"
       },
       "original": {
