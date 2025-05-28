@@ -347,11 +347,11 @@
             desc = "Undo History";
           }
           {
-            __unkeyed-1 = "<leader>fG";
+            __unkeyed-1 = "<leader>fg";
             desc = "Live grep";
           }
           {
-            __unkeyed-1 = "<leader>fg";
+            __unkeyed-1 = "<leader>fG";
             desc = "Live grep (All files)";
           }
           {
@@ -381,14 +381,6 @@
           {
             __unkeyed-1 = "<leader>fuC";
             desc = "Colorschemes";
-          }
-          {
-            __unkeyed-1 = "<leader>fG";
-            desc = "Find Git Files";
-          }
-          {
-            __unkeyed-1 = "<leader>gB";
-            desc = "Find git branches";
           }
           {
             __unkeyed-1 = "<leader>gC";
@@ -641,7 +633,7 @@
     }
     {
       mode = "n";
-      key = "<leader>fG";
+      key = "<leader>fg";
       action = "<cmd>lua Snacks.picker.grep()<cr>";
       options = {
         desc = "Live grep";
@@ -649,7 +641,7 @@
     }
     {
       mode = "n";
-      key = "<leader>fg";
+      key = "<leader>fG";
       action = "<cmd>lua Snacks.picker.grep({hidden = true, ignored = true})<cr>";
       options = {
         desc = "Live grep (All files)";
@@ -712,14 +704,6 @@
       action = ''<cmd>lua Snacks.picker.colorschemes()<cr>'';
       options = {
         desc = "Colorschemes";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>fG";
-      action = ''<cmd>lua Snacks.picker.git_files()<cr>'';
-      options = {
-        desc = "Find Git Files";
       };
     }
     {
