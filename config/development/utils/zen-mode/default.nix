@@ -26,7 +26,7 @@
       settings = {
         window = {
           height = 1;
-          width = 120;
+          width = 100;
           backdrop = 0.95;
           options = {
             signcolumn = "no";
