@@ -18,6 +18,7 @@
     };
   };
   extraPlugins = [pkgs.vimPlugins.tailwind-tools-nvim];
+  extraPackages = [pkgs.tailwindcss-language-server];
   extraConfigLuaPost = ''
     require('tailwind-tools').setup({
       server = {
