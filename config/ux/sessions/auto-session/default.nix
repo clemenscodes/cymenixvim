@@ -80,7 +80,7 @@
 
     local function open()
       if vim.api.nvim_buf_get_name(0):match("COMMIT_EDITMSG") then
-        vim.cmd("Bdelete")
+        require('snacks').bufdelete.delete()
       end
     end
 
