@@ -4,10 +4,7 @@
       servers = {
         htmx = {
           enable = true;
-          extraOptions = {};
-          filetypes = [
-            "html"
-          ];
+          filetypes = ["html"];
         };
       };
     };

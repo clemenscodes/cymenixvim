@@ -4,7 +4,6 @@
       servers = {
         dockerls = {
           enable = true;
-          extraOptions = {};
         };
       };
     };

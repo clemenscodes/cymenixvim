@@ -38,7 +38,6 @@
         nix = ["nix"];
         yaml = ["yamllint"];
       };
-
       linters = {
         clippy.cmd = lib.getExe pkgs.rust-analyzer;
         cmakelint.cmd = lib.getExe' pkgs.cmake-format "cmake-lint";

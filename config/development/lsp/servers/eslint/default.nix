@@ -3,7 +3,7 @@
     lsp = {
       servers = {
         eslint = {
-          enable = false;
+          enable = true;
           extraOptions = {
             rootDir =
               /*

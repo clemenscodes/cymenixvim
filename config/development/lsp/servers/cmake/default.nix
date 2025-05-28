@@ -3,7 +3,7 @@
     lsp = {
       servers = {
         cmake = {
-          enable = false;
+          enable = true;
           extraOptions = {};
         };
       };

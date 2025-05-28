@@ -4,7 +4,6 @@
       servers = {
         emmet_ls = {
           enable = true;
-          extraOptions = {};
           filetypes = [
             "typescript"
             "html"

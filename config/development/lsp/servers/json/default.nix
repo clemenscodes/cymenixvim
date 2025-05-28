@@ -4,7 +4,6 @@
       servers = {
         jsonls = {
           enable = true;
-          extraOptions = {};
         };
       };
     };

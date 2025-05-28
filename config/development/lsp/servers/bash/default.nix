@@ -3,8 +3,7 @@
     lsp = {
       servers = {
         bashls = {
-          enable = false;
-          extraOptions = {};
+          enable = true;
         };
       };
     };

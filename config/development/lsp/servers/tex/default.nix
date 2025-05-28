@@ -4,7 +4,6 @@
       servers = {
         texlab = {
           enable = true;
-          extraOptions = {};
         };
       };
     };

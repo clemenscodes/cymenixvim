@@ -4,7 +4,6 @@
       servers = {
         yamlls = {
           enable = true;
-          extraOptions = {};
         };
       };
     };

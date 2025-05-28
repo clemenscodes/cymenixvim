@@ -11,19 +11,19 @@
         capabilities = capabilities,
         settings = {
           css = {
-            validate = false,
+            validate = true,
             lint = {
               unknownAtRules = "ignore"
             }
           },
           scss = {
-            validate = false,
+            validate = true,
             lint = {
               unknownAtRules = "ignore"
             }
           },
           less = {
-            validate = false,
+            validate = true,
             lint = {
               unknownAtRules = "ignore"
             }

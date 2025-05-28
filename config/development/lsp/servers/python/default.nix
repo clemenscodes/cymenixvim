@@ -4,7 +4,6 @@
       servers = {
         pyright = {
           enable = true;
-          extraOptions = {};
         };
       };
     };

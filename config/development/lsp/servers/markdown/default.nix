@@ -4,7 +4,6 @@
       servers = {
         marksman = {
           enable = true;
-          extraOptions = {};
         };
       };
     };
