@@ -218,4 +218,21 @@
       };
     };
   };
+  keymaps = [
+    {
+      action = {
+        __raw = ''
+          function()
+            require('spectre').toggle()
+          end
+        '';
+      };
+      key = "<leader>s";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Navigate up with centered cursor";
+      };
+    }
+  ];
 }
