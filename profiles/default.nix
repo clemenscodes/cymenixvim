@@ -20,7 +20,7 @@
       (import ../config/ui/status {inherit inputs pkgs lib;})
       (import ../config/ui/syntax/rainbow-delimiters {inherit inputs pkgs lib;})
       (import ../config/ui/tabs {inherit inputs pkgs lib;})
-      (import ../config/ux/search/telescope {inherit inputs pkgs lib;})
+      (import ../config/ux/search {inherit inputs pkgs lib;})
       (import ../config/ux/shortcuts/which-key {inherit inputs pkgs lib;})
       (import ../config/ux/snacks {inherit inputs pkgs lib;})
       (import ../config/ux/terminal {inherit inputs pkgs lib;})
