@@ -47,7 +47,7 @@
           # Lua
           ''
             function(win)
-              vim.cmd('GitBlameEnable')
+
             end
           '';
         on_open =

@@ -35,6 +35,9 @@
         gitbrowse = {
           enabled = true;
         };
+        profiler = {
+          enabled = true;
+        };
         picker = {
           actions = {
             calculate_file_truncate_width = {

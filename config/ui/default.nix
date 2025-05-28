@@ -18,7 +18,6 @@
     (import ./startup {inherit inputs pkgs lib;})
     (import ./status {inherit inputs pkgs lib;})
     (import ./syntax {inherit inputs pkgs lib;})
-    (import ./tabs {inherit inputs pkgs lib;})
     (import ./tags {inherit inputs pkgs lib;})
     (import ./theme {inherit inputs pkgs lib;})
   ];
