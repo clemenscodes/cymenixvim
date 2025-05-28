@@ -9,6 +9,15 @@
       (import ../config {inherit inputs pkgs lib;})
     ];
   };
+  minimal = {...}: {
+    imports = [
+      (import ../config/core {inherit inputs pkgs lib;})
+      (import ../config/development {inherit inputs pkgs lib;})
+      (import ../config/ui/theme {inherit inputs pkgs lib;})
+      (import ../config/ui/icons {inherit inputs pkgs lib;})
+      (import ../config/ux/search/telescope {inherit inputs pkgs lib;})
+    ];
+  };
   development = {...}: {
     imports = [
       (import ../config {inherit inputs pkgs lib;})

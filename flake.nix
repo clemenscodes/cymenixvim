@@ -62,10 +62,11 @@
     cymenixvim = mkNvim profiles.default;
     development = mkNvim profiles.development;
     cardano = mkNvim profiles.cardano;
+    minimal = mkNvim profiles.minimal;
   in {
     packages = {
       ${system} = {
-        inherit cymenixvim development cardano;
+        inherit cymenixvim development cardano minimal;
         inherit (pkgs) telescope-manix modes-nvim;
         default = self.packages.${system}.cymenixvim;
       };
