@@ -40,12 +40,12 @@
       };
 
       linters = {
+        clippy.cmd = lib.getExe pkgs.rust-analyzer;
         cmakelint.cmd = lib.getExe' pkgs.cmake-format "cmake-lint";
         htmlhint.cmd = lib.getExe pkgs.htmlhint;
         jsonlint.cmd = lib.getExe pkgs.nodePackages.jsonlint;
         luacheck.cmd = lib.getExe pkgs.luaPackages.luacheck;
         eslint_d.cmd = lib.getExe pkgs.eslint_d;
-        eslint.cmd = lib.getExe pkgs.eslint;
         markdownlint.cmd = lib.getExe pkgs.markdownlint-cli;
         nix.cmd = lib.getExe' pkgs.nix "nix-instantiate";
         shellcheck.cmd = lib.getExe pkgs.shellcheck;
