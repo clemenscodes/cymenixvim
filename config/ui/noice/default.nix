@@ -3,9 +3,20 @@
     noice = {
       enable = true;
       settings = {
-        hover = {
-          enabled = false;
-          silent = true;
+        cmdline = {
+          enabled = true;
+        };
+        messages = {
+          enabled = true;
+        };
+        popupmenu = {
+          enabled = true;
+        };
+        commands = {
+          enabled = true;
+        };
+        notify = {
+          enabled = true;
         };
         lsp = {
           override = {
@@ -17,6 +28,13 @@
             enabled = true;
           };
           signature = {
+            enabled = true;
+          };
+          hover = {
+            enabled = true;
+            silent = true;
+          };
+          documentation = {
             enabled = true;
           };
         };

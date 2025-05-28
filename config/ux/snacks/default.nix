@@ -10,6 +10,7 @@
     snacks = {
       enable = true;
       settings = {
+
         image = {
           enabled = true;
         };
@@ -186,11 +187,11 @@
             desc = "Resume find";
           }
           {
-            __unkeyed-1 = "<leader>sw";
+            __unkeyed-1 = "<leader>fw";
             desc = "Search Word (visual or cursor)";
           }
           {
-            __unkeyed-1 = "<leader>uC";
+            __unkeyed-1 = "<leader>fuC";
             desc = "Colorschemes";
           }
           {
@@ -499,7 +500,7 @@
         "n"
         "x"
       ];
-      key = "<leader>sw";
+      key = "<leader>fw";
       action = ''<cmd>lua Snacks.picker.grep_word()<cr>'';
       options = {
         desc = "Search Word (visual or cursor)";
@@ -507,7 +508,7 @@
     }
     {
       mode = "n";
-      key = "<leader>uC";
+      key = "<leader>fuC";
       action = ''<cmd>lua Snacks.picker.colorschemes()<cr>'';
       options = {
         desc = "Colorschemes";
