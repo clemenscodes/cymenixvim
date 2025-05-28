@@ -1,4 +1,5 @@
-{...}: {
+{pkgs, ...}: {
+  extraPlugins = [pkgs.vimPlugins.nvim-spectre];
   extraConfigLuaPost = ''
     require('spectre').setup({
       color_devicons = true,
