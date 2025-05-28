@@ -16,6 +16,7 @@
       (import ../config/ui/theme {inherit inputs pkgs lib;})
       (import ../config/ui/icons {inherit inputs pkgs lib;})
       (import ../config/ux/search/telescope {inherit inputs pkgs lib;})
+      (import ../config/ux/shortcuts/which-key {inherit inputs pkgs lib;})
     ];
   };
   development = {...}: {
