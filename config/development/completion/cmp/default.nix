@@ -55,6 +55,11 @@
               require('luasnip').lsp_expand(args.body)
             end
           },
+          ["formatting"] = {
+            ["format"] = require("lspkind").cmp_format({
+              before = require("tailwind-tools.cmp").lspkind_format
+            }),
+          },
           ["sources"] = {
             { ["name"] = "npm", priority = 2000 },
             {
@@ -67,7 +72,6 @@
             { ["name"] = "path" },
             { ["name"] = "crates" },
             { ["name"] = "lua" },
-            { ["name"] = "tmux" },
           }
         })
       end
@@ -98,9 +102,6 @@
       enable = true;
     };
     cmp-nvim-lua = {
-      enable = true;
-    };
-    cmp-tmux = {
       enable = true;
     };
     cmp-path = {

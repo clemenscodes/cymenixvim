@@ -20,7 +20,11 @@
         override = true, -- setup the server from the plugin if true
         settings = { -- shortcut for `settings.tailwindCSS`
           experimental = {
-            classRegex = { "tw\\('([^']*)'\\)" }
+            classRegex = {
+              "tw\\('([^']*)'\\)",
+              [[class="([^"]*)]],
+              'class=\\s+"([^"]*)'
+            }
           },
           -- includeLanguages = {
           --   elixir = "phoenix-heex",
