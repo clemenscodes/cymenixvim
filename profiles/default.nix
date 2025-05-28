@@ -17,7 +17,12 @@
       (import ../config/ui/icons {inherit inputs pkgs lib;})
       (import ../config/ux/search/telescope {inherit inputs pkgs lib;})
       (import ../config/ux/shortcuts/which-key {inherit inputs pkgs lib;})
+      (import ../config/ux/snacks {inherit inputs pkgs lib;})
+      (import ../config/ux/ergonomics/project-nvim {inherit inputs pkgs lib;})
+      (import ../config/ux/sessions/auto-session {inherit inputs pkgs lib;})
     ];
+    package = pkgs.neovim;
+    colorscheme = "catppuccin";
   };
   development = {...}: {
     imports = [
