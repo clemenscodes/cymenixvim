@@ -2,7 +2,6 @@
   extraPlugins = [pkgs.vimPlugins.typescript-tools-nvim];
   extraConfigLuaPost = ''
     require("typescript-tools").setup {
-      root_dir = vim.fn.getcwd(),
       settings = {
         -- spawn additional tsserver instance to calculate diagnostics on it
         separate_diagnostic_server = true,
