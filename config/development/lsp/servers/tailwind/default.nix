@@ -21,7 +21,7 @@
   extraConfigLuaPost = ''
     require('tailwind-tools').setup({
       server = {
-        override = false, -- setup the server from the plugin if true
+        override = true, -- setup the server from the plugin if true
         settings = { -- shortcut for `settings.tailwindCSS`
           experimental = {
             classRegex = {

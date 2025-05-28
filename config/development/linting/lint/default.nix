@@ -27,7 +27,6 @@
         sh = ["shellcheck"];
         bash = ["shellcheck"];
         html = ["htmlhint"];
-        htmlangular = ["eslint_d"];
         css = ["stylelint"];
         javascript = ["eslint_d"];
         typescript = ["eslint_d"];

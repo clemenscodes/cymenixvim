@@ -4,14 +4,10 @@
       servers = {
         eslint = {
           enable = true;
-          extraOptions = {
-            rootDir =
-              /*
-              lua
-              */
-              ''
-                require('lspconfig').util.root_pattern(".git")
-              '';
+          settings = {
+            root_dir = {
+              __raw = ''vim.fn.getcwd()'';
+            };
           };
         };
       };

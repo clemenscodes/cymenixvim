@@ -4,6 +4,11 @@
       enable = true;
       settings = {
         settings = {
+          settings = {
+            root_dir = {
+              __raw = ''vim.fn.getcwd()'';
+            };
+          };
           code_lens = "off";
           complete_function_calls = false;
           disable_member_code_lens = true;
