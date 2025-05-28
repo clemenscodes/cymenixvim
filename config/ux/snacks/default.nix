@@ -102,13 +102,6 @@
             }
             {
               pane = 2;
-              section = "terminal";
-              cmd = "colorscript -e square";
-              height = 5;
-              padding = 2;
-            }
-            {
-              pane = 2;
               icon = " ";
               desc = "Browse Repo";
               padding = 1;
@@ -123,17 +116,6 @@
                 function()
                   local in_git = Snacks.git.get_root() ~= nil
                   local cmds = {
-                    {
-                      title = "Notifications",
-                      cmd = "gh notify -s -a -n5",
-                      action = function()
-                        vim.ui.open("https://github.com/notifications")
-                      end,
-                      key = "N",
-                      icon = " ",
-                      height = 5,
-                      enabled = true,
-                    },
                     {
                       title = "Open Issues",
                       cmd = "gh issue list -L 3",
