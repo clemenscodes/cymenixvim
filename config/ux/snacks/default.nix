@@ -10,8 +10,127 @@
     snacks = {
       enable = true;
       settings = {
+        animate = {
+          enabled = true;
+        };
         image = {
           enabled = true;
+        };
+        quickfile = {
+          enabled = true;
+        };
+        bufdelete = {
+          enabled = true;
+        };
+        dashboard = {
+          enable = true;
+          sections = [
+            {
+              header = ''
+                ██╗   ██╗██╗███╗   ███╗
+                ██║   ██║██║████╗ ████║
+                ██║   ██║██║██╔████╔██║
+                ╚██╗ ██╔╝██║██║╚██╔╝██║
+                 ╚████╔╝ ██║██║ ╚═╝ ██║
+                  ╚═══╝  ╚═╝╚═╝     ╚═╝
+              '';
+            }
+            {
+              icon = " ";
+              title = "Keymaps";
+              section = "keys";
+              gap = 1;
+              padding = 1;
+            }
+            {
+              icon = " ";
+              title = "Recent Files";
+              __unkeyed-1.__raw = "require('snacks').dashboard.sections.recent_files({cwd = true})";
+              gap = 1;
+              padding = 1;
+            }
+            {
+              icon = " ";
+              title = "Projects";
+              section = "projects";
+              gap = 1;
+              padding = 1;
+            }
+            {
+              pane = 2;
+              section = "terminal";
+              cmd = "colorscript -e square";
+              height = 5;
+              padding = 2;
+            }
+            {
+              pane = 2;
+              icon = " ";
+              desc = "Browse Repo";
+              padding = 1;
+              key = "b";
+              action.__raw = ''
+                function()
+                  Snacks.gitbrowse()
+                end'';
+            }
+            {
+              __raw = ''
+                function()
+                  local in_git = Snacks.git.get_root() ~= nil
+                  local cmds = {
+                    {
+                      title = "Notifications",
+                      cmd = "gh notify -s -a -n5",
+                      action = function()
+                        vim.ui.open("https://github.com/notifications")
+                      end,
+                      key = "N",
+                      icon = " ",
+                      height = 5,
+                      enabled = true,
+                    },
+                    {
+                      title = "Open Issues",
+                      cmd = "gh issue list -L 3",
+                      key = "i",
+                      action = function()
+                        vim.fn.jobstart("gh issue list --web", { detach = true })
+                      end,
+                      icon = " ",
+                      height = 7,
+                    },
+                    {
+                      icon = " ",
+                      title = "Open PRs",
+                      cmd = "gh pr list -L 3",
+                      key = "p",
+                      action = function()
+                        vim.fn.jobstart("gh pr list --web", { detach = true })
+                      end,
+                      height = 7,
+                    },
+                    {
+                      icon = " ",
+                      title = "Git Status",
+                      cmd = "git --no-pager diff --stat -B -M -C",
+                      height = 10,
+                    },
+                  }
+                  return vim.tbl_map(function(cmd)
+                    return vim.tbl_extend("force", {
+                      pane = 2,
+                      section = "terminal",
+                      enabled = in_git,
+                      padding = 1,
+                      ttl = 5 * 60,
+                      indent = 3,
+                    }, cmd)
+                  end, cmds)
+                end
+              '';
+            }
+          ];
         };
         scope = {
           enabled = true;
@@ -22,10 +141,17 @@
         profiler = {
           enabled = true;
         };
+        statuscolumn = {
+          enabled = true;
+          folds = {
+            open = true;
+            git_hl = true;
+          };
+        };
         zen = {
           enabled = true;
           toggles = {
-            dim = true;
+            dim = false;
             git_signs = true;
             diagnostics = true;
             inlay_hints = false;
@@ -40,6 +166,7 @@
             };
           };
         };
+
         picker = {
           actions = {
             calculate_file_truncate_width = {
@@ -278,6 +405,14 @@
           {
             __unkeyed-1 = "<leader>z";
             desc = "Toggle Zen mode";
+          }
+          {
+            __unkeyed-1 = "<leader>o";
+            desc = "Delete all buffers except current";
+          }
+          {
+            __unkeyed-1 = "<leader>q";
+            desc = "Delete current buffer";
           }
         ];
       };
@@ -679,6 +814,24 @@
       options = {
         silent = true;
         desc = "Toggle Zen mode";
+      };
+    }
+    {
+      action = ":lua require('snacks').bufdelete.other()<CR>";
+      key = "<leader>o";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Delete all buffers except current";
+      };
+    }
+    {
+      action = ":lua require('snacks').bufdelete.delete()<CR>";
+      key = "<leader>q";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Delete current buffer";
       };
     }
   ];

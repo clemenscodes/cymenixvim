@@ -234,7 +234,7 @@
     }
     {
       action = "%";
-      key = "-";
+      key = "q";
       mode = "x";
       options = {
         silent = true;
