@@ -1,11 +1,12 @@
-{pkgs, ...}: {
-  extraPackages = [pkgs.eslint_d];
+{
+  pkgs,
+  lib,
+  ...
+}: {
   keymaps = [
     {
       action =
-        /*
-        lua
-        */
+        # Lua
         ''
           function()
             lint.try_lint()
@@ -23,10 +24,31 @@
     lint = {
       enable = true;
       lintersByFt = {
+        sh = ["shellcheck"];
+        bash = ["shellcheck"];
+        html = ["htmlhint"];
+        htmlangular = ["eslint_d"];
+        css = ["stylelint"];
         javascript = ["eslint_d"];
         typescript = ["eslint_d"];
-        javascriptreact = ["eslint_d"];
-        typescriptreact = ["eslint_d"];
+        markdown = ["markdownlint"];
+        rust = ["clippy"];
+        lua = ["luacheck"];
+        json = ["jsonlint"];
+        nix = ["nix"];
+        yaml = ["yamllint"];
+      };
+
+      linters = {
+        cmakelint.cmd = lib.getExe' pkgs.cmake-format "cmake-lint";
+        htmlhint.cmd = lib.getExe pkgs.htmlhint;
+        jsonlint.cmd = lib.getExe pkgs.nodePackages.jsonlint;
+        luacheck.cmd = lib.getExe pkgs.luaPackages.luacheck;
+        markdownlint.cmd = lib.getExe pkgs.markdownlint-cli;
+        nix.cmd = lib.getExe' pkgs.nix "nix-instantiate";
+        shellcheck.cmd = lib.getExe pkgs.shellcheck;
+        stylelint.cmd = lib.getExe pkgs.stylelint;
+        yamllint.cmd = lib.getExe pkgs.yamllint;
       };
     };
     which-key = {
