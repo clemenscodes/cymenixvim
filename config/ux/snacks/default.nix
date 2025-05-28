@@ -25,10 +25,10 @@
         zen = {
           enabled = true;
           toggles = {
-            dim = false;
+            dim = true;
             git_signs = true;
             diagnostics = true;
-            inlay_hints = true;
+            inlay_hints = false;
             mini_diff_signs = false;
           };
           win = {
