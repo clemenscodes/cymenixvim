@@ -1,4 +1,5 @@
-{...}: {
+{pkgs, ...}: {
+  extraPackages = [(pkgs.writeShellScriptBin "gsed" "exec ${pkgs.gnused}/bin/sed \"$@\"")];
   plugins = {
     spectre = {
       enable = true;
