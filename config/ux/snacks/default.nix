@@ -1,4 +1,45 @@
 {pkgs, ...}: {
+  extraConfigLuaPost = ''
+    local scroll_group = vim.api.nvim_create_augroup("SmartScrollSnacks", { clear = true })
+
+    local function smart_scroll(direction)
+      local cur = vim.fn.line(".")
+      local top = vim.fn.line("w0")
+      local bot = vim.fn.line("w$")
+
+      if cur == top + vim.o.scrolloff or cur == bot - vim.o.scrolloff then
+        if Snacks.scroll.enabled then
+          Snacks.scroll.disable()
+        end
+        vim.api.nvim_create_autocmd("CursorMoved", {
+          group = scroll_group,
+          callback = function()
+            Snacks.scroll.enable()
+          end,
+          once = true,
+        })
+      else
+        if not Snacks.scroll.enabled then
+          Snacks.scroll.enable()
+        end
+      end
+
+      local count = vim.v.count
+      if count == 0 then
+        return direction == "up" and "gk" or "gj"
+      else
+        return direction == "up" and "k" or "j"
+      end
+    end
+
+    vim.keymap.set("n", "k", function()
+      return smart_scroll("up")
+    end, { expr = true, silent = true })
+
+    vim.keymap.set("n", "j", function()
+      return smart_scroll("down")
+    end, { expr = true, silent = true })
+  '';
   extraPackages = [
     pkgs.ghostscript
     pkgs.tectonic
@@ -11,6 +52,9 @@
       enable = true;
       settings = {
         animate = {
+          enabled = true;
+        };
+        scroll = {
           enabled = true;
         };
         image = {
