@@ -214,6 +214,10 @@
             __unkeyed-1 = "<leader>s";
             group = "+Search and replace";
           }
+          {
+            __unkeyed-1 = "<leader>s";
+            group = "Toggle Spectre";
+          }
         ];
       };
     };
@@ -227,11 +231,11 @@
           end
         '';
       };
-      key = "<leader>s";
+      key = "<leader>ss";
       mode = "n";
       options = {
         silent = true;
-        desc = "Navigate up with centered cursor";
+        desc = "Toggle Spectre";
       };
     }
   ];
