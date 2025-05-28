@@ -10,7 +10,6 @@
     snacks = {
       enable = true;
       settings = {
-
         image = {
           enabled = true;
         };
@@ -22,6 +21,24 @@
         };
         profiler = {
           enabled = true;
+        };
+        zen = {
+          enabled = true;
+          toggles = {
+            dim = false;
+            git_signs = true;
+            diagnostics = true;
+            inlay_hints = true;
+            mini_diff_signs = false;
+          };
+          win = {
+            width = 120;
+            height = 0;
+            backdrop = {
+              transparent = false;
+              blend = 90;
+            };
+          };
         };
         picker = {
           actions = {
@@ -257,6 +274,10 @@
           {
             __unkeyed-1 = "gt";
             desc = "Go to type definition";
+          }
+          {
+            __unkeyed-1 = "<leader>z";
+            desc = "Toggle Zen mode";
           }
         ];
       };
@@ -649,6 +670,15 @@
       action = ''<cmd>lua Snacks.picker.lsp_type_definitions()<cr>'';
       options = {
         desc = "Go to type definition";
+      };
+    }
+    {
+      action = ":lua require('snacks').zen()<CR>";
+      key = "<leader>z";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Toggle Zen mode";
       };
     }
   ];

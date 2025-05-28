@@ -197,6 +197,15 @@
       };
     }
     {
+      action = "$";
+      key = "+";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Go to end of line";
+      };
+    }
+    {
       action = "^";
       key = "q";
       mode = "n";
@@ -207,7 +216,7 @@
     }
     {
       action = "%";
-      key = "-";
+      key = "q";
       mode = "n";
       options = {
         silent = true;
@@ -216,7 +225,7 @@
     }
     {
       action = "^";
-      key = "q";
+      key = "-";
       mode = "x";
       options = {
         silent = true;
@@ -235,6 +244,15 @@
     {
       action = "$";
       key = "ü";
+      mode = "x";
+      options = {
+        silent = true;
+        desc = "Go to end of line";
+      };
+    }
+    {
+      action = "$";
+      key = "+";
       mode = "x";
       options = {
         silent = true;
