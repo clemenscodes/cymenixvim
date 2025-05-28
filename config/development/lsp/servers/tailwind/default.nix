@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   plugins = {
     lsp = {
       servers = {
@@ -7,7 +11,7 @@
           package = null;
           autostart = true;
           cmd = ["tailwindcss-language-server" "--stdio"];
-          filetypes = ["html" "htmlangular" "css" "tsx" "typescript"];
+          filetypes = lib.mkForce ["html" "htmlangular" "css" "tsx" "typescript"];
           rootMarkers = [".git" "nx.json"];
         };
       };
@@ -17,7 +21,7 @@
   extraConfigLuaPost = ''
     require('tailwind-tools').setup({
       server = {
-        override = true, -- setup the server from the plugin if true
+        override = false, -- setup the server from the plugin if true
         settings = { -- shortcut for `settings.tailwindCSS`
           experimental = {
             classRegex = {

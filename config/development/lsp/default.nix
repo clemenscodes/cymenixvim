@@ -13,6 +13,9 @@
     lsp = {
       enable = true;
     };
+    lspkind = {
+      enable = true;
+    };
     which-key = {
       settings = {
         spec = [
