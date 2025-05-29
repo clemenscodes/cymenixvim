@@ -349,5 +349,23 @@
         desc = "Move line down";
       };
     }
+    {
+      action = "}";
+      key = "fw";
+      mode = ["n" "o" "x"];
+      options = {
+        silent = true;
+        desc = "Move to next whitespace";
+      };
+    }
+    {
+      action = "{";
+      key = "mw";
+      mode = ["n" "o" "x"];
+      options = {
+        silent = true;
+        desc = "Move to previous whitespace";
+      };
+    }
   ];
 }
