@@ -74,11 +74,11 @@ in {
         peekDefinitionCode = {
           "fdf" = {
             query = "@function.outer";
-            desc = "Peak function definition";
+            desc = "Peek function definition";
           };
           "fdc" = {
             query = "@calss.outer";
-            desc = "Peak class definition";
+            desc = "Peek class definition";
           };
         };
       };
@@ -702,6 +702,14 @@ in {
             query = "@assignment.inner";
             desc = "Next assignment (inner)";
           };
+          "fal" = {
+            query = "@assignment.lhs";
+            desc = "Next assignment left hand side (outer)";
+          };
+          "far" = {
+            query = "@assignment.rhs";
+            desc = "Next assignment right hand side(inner)";
+          };
           "fuo" = {
             query = "@attribute.outer";
             desc = "Next attribute (outer)";
@@ -773,372 +781,6 @@ in {
           "fpi" = {
             query = "@parameter.inner";
             desc = "Next parameter (inner)";
-          };
-          "ffO" = {
-            query = "@function.outer";
-            desc = "End of next function (outer)";
-          };
-          "ffI" = {
-            query = "@function.inner";
-            desc = "End of next function (inner)";
-          };
-          "fcO" = {
-            query = "@class.outer";
-            desc = "End of next class (outer)";
-          };
-          "fcI" = {
-            query = "@class.inner";
-            desc = "End of next class (inner)";
-          };
-          "flO" = {
-            query = "@loop.outer";
-            desc = "End of next loop (outer)";
-          };
-          "flI" = {
-            query = "@loop.inner";
-            desc = "End of next loop (inner)";
-          };
-          "fsO" = {
-            query = "@local.scope";
-            queryGroup = "locals";
-            desc = "End of next local scope";
-          };
-          "fzO" = {
-            query = "@fold";
-            queryGroup = "folds";
-            desc = "End of next fold";
-          };
-          "fiO" = {
-            query = "@conditional.outer";
-            desc = "End of next conditional (outer)";
-          };
-          "fiI" = {
-            query = "@conditional.inner";
-            desc = "End of next conditional (inner)";
-          };
-          "faO" = {
-            query = "@assignment.outer";
-            desc = "End of next assignment (outer)";
-          };
-          "faI" = {
-            query = "@assignment.inner";
-            desc = "End of next assignment (inner)";
-          };
-          "fuO" = {
-            query = "@attribute.outer";
-            desc = "End of next attribute (outer)";
-          };
-          "fuI" = {
-            query = "@attribute.inner";
-            desc = "End of next attribute (inner)";
-          };
-          "feO" = {
-            query = "@frame.outer";
-            desc = "End of next frame (outer)";
-          };
-          "feI" = {
-            query = "@frame.inner";
-            desc = "End of next frame (inner)";
-          };
-          "fbO" = {
-            query = "@block.outer";
-            desc = "End of next block (outer)";
-          };
-          "fbI" = {
-            query = "@block.inner";
-            desc = "End of next block (inner)";
-          };
-          "fvO" = {
-            query = "@call.outer";
-            desc = "End of next call (outer)";
-          };
-          "fvI" = {
-            query = "@call.inner";
-            desc = "End of next call (inner)";
-          };
-          "fmO" = {
-            query = "@comment.outer";
-            desc = "End of next comment (outer)";
-          };
-          "fmI" = {
-            query = "@comment.inner";
-            desc = "End of next comment (inner)";
-          };
-          "frO" = {
-            query = "@return.outer";
-            desc = "End of next return (outer)";
-          };
-          "frI" = {
-            query = "@return.inner";
-            desc = "End of next return (inner)";
-          };
-          "fnO" = {
-            query = "@number.inner";
-            desc = "End of next number";
-          };
-          "fxO" = {
-            query = "@regex.outer";
-            desc = "End of next regex (outer)";
-          };
-          "fxI" = {
-            query = "@regex.inner";
-            desc = "End of next regex (inner)";
-          };
-          "ftO" = {
-            query = "@statement.outer";
-            desc = "End of next statement";
-          };
-          "fpO" = {
-            query = "@parameter.outer";
-            desc = "End of next parameter (outer)";
-          };
-          "fpI" = {
-            query = "@parameter.inner";
-            desc = "End of next parameter (inner)";
-          };
-          "mfo" = {
-            query = "@function.outer";
-            desc = "Previous function (outer)";
-          };
-          "mfi" = {
-            query = "@function.inner";
-            desc = "Previous function (inner)";
-          };
-          "mco" = {
-            query = "@class.outer";
-            desc = "Previous class (outer)";
-          };
-          "mci" = {
-            query = "@class.inner";
-            desc = "Previous class (inner)";
-          };
-          "mlo" = {
-            query = "@loop.outer";
-            desc = "Previous loop (outer)";
-          };
-          "mli" = {
-            query = "@loop.inner";
-            desc = "Previous loop (inner)";
-          };
-          "mso" = {
-            query = "@local.scope";
-            queryGroup = "locals";
-            desc = "Previous local scope";
-          };
-          "mzo" = {
-            query = "@fold";
-            queryGroup = "folds";
-            desc = "Previous fold";
-          };
-          "mio" = {
-            query = "@conditional.outer";
-            desc = "Previous conditional (outer)";
-          };
-          "mii" = {
-            query = "@conditional.inner";
-            desc = "Previous conditional (inner)";
-          };
-          "mao" = {
-            query = "@assignment.outer";
-            desc = "Previous assignment (outer)";
-          };
-          "mai" = {
-            query = "@assignment.inner";
-            desc = "Previous assignment (inner)";
-          };
-          "muo" = {
-            query = "@attribute.outer";
-            desc = "Previous attribute (outer)";
-          };
-          "mui" = {
-            query = "@attribute.inner";
-            desc = "Previous attribute (inner)";
-          };
-          "meo" = {
-            query = "@frame.outer";
-            desc = "Previous frame (outer)";
-          };
-          "mei" = {
-            query = "@frame.inner";
-            desc = "Previous frame (inner)";
-          };
-          "mbo" = {
-            query = "@block.outer";
-            desc = "Previous block (outer)";
-          };
-          "mbi" = {
-            query = "@block.inner";
-            desc = "Previous block (inner)";
-          };
-          "mvo" = {
-            query = "@call.outer";
-            desc = "Previous call (outer)";
-          };
-          "mvi" = {
-            query = "@call.inner";
-            desc = "Previous call (inner)";
-          };
-          "mmo" = {
-            query = "@comment.outer";
-            desc = "Previous comment (outer)";
-          };
-          "mmi" = {
-            query = "@comment.inner";
-            desc = "Previous comment (inner)";
-          };
-          "mro" = {
-            query = "@return.outer";
-            desc = "Previous return (outer)";
-          };
-          "mri" = {
-            query = "@return.inner";
-            desc = "Previous return (inner)";
-          };
-          "mno" = {
-            query = "@number.inner";
-            desc = "Previous number";
-          };
-          "mxo" = {
-            query = "@regex.outer";
-            desc = "Previous regex (outer)";
-          };
-          "mxi" = {
-            query = "@regex.inner";
-            desc = "Previous regex (inner)";
-          };
-          "mto" = {
-            query = "@statement.outer";
-            desc = "Previous statement";
-          };
-          "mpo" = {
-            query = "@parameter.outer";
-            desc = "Previous parameter (outer)";
-          };
-          "mpi" = {
-            query = "@parameter.inner";
-            desc = "Previous parameter (inner)";
-          };
-          "mfO" = {
-            query = "@function.outer";
-            desc = "End of previous function (outer)";
-          };
-          "mfI" = {
-            query = "@function.inner";
-            desc = "End of previous function (inner)";
-          };
-          "mcO" = {
-            query = "@class.outer";
-            desc = "End of previous class (outer)";
-          };
-          "mcI" = {
-            query = "@class.inner";
-            desc = "End of previous class (inner)";
-          };
-          "mlO" = {
-            query = "@loop.outer";
-            desc = "End of previous loop (outer)";
-          };
-          "mlI" = {
-            query = "@loop.inner";
-            desc = "End of previous loop (inner)";
-          };
-          "msO" = {
-            query = "@local.scope";
-            queryGroup = "locals";
-            desc = "End of previous local scope";
-          };
-          "mzO" = {
-            query = "@fold";
-            queryGroup = "folds";
-            desc = "End of previous fold";
-          };
-          "miO" = {
-            query = "@conditional.outer";
-            desc = "End of previous conditional (outer)";
-          };
-          "miI" = {
-            query = "@conditional.inner";
-            desc = "End of previous conditional (inner)";
-          };
-          "maO" = {
-            query = "@assignment.outer";
-            desc = "End of previous assignment (outer)";
-          };
-          "maI" = {
-            query = "@assignment.inner";
-            desc = "End of previous assignment (inner)";
-          };
-          "muO" = {
-            query = "@attribute.outer";
-            desc = "End of previous attribute (outer)";
-          };
-          "muI" = {
-            query = "@attribute.inner";
-            desc = "End of previous attribute (inner)";
-          };
-          "meO" = {
-            query = "@frame.outer";
-            desc = "End of previous frame (outer)";
-          };
-          "meI" = {
-            query = "@frame.inner";
-            desc = "End of previous frame (inner)";
-          };
-          "mbO" = {
-            query = "@block.outer";
-            desc = "End of previous block (outer)";
-          };
-          "mbI" = {
-            query = "@block.inner";
-            desc = "End of previous block (inner)";
-          };
-          "mvO" = {
-            query = "@call.outer";
-            desc = "End of previous call (outer)";
-          };
-          "mvI" = {
-            query = "@call.inner";
-            desc = "End of previous call (inner)";
-          };
-          "mmO" = {
-            query = "@comment.outer";
-            desc = "End of previous comment (outer)";
-          };
-          "mmI" = {
-            query = "@comment.inner";
-            desc = "End of previous comment (inner)";
-          };
-          "mrO" = {
-            query = "@return.outer";
-            desc = "End of previous return (outer)";
-          };
-          "mrI" = {
-            query = "@return.inner";
-            desc = "End of previous return (inner)";
-          };
-          "mnO" = {
-            query = "@number.inner";
-            desc = "End of previous number";
-          };
-          "mxO" = {
-            query = "@regex.outer";
-            desc = "End of previous regex (outer)";
-          };
-          "mxI" = {
-            query = "@regex.inner";
-            desc = "End of previous regex (inner)";
-          };
-          "mtO" = {
-            query = "@statement.outer";
-            desc = "End of previous statement";
-          };
-          "mpO" = {
-            query = "@parameter.outer";
-            desc = "End of previous parameter (outer)";
-          };
-          "mpI" = {
-            query = "@parameter.inner";
-            desc = "End of previous parameter (inner)";
           };
         };
       };
@@ -1286,102 +928,102 @@ in {
           }
           {
             __unkeyed-1 = "m";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Previous";
           }
           {
             __unkeyed-1 = "ma";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Assignment";
           }
           {
             __unkeyed-1 = "mu";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Attribute";
           }
           {
             __unkeyed-1 = "me";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Frame";
           }
           {
             __unkeyed-1 = "mb";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Block";
           }
           {
             __unkeyed-1 = "mv";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Call";
           }
           {
             __unkeyed-1 = "mm";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Comment";
           }
           {
             __unkeyed-1 = "mr";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Return";
           }
           {
             __unkeyed-1 = "mn";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Number";
           }
           {
             __unkeyed-1 = "mx";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Regex";
           }
           {
             __unkeyed-1 = "mt";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Statement";
           }
           {
             __unkeyed-1 = "mc";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Class";
           }
           {
             __unkeyed-1 = "mf";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Function";
           }
           {
             __unkeyed-1 = "ml";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Loop";
           }
           {
             __unkeyed-1 = "ms";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Scope";
           }
           {
             __unkeyed-1 = "mz";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Fold";
           }
           {
             __unkeyed-1 = "mi";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Conditional";
           }
           {
             __unkeyed-1 = "mp";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Parameter";
           }
           {
             __unkeyed-1 = "mo";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Swap";
           }
           {
             __unkeyed-1 = "md";
-            mode = ["n" "o" "x"];
+            mode = ["n"];
             group = "+Peek";
           }
         ];
@@ -1412,7 +1054,7 @@ in {
         '';
       };
       key = "m";
-      mode = ["n" "o" "x"];
+      mode = ["n" "o"];
       options = {
         silent = true;
       };
