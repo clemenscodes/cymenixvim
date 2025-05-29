@@ -1,70 +1,189 @@
 {pkgs, ...}: {
-  extraConfigLuaPost = ''
-    local scroll_group = vim.api.nvim_create_augroup("SmartScrollSnacks", { clear = true })
-
-    local function smart_scroll(direction)
-      local cur = vim.fn.line(".")
-      local top = vim.fn.line("w0")
-      local bot = vim.fn.line("w$")
-
-      if cur == top + vim.o.scrolloff or cur == bot - vim.o.scrolloff then
-        if Snacks.scroll.enabled then
-          Snacks.scroll.disable()
-        end
-        vim.api.nvim_create_autocmd("CursorMoved", {
-          group = scroll_group,
-          callback = function()
-            Snacks.scroll.enable()
-          end,
-          once = true,
-        })
-      else
-        if not Snacks.scroll.enabled then
-          Snacks.scroll.enable()
-        end
-      end
-
-      local count = vim.v.count
-      if count == 0 then
-        return direction == "up" and "gk" or "gj"
-      else
-        return direction == "up" and "k" or "j"
-      end
-    end
-
-    vim.keymap.set("n", "k", function()
-      return smart_scroll("up")
-    end, { expr = true, silent = true })
-
-    vim.keymap.set("n", "j", function()
-      return smart_scroll("down")
-    end, { expr = true, silent = true })
-  '';
-  extraPackages = [
-    pkgs.ghostscript
-    pkgs.tectonic
-    pkgs.texliveSmall
-    pkgs.mermaid-cli
-    pkgs.sqlite
-  ];
   plugins = {
     snacks = {
       enable = true;
       settings = {
         animate = {
           enabled = true;
-        };
-        scroll = {
-          enabled = true;
+          duration = 10;
+          fps = 180;
         };
         image = {
           enabled = true;
+          formats = [
+            "png"
+            "jpg"
+            "jpeg"
+            "gif"
+            "bmp"
+            "webp"
+            "tiff"
+            "heic"
+            "avif"
+            "mp4"
+            "mov"
+            "avi"
+            "mkv"
+            "webm"
+            "pdf"
+          ];
         };
         quickfile = {
           enabled = true;
         };
         bufdelete = {
           enabled = true;
+        };
+        notifier = {
+          enabled = true;
+        };
+        input = {
+          enabled = true;
+        };
+        git = {
+          enabled = true;
+        };
+        gitbrowse = {
+          enabled = true;
+        };
+        profiler = {
+          enabled = true;
+        };
+        statuscolumn = {
+          enabled = true;
+          folds = {
+            open = true;
+            git_hl = true;
+          };
+        };
+        terminal = {
+          enabled = true;
+          win = {
+            height = 0.3;
+            wo = {
+              winbar = "";
+            };
+            keys = {
+              __raw = ''
+                {
+                  q = "hide",
+                  gf = function(self)
+                    local f = vim.fn.findfile(vim.fn.expand("<cfile>"), "**")
+                    if f == "" then
+                      Snacks.notify.warn("No file under cursor")
+                    else
+                      self:hide()
+                      vim.schedule(function()
+                        vim.cmd("e " .. f)
+                      end)
+                    end
+                  end,
+                  term_toggle = {
+                    "<leader>",
+                    function(self)
+                      self.leader_timer= self.leader_timer or (vim.uv or vim.loop).new_timer()
+                      if self.leader_timer:is_active() then
+                        self.leader_timer:stop()
+                        local backspace = vim.api.nvim_replace_termcodes("<BS>", true, false, true)
+                        vim.api.nvim_feedkeys(backspace, "t", false)
+                        Snacks.terminal.toggle()
+                        return ""
+                      else
+                        self.leader_timer:start(300, 0, function() end)
+                        return " "
+                      end
+                    end,
+                    mode = "t",
+                    expr = true,
+                    desc = "Double leader to toggle terminal",
+                  },
+                  term_normal = {
+                    "<esc>",
+                    function(self)
+                      self.esc_timer = self.esc_timer or (vim.uv or vim.loop).new_timer()
+                      if self.esc_timer:is_active() then
+                        self.esc_timer:stop()
+                        vim.cmd("stopinsert")
+                      else
+                        self.esc_timer:start(300, 0, function() end)
+                        return "<esc>"
+                      end
+                    end,
+                    mode = "t",
+                    expr = true,
+                    desc = "Double escape to toggle terminal",
+                  },
+                }
+              '';
+            };
+          };
+        };
+        zen = {
+          enabled = true;
+          toggles = {
+            dim = false;
+            git_signs = true;
+            diagnostics = true;
+            inlay_hints = false;
+            mini_diff_signs = false;
+          };
+          win = {
+            width = 120;
+            height = 0;
+            backdrop = {
+              transparent = false;
+              blend = 90;
+            };
+          };
+        };
+        picker = {
+          actions = {
+            calculate_file_truncate_width = {
+              __raw = ''
+                function(self)
+                    local width = self.list.win:size().width
+                    self.opts.formatters.file.truncate = width - 6
+                end
+              '';
+            };
+          };
+          win = {
+            list = {
+              on_buf = {
+                __raw = ''
+                  function(self)
+                      self:execute 'calculate_file_truncate_width'
+                  end
+                '';
+              };
+            };
+            preview = {
+              on_buf = {
+                __raw = ''
+                  function(self)
+                      self:execute 'calculate_file_truncate_width'
+                  end
+                '';
+              };
+              on_close = {
+                __raw = ''
+                  function(self)
+                      self:execute 'calculate_file_truncate_width'
+                  end
+                '';
+              };
+            };
+          };
+          layouts = {
+            select = {
+              layout = {
+                relative = "cursor";
+                width = 70;
+                min_width = 0;
+                row = 1;
+              };
+            };
+          };
         };
         dashboard = {
           enable = true;
@@ -157,90 +276,6 @@
               '';
             }
           ];
-        };
-        scope = {
-          enabled = true;
-        };
-        gitbrowse = {
-          enabled = true;
-        };
-        profiler = {
-          enabled = true;
-        };
-        statuscolumn = {
-          enabled = true;
-          folds = {
-            open = true;
-            git_hl = true;
-          };
-        };
-        zen = {
-          enabled = true;
-          toggles = {
-            dim = false;
-            git_signs = true;
-            diagnostics = true;
-            inlay_hints = false;
-            mini_diff_signs = false;
-          };
-          win = {
-            width = 120;
-            height = 0;
-            backdrop = {
-              transparent = false;
-              blend = 90;
-            };
-          };
-        };
-
-        picker = {
-          actions = {
-            calculate_file_truncate_width = {
-              __raw = ''
-                function(self)
-                    local width = self.list.win:size().width
-                    self.opts.formatters.file.truncate = width - 6
-                end
-              '';
-            };
-          };
-          win = {
-            list = {
-              on_buf = {
-                __raw = ''
-                  function(self)
-                      self:execute 'calculate_file_truncate_width'
-                  end
-                '';
-              };
-            };
-            preview = {
-              on_buf = {
-                __raw = ''
-                  function(self)
-                      self:execute 'calculate_file_truncate_width'
-                  end
-                '';
-              };
-              on_close = {
-                __raw = ''
-                  function(self)
-                      self:execute 'calculate_file_truncate_width'
-                  end
-                '';
-              };
-            };
-          };
-          layouts = {
-            select = {
-              layout = {
-                relative = "cursor";
-                width = 70;
-                min_width = 0;
-                row = 1;
-              };
-            };
-          };
         };
       };
     };
@@ -431,6 +466,10 @@
           {
             __unkeyed-1 = "<leader>q";
             desc = "Delete current buffer";
+          }
+          {
+            __unkeyed-1 = "<leader><leader>";
+            desc = "Toggle terminal";
           }
         ];
       };
@@ -844,5 +883,27 @@
         desc = "Delete current buffer";
       };
     }
+    {
+      action = {
+        __raw = ''
+          function()
+            Snacks.terminal.toggle()
+          end
+        '';
+      };
+      key = "<leader><leader>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Toggle terminal";
+      };
+    }
+  ];
+  extraPackages = [
+    pkgs.ghostscript
+    pkgs.tectonic
+    pkgs.texliveSmall
+    pkgs.mermaid-cli
+    pkgs.sqlite
   ];
 }

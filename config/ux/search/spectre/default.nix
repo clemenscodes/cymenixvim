@@ -215,7 +215,7 @@
             group = "+Search and replace";
           }
           {
-            __unkeyed-1 = "<leader>s";
+            __unkeyed-1 = "<leader>ss";
             group = "Toggle Spectre";
           }
         ];

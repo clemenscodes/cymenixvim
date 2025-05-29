@@ -2,7 +2,7 @@
   keymaps = [
     {
       action = ":ToggleTerm<CR>";
-      key = "<leader>tm";
+      key = "<leader>tt";
       mode = "n";
       options = {
         silent = true;
@@ -22,7 +22,7 @@
       settings = {
         spec = [
           {
-            __unkeyed-1 = "<leader>tm";
+            __unkeyed-1 = "<leader>tt";
             desc = "Toggle terminal";
           }
         ];

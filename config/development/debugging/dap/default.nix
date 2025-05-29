@@ -184,12 +184,16 @@
       settings = {
         spec = [
           {
-            __unkeyed-1 = "<leader>td";
+            __unkeyed-1 = "<leader>d";
+            group = "+Debug";
+          }
+          {
+            __unkeyed-1 = "<leader>du";
             desc = "Toggle dapui";
           }
           {
-            __unkeyed-1 = "<leader>d";
-            group = "+Debug";
+            __unkeyed-1 = "<leader>dp";
+            desc = "Toggle REPL";
           }
           {
             __unkeyed-1 = "<leader>db";
@@ -339,16 +343,16 @@
     }
     {
       action = ":DapToggleRepl<CR>";
-      key = "<leader>tdr";
+      key = "<leader>dp";
       mode = "n";
       options = {
         silent = true;
-        desc = "Toggle Dap REPL";
+        desc = "Toggle REPL";
       };
     }
     {
       action = ":lua require('dapui').toggle()<CR>";
-      key = "<leader>tdd";
+      key = "<leader>du";
       mode = "n";
       options = {
         silent = true;

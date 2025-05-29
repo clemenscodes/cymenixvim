@@ -12,7 +12,7 @@
       settings = {
         lsp = {
           auto_attach = true;
-          preference = ["typescript-tools" "nil-ls" "tailwindcss"];
+          preference = ["vtsls" "nil-ls" "tailwindcss"];
         };
         icons = {
           File = " ";
