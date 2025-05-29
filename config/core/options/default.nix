@@ -15,7 +15,7 @@
     wrap = false;
     undofile = true;
     expandtab = true;
-    autoindent = true;
+    smartindent = false;
     updatetime = 100;
     hlsearch = true;
     virtualedit = "block";
@@ -31,11 +31,8 @@
     cursorline = true;
     cursorcolumn = false;
     fileencoding = "utf-8";
-    breakindent = true;
     linebreak = true;
     infercase = true;
-    preserveindent = true;
-    copyindent = true;
     title = true;
     startofline = true;
     showmatch = true;

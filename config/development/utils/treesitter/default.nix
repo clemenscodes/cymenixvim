@@ -63,9 +63,6 @@ in {
             node_decremental = "grm";
           };
         };
-        indent = {
-          enable = true;
-        };
       };
     };
     treesitter-textobjects = {
