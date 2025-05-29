@@ -68,7 +68,7 @@
       ${system} = {
         inherit cymenixvim development cardano minimal;
         inherit (pkgs) telescope-manix modes-nvim;
-        default = self.packages.${system}.cymenixvim;
+        default = self.packages.${system}.minimal;
       };
     };
     formatter = {
