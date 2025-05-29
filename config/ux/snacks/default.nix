@@ -307,10 +307,6 @@
             desc = "Open file in browser";
           }
           {
-            __unkeyed-1 = "<leader>fC";
-            desc = "Find config files";
-          }
-          {
             __unkeyed-1 = "<leader>fe";
             desc = "File Explorer";
           }
@@ -390,10 +386,6 @@
           {
             __unkeyed-1 = "<leader>gC";
             desc = "Find git commits";
-          }
-          {
-            __unkeyed-1 = "<leader>gs";
-            desc = "Find git status";
           }
           {
             __unkeyed-1 = "<leader>gS";
@@ -554,14 +546,6 @@
     }
     {
       mode = "n";
-      key = "<leader>fm";
-      action = ''<cmd>lua Snacks.picker.man()<cr>'';
-      options = {
-        desc = "Find man pages";
-      };
-    }
-    {
-      mode = "n";
       key = "<leader>fo";
       action = ''<cmd>lua Snacks.picker.recent()<cr>'';
       options = {
@@ -673,14 +657,6 @@
       };
     }
     {
-      mode = "n";
-      key = "<leader>f<CR>";
-      action = ''<cmd>lua Snacks.picker.resume()<cr>'';
-      options = {
-        desc = "Resume find";
-      };
-    }
-    {
       mode = [
         "n"
         "x"
@@ -693,7 +669,7 @@
     }
     {
       mode = "n";
-      key = "<leader>gB";
+      key = "<leader>gb";
       action = ''<cmd>lua Snacks.picker.git_branches()<cr>'';
       options = {
         desc = "Find git branches";
@@ -705,14 +681,6 @@
       action = ''<cmd>lua Snacks.picker.git_log()<cr>'';
       options = {
         desc = "Find git commits";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>gs";
-      action = ''<cmd>lua Snacks.picker.git_status()<cr>'';
-      options = {
-        desc = "Find git status";
       };
     }
     {
