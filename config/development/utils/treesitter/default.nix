@@ -136,6 +136,14 @@ in {
             query = "@assignment.inner";
             desc = "Next assignment (inner)";
           };
+          "fal" = {
+            query = "@assignment.lhs";
+            desc = "Next assignment left hand side (outer)";
+          };
+          "far" = {
+            query = "@assignment.rhs";
+            desc = "Next assignment right hand side (inner)";
+          };
           "fuo" = {
             query = "@attribute.outer";
             desc = "Next attribute (outer)";
@@ -259,6 +267,14 @@ in {
           "faI" = {
             query = "@assignment.inner";
             desc = "End of next assignment (inner)";
+          };
+          "faL" = {
+            query = "@assignment.lhs";
+            desc = "End of next assignment left hand sinde (outer)";
+          };
+          "faR" = {
+            query = "@assignment.rhs";
+            desc = "End of next assignment right hand side (inner)";
           };
           "fuO" = {
             query = "@attribute.outer";
@@ -384,6 +400,14 @@ in {
             query = "@assignment.inner";
             desc = "Previous assignment (inner)";
           };
+          "mal" = {
+            query = "@assignment.lhs";
+            desc = "Previous assignment left hand side (outer)";
+          };
+          "mar" = {
+            query = "@assignment.rhs";
+            desc = "Previous assignment right hand side (inner)";
+          };
           "muo" = {
             query = "@attribute.outer";
             desc = "Previous attribute (outer)";
@@ -507,6 +531,14 @@ in {
           "maI" = {
             query = "@assignment.inner";
             desc = "End of previous assignment (inner)";
+          };
+          "maL" = {
+            query = "@assignment.lhs";
+            desc = "End of previous assignment left hand side (outer)";
+          };
+          "maR" = {
+            query = "@assignment.rhs";
+            desc = "End of previous assignment right hand side (inner)";
           };
           "muO" = {
             query = "@attribute.outer";
@@ -1248,6 +1280,11 @@ in {
             group = "+Swap";
           }
           {
+            __unkeyed-1 = "fd";
+            mode = ["n" "o" "x"];
+            group = "+Peek";
+          }
+          {
             __unkeyed-1 = "m";
             mode = ["n" "o" "x"];
             group = "+Previous";
@@ -1342,6 +1379,11 @@ in {
             mode = ["n" "o" "x"];
             group = "+Swap";
           }
+          {
+            __unkeyed-1 = "md";
+            mode = ["n" "o" "x"];
+            group = "+Peek";
+          }
         ];
       };
     };
@@ -1373,6 +1415,36 @@ in {
       mode = ["n" "o" "x"];
       options = {
         silent = true;
+      };
+    }
+    {
+      action = {
+        __raw = ''
+          function()
+            require('nvim-treesitter.textobjects.repeatable_move').repeat_last_move_next()
+          end
+        '';
+      };
+      key = ",";
+      mode = ["n" "o" "x"];
+      options = {
+        silent = true;
+        desc = "Repeat last textobject move next";
+      };
+    }
+    {
+      action = {
+        __raw = ''
+          function()
+            require('nvim-treesitter.textobjects.repeatable_move').repeat_last_move_previous()
+          end
+        '';
+      };
+      key = "-";
+      mode = ["n" "o" "x"];
+      options = {
+        silent = true;
+        desc = "Repeat last textobject move previous";
       };
     }
   ];
