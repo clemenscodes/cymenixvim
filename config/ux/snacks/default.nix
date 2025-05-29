@@ -857,7 +857,73 @@
       };
     }
     {
-      action = ":lua require('snacks').zen()<CR>";
+      action = {
+        __raw = ''
+          function()
+            local api = vim.api
+            local current_win = api.nvim_get_current_win()
+            local current_buf = api.nvim_get_current_buf()
+            local win_config = api.nvim_win_get_config(current_win)
+            local is_floating = win_config.relative ~= ""
+
+            if not is_floating and #api.nvim_list_wins() > 1 then
+              pcall(vim.cmd, 'only')
+            end
+
+            for _, buf in ipairs(api.nvim_list_bufs()) do
+              if buf ~= current_buf and api.nvim_buf_is_loaded(buf) then
+                local is_listed = api.nvim_buf_get_option(buf, 'buflisted')
+                local is_modifiable = api.nvim_buf_get_option(buf, 'modifiable')
+                local buftype = api.nvim_buf_get_option(buf, 'buftype')
+                if is_listed then
+                  local cmd = is_modifiable and 'bdelete ' or 'bdelete! '
+                  pcall(vim.cmd, cmd .. buf)
+                end
+              end
+            end
+
+            Snacks.bufdelete.other()
+          end
+        '';
+      };
+      key = "<leader>o";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Delete everything except current buffer";
+      };
+    }
+    {
+      action = {
+        __raw = ''
+          function()
+            local api = vim.api
+            local current_win = api.nvim_get_current_win()
+            local current_buf = api.nvim_get_current_buf()
+            local win_config = api.nvim_win_get_config(current_win)
+            local is_floating = win_config.relative ~= ""
+
+            if not is_floating and #api.nvim_list_wins() > 1 then
+              pcall(vim.cmd, 'only')
+            end
+
+            for _, buf in ipairs(api.nvim_list_bufs()) do
+              if buf ~= current_buf and api.nvim_buf_is_loaded(buf) then
+                local is_listed = api.nvim_buf_get_option(buf, 'buflisted')
+                local is_modifiable = api.nvim_buf_get_option(buf, 'modifiable')
+                local buftype = api.nvim_buf_get_option(buf, 'buftype')
+                if is_listed then
+                  local cmd = is_modifiable and 'bdelete ' or 'bdelete! '
+                  pcall(vim.cmd, cmd .. buf)
+                end
+              end
+            end
+
+            Snacks.bufdelete.other()
+            Snacks.zen()
+          end
+        '';
+      };
       key = "<leader>z";
       mode = "n";
       options = {
@@ -866,16 +932,7 @@
       };
     }
     {
-      action = ":lua require('snacks').bufdelete.other()<CR>";
-      key = "<leader>o";
-      mode = "n";
-      options = {
-        silent = true;
-        desc = "Delete all buffers except current";
-      };
-    }
-    {
-      action = ":lua require('snacks').bufdelete.delete()<CR>";
+      action = ":lua require('snacks').bufdelete.delete({ force = true, wipe = true })<CR>";
       key = "<leader>q";
       mode = "n";
       options = {
@@ -896,6 +953,21 @@
       options = {
         silent = true;
         desc = "Toggle terminal";
+      };
+    }
+    {
+      action = {
+        __raw = ''
+          function()
+            Snacks.terminal.open()
+          end
+        '';
+      };
+      key = "<leader>m";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "More terminals";
       };
     }
   ];
