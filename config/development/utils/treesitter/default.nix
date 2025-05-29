@@ -68,6 +68,22 @@ in {
         };
       };
     };
+    treesitter-textobjects = {
+      enable = true;
+      lspInterop = {
+        enable = true;
+        border = "rounded";
+      };
+      move = {
+        enable = true;
+      };
+      select = {
+        enable = true;
+      };
+      swap = {
+        enable = true;
+      };
+    };
     treesitter-context = {
       settings = {
         max_lines = 4;

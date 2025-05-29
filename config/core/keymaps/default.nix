@@ -224,6 +224,15 @@
       };
     }
     {
+      action = "%";
+      key = "q";
+      mode = "o";
+      options = {
+        silent = true;
+        desc = "Move to other pair";
+      };
+    }
+    {
       action = "^";
       key = "-";
       mode = "x";

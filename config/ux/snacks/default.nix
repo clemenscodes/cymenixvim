@@ -360,10 +360,6 @@
             desc = "Find theme";
           }
           {
-            __unkeyed-1 = "<leader>fu";
-            desc = "Undo History";
-          }
-          {
             __unkeyed-1 = "<leader>fg";
             desc = "Live grep";
           }
@@ -388,16 +384,8 @@
             desc = "Fuzzy find in open buffers";
           }
           {
-            __unkeyed-1 = "<leader>f<CR>";
-            desc = "Resume find";
-          }
-          {
             __unkeyed-1 = "<leader>fw";
             desc = "Search Word (visual or cursor)";
-          }
-          {
-            __unkeyed-1 = "<leader>fuC";
-            desc = "Colorschemes";
           }
           {
             __unkeyed-1 = "<leader>gC";
@@ -522,22 +510,6 @@
       action = ''<cmd>lua Snacks.picker.commands()<cr>'';
       options = {
         desc = "Find commands";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>fC";
-      action.__raw = ''
-        function()
-          require("snacks.picker").files {
-            prompt_title = "Config Files",
-            cwd = vim.fn.stdpath("config"),
-          }
-        end
-      '';
-      options = {
-        desc = "Find config files";
-        silent = true;
       };
     }
     {
@@ -717,14 +689,6 @@
       action = ''<cmd>lua Snacks.picker.grep_word()<cr>'';
       options = {
         desc = "Search Word (visual or cursor)";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>fuC";
-      action = ''<cmd>lua Snacks.picker.colorschemes()<cr>'';
-      options = {
-        desc = "Colorschemes";
       };
     }
     {
