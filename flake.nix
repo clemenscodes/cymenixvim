@@ -31,6 +31,10 @@
       url = "github:mvllow/modes.nvim/v0.3.0";
       flake = false;
     };
+    cinnamon-nvim = {
+      url = "github:declancm/cinnamon.nvim/v1.2.5";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -51,6 +55,12 @@
             pname = "modes.nvim";
             version = "0.3.0";
             src = inputs.modes-nvim;
+            doCheck = false;
+          };
+          cinnamon-nvim = pkgs.vimUtils.buildVimPlugin {
+            pname = "cinnamon.nvim";
+            version = "1.2.5";
+            src = inputs.cinnamon-nvim;
             doCheck = false;
           };
         })

@@ -181,7 +181,7 @@
     {
       action = "x";
       key = "<BS>";
-      mode = "n";
+      mode = ["n" "o" "x"];
       options = {
         silent = true;
         desc = "Delete character";
@@ -190,82 +190,19 @@
     {
       action = "$";
       key = "ü";
-      mode = "n";
+      mode = ["n" "o" "x"];
       options = {
         silent = true;
         desc = "Go to end of line";
-      };
-    }
-    {
-      action = "$";
-      key = "+";
-      mode = "n";
-      options = {
-        silent = true;
-        desc = "Go to end of line";
-      };
-    }
-    {
-      action = "^";
-      key = "q";
-      mode = "n";
-      options = {
-        silent = true;
-        desc = "Go to start of line";
       };
     }
     {
       action = "%";
       key = "q";
-      mode = "n";
+      mode = ["n" "o" "x"];
       options = {
         silent = true;
         desc = "Go to other pair";
-      };
-    }
-    {
-      action = "%";
-      key = "q";
-      mode = "o";
-      options = {
-        silent = true;
-        desc = "Move to other pair";
-      };
-    }
-    {
-      action = "^";
-      key = "-";
-      mode = "x";
-      options = {
-        silent = true;
-        desc = "Go to start of line";
-      };
-    }
-    {
-      action = "%";
-      key = "q";
-      mode = "x";
-      options = {
-        silent = true;
-        desc = "Go to other pair";
-      };
-    }
-    {
-      action = "$";
-      key = "ü";
-      mode = "x";
-      options = {
-        silent = true;
-        desc = "Go to end of line";
-      };
-    }
-    {
-      action = "$";
-      key = "+";
-      mode = "x";
-      options = {
-        silent = true;
-        desc = "Go to end of line";
       };
     }
     {
@@ -351,7 +288,7 @@
     }
     {
       action = "}";
-      key = "fw";
+      key = "mf";
       mode = ["n" "o" "x"];
       options = {
         silent = true;
@@ -360,11 +297,29 @@
     }
     {
       action = "{";
-      key = "mw";
+      key = "mb";
       mode = ["n" "o" "x"];
       options = {
         silent = true;
         desc = "Move to previous whitespace";
+      };
+    }
+    {
+      action = "/";
+      key = "<";
+      mode = ["n" "o" "x"];
+      options = {
+        silent = true;
+        desc = "Search";
+      };
+    }
+    {
+      action = ":lua ";
+      key = "+";
+      mode = ["n"];
+      options = {
+        silent = true;
+        desc = "Run lua";
       };
     }
   ];

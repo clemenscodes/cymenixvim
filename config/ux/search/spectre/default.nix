@@ -216,7 +216,11 @@
           }
           {
             __unkeyed-1 = "<leader>ss";
-            group = "Toggle Spectre";
+            desc = "Toggle Spectre";
+          }
+          {
+            __unkeyed-1 = "<leader>sf";
+            desc = "Open Spectre for current file";
           }
         ];
       };
@@ -236,6 +240,21 @@
       options = {
         silent = true;
         desc = "Toggle Spectre";
+      };
+    }
+    {
+      action = {
+        __raw = ''
+          function()
+            require('spectre').open_file_search({ select_word = true })
+          end
+        '';
+      };
+      key = "<leader>sf";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Open Spectre for current file";
       };
     }
   ];

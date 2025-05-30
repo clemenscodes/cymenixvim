@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "cinnamon-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1721889689,
+        "narHash": "sha256-+nDYk3zkLlj9YkzfK8mbD22iLWaHpzHImxPt3EVfyV0=",
+        "owner": "declancm",
+        "repo": "cinnamon.nvim",
+        "rev": "ecd211e46a1d4fb0efffbdb2c2bbd59785605870",
+        "type": "github"
+      },
+      "original": {
+        "owner": "declancm",
+        "ref": "v1.2.5",
+        "repo": "cinnamon.nvim",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -1560,6 +1577,7 @@
     },
     "root": {
       "inputs": {
+        "cinnamon-nvim": "cinnamon-nvim",
         "modes-nvim": "modes-nvim",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs",

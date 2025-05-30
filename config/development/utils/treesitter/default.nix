@@ -86,529 +86,529 @@ in {
         enable = true;
         setJumps = true;
         gotoNextStart = {
-          "ffo" = {
+          "-fo" = {
             query = "@function.outer";
             desc = "Next function (outer)";
           };
-          "ffi" = {
+          "-fi" = {
             query = "@function.inner";
             desc = "Next function (inner)";
           };
-          "fco" = {
+          "-co" = {
             query = "@class.outer";
             desc = "Next class (outer)";
           };
-          "fci" = {
+          "-ci" = {
             query = "@class.inner";
             desc = "Next class (inner)";
           };
-          "flo" = {
+          "-lo" = {
             query = "@loop.outer";
             desc = "Next loop (outer)";
           };
-          "fli" = {
+          "-li" = {
             query = "@loop.inner";
             desc = "Next loop (inner)";
           };
-          "fso" = {
+          "-so" = {
             query = "@local.scope";
             queryGroup = "locals";
             desc = "Next local scope";
           };
-          "fzo" = {
+          "-zo" = {
             query = "@fold";
             queryGroup = "folds";
             desc = "Next fold";
           };
-          "fio" = {
+          "-io" = {
             query = "@conditional.outer";
             desc = "Next conditional (outer)";
           };
-          "fii" = {
+          "-ii" = {
             query = "@conditional.inner";
             desc = "Next conditional (inner)";
           };
-          "fao" = {
+          "-ao" = {
             query = "@assignment.outer";
             desc = "Next assignment (outer)";
           };
-          "fai" = {
+          "-ai" = {
             query = "@assignment.inner";
             desc = "Next assignment (inner)";
           };
-          "fal" = {
+          "-al" = {
             query = "@assignment.lhs";
             desc = "Next assignment left hand side (outer)";
           };
-          "far" = {
+          "-ar" = {
             query = "@assignment.rhs";
             desc = "Next assignment right hand side (inner)";
           };
-          "fuo" = {
+          "-uo" = {
             query = "@attribute.outer";
             desc = "Next attribute (outer)";
           };
-          "fui" = {
+          "-ui" = {
             query = "@attribute.inner";
             desc = "Next attribute (inner)";
           };
-          "feo" = {
+          "-eo" = {
             query = "@frame.outer";
             desc = "Next frame (outer)";
           };
-          "fei" = {
+          "-ei" = {
             query = "@frame.inner";
             desc = "Next frame (inner)";
           };
-          "fbo" = {
+          "-bo" = {
             query = "@block.outer";
             desc = "Next block (outer)";
           };
-          "fbi" = {
+          "-bi" = {
             query = "@block.inner";
             desc = "Next block (inner)";
           };
-          "fvo" = {
+          "-vo" = {
             query = "@call.outer";
             desc = "Next call (outer)";
           };
-          "fvi" = {
+          "-vi" = {
             query = "@call.inner";
             desc = "Next call (inner)";
           };
-          "fmo" = {
+          "-mo" = {
             query = "@comment.outer";
             desc = "Next comment (outer)";
           };
-          "fmi" = {
+          "-mi" = {
             query = "@comment.inner";
             desc = "Next comment (inner)";
           };
-          "fro" = {
+          "-ro" = {
             query = "@return.outer";
             desc = "Next return (outer)";
           };
-          "fri" = {
+          "-ri" = {
             query = "@return.inner";
             desc = "Next return (inner)";
           };
-          "fno" = {
+          "-no" = {
             query = "@number.inner";
             desc = "Next number";
           };
-          "fxo" = {
+          "-xo" = {
             query = "@regex.outer";
             desc = "Next regex (outer)";
           };
-          "fxi" = {
+          "-xi" = {
             query = "@regex.inner";
             desc = "Next regex (inner)";
           };
-          "fto" = {
+          "-to" = {
             query = "@statement.outer";
             desc = "Next statement";
           };
-          "fpo" = {
+          "-po" = {
             query = "@parameter.outer";
             desc = "Next parameter (outer)";
           };
-          "fpi" = {
+          "-pi" = {
             query = "@parameter.inner";
             desc = "Next parameter (inner)";
           };
         };
         gotoNextEnd = {
-          "ffO" = {
+          "-fO" = {
             query = "@function.outer";
             desc = "End of next function (outer)";
           };
-          "ffI" = {
+          "-fI" = {
             query = "@function.inner";
             desc = "End of next function (inner)";
           };
-          "fcO" = {
+          "-cO" = {
             query = "@class.outer";
             desc = "End of next class (outer)";
           };
-          "fcI" = {
+          "-cI" = {
             query = "@class.inner";
             desc = "End of next class (inner)";
           };
-          "flO" = {
+          "-lO" = {
             query = "@loop.outer";
             desc = "End of next loop (outer)";
           };
-          "flI" = {
+          "-lI" = {
             query = "@loop.inner";
             desc = "End of next loop (inner)";
           };
-          "fsO" = {
+          "-sO" = {
             query = "@local.scope";
             queryGroup = "locals";
             desc = "End of next local scope";
           };
-          "fzO" = {
+          "-zO" = {
             query = "@fold";
             queryGroup = "folds";
             desc = "End of next fold";
           };
-          "fiO" = {
+          "-iO" = {
             query = "@conditional.outer";
             desc = "End of next conditional (outer)";
           };
-          "fiI" = {
+          "-iI" = {
             query = "@conditional.inner";
             desc = "End of next conditional (inner)";
           };
-          "faO" = {
+          "-aO" = {
             query = "@assignment.outer";
             desc = "End of next assignment (outer)";
           };
-          "faI" = {
+          "-aI" = {
             query = "@assignment.inner";
             desc = "End of next assignment (inner)";
           };
-          "faL" = {
+          "-aL" = {
             query = "@assignment.lhs";
             desc = "End of next assignment left hand sinde (outer)";
           };
-          "faR" = {
+          "-aR" = {
             query = "@assignment.rhs";
             desc = "End of next assignment right hand side (inner)";
           };
-          "fuO" = {
+          "-uO" = {
             query = "@attribute.outer";
             desc = "End of next attribute (outer)";
           };
-          "fuI" = {
+          "-uI" = {
             query = "@attribute.inner";
             desc = "End of next attribute (inner)";
           };
-          "feO" = {
+          "-eO" = {
             query = "@frame.outer";
             desc = "End of next frame (outer)";
           };
-          "feI" = {
+          "-eI" = {
             query = "@frame.inner";
             desc = "End of next frame (inner)";
           };
-          "fbO" = {
+          "-bO" = {
             query = "@block.outer";
             desc = "End of next block (outer)";
           };
-          "fbI" = {
+          "-bI" = {
             query = "@block.inner";
             desc = "End of next block (inner)";
           };
-          "fvO" = {
+          "-vO" = {
             query = "@call.outer";
             desc = "End of next call (outer)";
           };
-          "fvI" = {
+          "-vI" = {
             query = "@call.inner";
             desc = "End of next call (inner)";
           };
-          "fmO" = {
+          "-mO" = {
             query = "@comment.outer";
             desc = "End of next comment (outer)";
           };
-          "fmI" = {
+          "-mI" = {
             query = "@comment.inner";
             desc = "End of next comment (inner)";
           };
-          "frO" = {
+          "-rO" = {
             query = "@return.outer";
             desc = "End of next return (outer)";
           };
-          "frI" = {
+          "-rI" = {
             query = "@return.inner";
             desc = "End of next return (inner)";
           };
-          "fnO" = {
+          "-nO" = {
             query = "@number.inner";
             desc = "End of next number";
           };
-          "fxO" = {
+          "-xO" = {
             query = "@regex.outer";
             desc = "End of next regex (outer)";
           };
-          "fxI" = {
+          "-xI" = {
             query = "@regex.inner";
             desc = "End of next regex (inner)";
           };
-          "ftO" = {
+          "-tO" = {
             query = "@statement.outer";
             desc = "End of next statement";
           };
-          "fpO" = {
+          "-pO" = {
             query = "@parameter.outer";
             desc = "End of next parameter (outer)";
           };
-          "fpI" = {
+          "-pI" = {
             query = "@parameter.inner";
             desc = "End of next parameter (inner)";
           };
         };
         gotoPreviousStart = {
-          "mfo" = {
+          ",fo" = {
             query = "@function.outer";
             desc = "Previous function (outer)";
           };
-          "mfi" = {
+          ",fi" = {
             query = "@function.inner";
             desc = "Previous function (inner)";
           };
-          "mco" = {
+          ",co" = {
             query = "@class.outer";
             desc = "Previous class (outer)";
           };
-          "mci" = {
+          ",ci" = {
             query = "@class.inner";
             desc = "Previous class (inner)";
           };
-          "mlo" = {
+          ",lo" = {
             query = "@loop.outer";
             desc = "Previous loop (outer)";
           };
-          "mli" = {
+          ",li" = {
             query = "@loop.inner";
             desc = "Previous loop (inner)";
           };
-          "mso" = {
+          ",so" = {
             query = "@local.scope";
             queryGroup = "locals";
             desc = "Previous local scope";
           };
-          "mzo" = {
+          ",zo" = {
             query = "@fold";
             queryGroup = "folds";
             desc = "Previous fold";
           };
-          "mio" = {
+          ",io" = {
             query = "@conditional.outer";
             desc = "Previous conditional (outer)";
           };
-          "mii" = {
+          ",ii" = {
             query = "@conditional.inner";
             desc = "Previous conditional (inner)";
           };
-          "mao" = {
+          ",ao" = {
             query = "@assignment.outer";
             desc = "Previous assignment (outer)";
           };
-          "mai" = {
+          ",ai" = {
             query = "@assignment.inner";
             desc = "Previous assignment (inner)";
           };
-          "mal" = {
+          ",al" = {
             query = "@assignment.lhs";
             desc = "Previous assignment left hand side (outer)";
           };
-          "mar" = {
+          ",ar" = {
             query = "@assignment.rhs";
             desc = "Previous assignment right hand side (inner)";
           };
-          "muo" = {
+          ",uo" = {
             query = "@attribute.outer";
             desc = "Previous attribute (outer)";
           };
-          "mui" = {
+          ",ui" = {
             query = "@attribute.inner";
             desc = "Previous attribute (inner)";
           };
-          "meo" = {
+          ",eo" = {
             query = "@frame.outer";
             desc = "Previous frame (outer)";
           };
-          "mei" = {
+          ",ei" = {
             query = "@frame.inner";
             desc = "Previous frame (inner)";
           };
-          "mbo" = {
+          ",bo" = {
             query = "@block.outer";
             desc = "Previous block (outer)";
           };
-          "mbi" = {
+          ",bi" = {
             query = "@block.inner";
             desc = "Previous block (inner)";
           };
-          "mvo" = {
+          ",vo" = {
             query = "@call.outer";
             desc = "Previous call (outer)";
           };
-          "mvi" = {
+          ",vi" = {
             query = "@call.inner";
             desc = "Previous call (inner)";
           };
-          "mmo" = {
+          ",mo" = {
             query = "@comment.outer";
             desc = "Previous comment (outer)";
           };
-          "mmi" = {
+          ",mi" = {
             query = "@comment.inner";
             desc = "Previous comment (inner)";
           };
-          "mro" = {
+          ",ro" = {
             query = "@return.outer";
             desc = "Previous return (outer)";
           };
-          "mri" = {
+          ",ri" = {
             query = "@return.inner";
             desc = "Previous return (inner)";
           };
-          "mno" = {
+          ",no" = {
             query = "@number.inner";
             desc = "Previous number";
           };
-          "mxo" = {
+          ",xo" = {
             query = "@regex.outer";
             desc = "Previous regex (outer)";
           };
-          "mxi" = {
+          ",xi" = {
             query = "@regex.inner";
             desc = "Previous regex (inner)";
           };
-          "mto" = {
+          ",to" = {
             query = "@statement.outer";
             desc = "Previous statement";
           };
-          "mpo" = {
+          ",po" = {
             query = "@parameter.outer";
             desc = "Previous parameter (outer)";
           };
-          "mpi" = {
+          ",pi" = {
             query = "@parameter.inner";
             desc = "Previous parameter (inner)";
           };
         };
         gotoPreviousEnd = {
-          "mfO" = {
+          ",fO" = {
             query = "@function.outer";
             desc = "End of previous function (outer)";
           };
-          "mfI" = {
+          ",fI" = {
             query = "@function.inner";
             desc = "End of previous function (inner)";
           };
-          "mcO" = {
+          ",cO" = {
             query = "@class.outer";
             desc = "End of previous class (outer)";
           };
-          "mcI" = {
+          ",cI" = {
             query = "@class.inner";
             desc = "End of previous class (inner)";
           };
-          "mlO" = {
+          ",lO" = {
             query = "@loop.outer";
             desc = "End of previous loop (outer)";
           };
-          "mlI" = {
+          ",lI" = {
             query = "@loop.inner";
             desc = "End of previous loop (inner)";
           };
-          "msO" = {
+          ",sO" = {
             query = "@local.scope";
             queryGroup = "locals";
             desc = "End of previous local scope";
           };
-          "mzO" = {
+          ",zO" = {
             query = "@fold";
             queryGroup = "folds";
             desc = "End of previous fold";
           };
-          "miO" = {
+          ",iO" = {
             query = "@conditional.outer";
             desc = "End of previous conditional (outer)";
           };
-          "miI" = {
+          ",iI" = {
             query = "@conditional.inner";
             desc = "End of previous conditional (inner)";
           };
-          "maO" = {
+          ",aO" = {
             query = "@assignment.outer";
             desc = "End of previous assignment (outer)";
           };
-          "maI" = {
+          ",aI" = {
             query = "@assignment.inner";
             desc = "End of previous assignment (inner)";
           };
-          "maL" = {
+          ",aL" = {
             query = "@assignment.lhs";
             desc = "End of previous assignment left hand side (outer)";
           };
-          "maR" = {
+          ",aR" = {
             query = "@assignment.rhs";
             desc = "End of previous assignment right hand side (inner)";
           };
-          "muO" = {
+          ",uO" = {
             query = "@attribute.outer";
             desc = "End of previous attribute (outer)";
           };
-          "muI" = {
+          ",uI" = {
             query = "@attribute.inner";
             desc = "End of previous attribute (inner)";
           };
-          "meO" = {
+          ",eO" = {
             query = "@frame.outer";
             desc = "End of previous frame (outer)";
           };
-          "meI" = {
+          ",eI" = {
             query = "@frame.inner";
             desc = "End of previous frame (inner)";
           };
-          "mbO" = {
+          ",bO" = {
             query = "@block.outer";
             desc = "End of previous block (outer)";
           };
-          "mbI" = {
+          ",bI" = {
             query = "@block.inner";
             desc = "End of previous block (inner)";
           };
-          "mvO" = {
+          ",vO" = {
             query = "@call.outer";
             desc = "End of previous call (outer)";
           };
-          "mvI" = {
+          ",vI" = {
             query = "@call.inner";
             desc = "End of previous call (inner)";
           };
-          "mmO" = {
+          ",mO" = {
             query = "@comment.outer";
             desc = "End of previous comment (outer)";
           };
-          "mmI" = {
+          ",mI" = {
             query = "@comment.inner";
             desc = "End of previous comment (inner)";
           };
-          "mrO" = {
+          ",rO" = {
             query = "@return.outer";
             desc = "End of previous return (outer)";
           };
-          "mrI" = {
+          ",rI" = {
             query = "@return.inner";
             desc = "End of previous return (inner)";
           };
-          "mnO" = {
+          ",nO" = {
             query = "@number.inner";
             desc = "End of previous number";
           };
-          "mxO" = {
+          ",xO" = {
             query = "@regex.outer";
             desc = "End of previous regex (outer)";
           };
-          "mxI" = {
+          ",xI" = {
             query = "@regex.inner";
             desc = "End of previous regex (inner)";
           };
-          "mtO" = {
+          ",tO" = {
             query = "@statement.outer";
             desc = "End of previous statement";
           };
-          "mpO" = {
+          ",pO" = {
             query = "@parameter.outer";
             desc = "End of previous parameter (outer)";
           };
-          "mpI" = {
+          ",pI" = {
             query = "@parameter.inner";
             desc = "End of previous parameter (inner)";
           };
@@ -620,13 +620,13 @@ in {
       swap = {
         enable = true;
         swapNext = {
-          "fop" = {
+          "-op" = {
             query = "@parameter.inner";
             desc = "Swap with next parameter";
           };
         };
         swapPrevious = {
-          "mop" = {
+          ",op" = {
             query = "@parameter.inner";
             desc = "Swap with previous parameter";
           };
@@ -660,202 +660,202 @@ in {
       settings = {
         spec = [
           {
-            __unkeyed-1 = "f";
+            __unkeyed-1 = "-";
             mode = ["n" "o" "x"];
             group = "+Next";
           }
           {
-            __unkeyed-1 = "fa";
+            __unkeyed-1 = "-a";
             mode = ["n" "o" "x"];
             group = "+Assignment";
           }
           {
-            __unkeyed-1 = "fu";
+            __unkeyed-1 = "-u";
             mode = ["n" "o" "x"];
             group = "+Attribute";
           }
           {
-            __unkeyed-1 = "fe";
+            __unkeyed-1 = "-e";
             mode = ["n" "o" "x"];
             group = "+Frame";
           }
           {
-            __unkeyed-1 = "fb";
+            __unkeyed-1 = "-b";
             mode = ["n" "o" "x"];
             group = "+Block";
           }
           {
-            __unkeyed-1 = "fv";
+            __unkeyed-1 = "-v";
             mode = ["n" "o" "x"];
             group = "+Call";
           }
           {
-            __unkeyed-1 = "fm";
+            __unkeyed-1 = "-m";
             mode = ["n" "o" "x"];
             group = "+Comment";
           }
           {
-            __unkeyed-1 = "fr";
+            __unkeyed-1 = "-r";
             mode = ["n" "o" "x"];
             group = "+Return";
           }
           {
-            __unkeyed-1 = "fn";
+            __unkeyed-1 = "-n";
             mode = ["n" "o" "x"];
             group = "+Number";
           }
           {
-            __unkeyed-1 = "fx";
+            __unkeyed-1 = "-x";
             mode = ["n" "o" "x"];
             group = "+Regex";
           }
           {
-            __unkeyed-1 = "ft";
+            __unkeyed-1 = "-t";
             mode = ["n" "o" "x"];
             group = "+Statement";
           }
           {
-            __unkeyed-1 = "fc";
+            __unkeyed-1 = "-c";
             mode = ["n" "o" "x"];
             group = "+Class";
           }
           {
-            __unkeyed-1 = "ff";
+            __unkeyed-1 = "-f";
             mode = ["n" "o" "x"];
             group = "+Function";
           }
           {
-            __unkeyed-1 = "fl";
+            __unkeyed-1 = "-l";
             mode = ["n" "o" "x"];
             group = "+Loop";
           }
           {
-            __unkeyed-1 = "fs";
+            __unkeyed-1 = "-s";
             mode = ["n" "o" "x"];
             group = "+Scope";
           }
           {
-            __unkeyed-1 = "fz";
+            __unkeyed-1 = "-z";
             mode = ["n" "o" "x"];
             group = "+Fold";
           }
           {
-            __unkeyed-1 = "fi";
+            __unkeyed-1 = "-i";
             mode = ["n" "o" "x"];
             group = "+Conditional";
           }
           {
-            __unkeyed-1 = "fp";
+            __unkeyed-1 = "-p";
             mode = ["n" "o" "x"];
             group = "+Parameter";
           }
           {
-            __unkeyed-1 = "fo";
+            __unkeyed-1 = "-o";
             mode = ["n" "o" "x"];
             group = "+Swap";
           }
           {
-            __unkeyed-1 = "fd";
+            __unkeyed-1 = "-d";
             mode = ["n" "o" "x"];
             group = "+Peek";
           }
           {
-            __unkeyed-1 = "m";
+            __unkeyed-1 = ",";
             mode = ["n" "o" "x"];
             group = "+Previous";
           }
           {
-            __unkeyed-1 = "ma";
+            __unkeyed-1 = ",a";
             mode = ["n" "o" "x"];
             group = "+Assignment";
           }
           {
-            __unkeyed-1 = "mu";
+            __unkeyed-1 = ",u";
             mode = ["n" "o" "x"];
             group = "+Attribute";
           }
           {
-            __unkeyed-1 = "me";
+            __unkeyed-1 = ",e";
             mode = ["n" "o" "x"];
             group = "+Frame";
           }
           {
-            __unkeyed-1 = "mb";
+            __unkeyed-1 = ",b";
             mode = ["n" "o" "x"];
             group = "+Block";
           }
           {
-            __unkeyed-1 = "mv";
+            __unkeyed-1 = ",v";
             mode = ["n"];
             group = "+Call";
           }
           {
-            __unkeyed-1 = "mm";
+            __unkeyed-1 = ",m";
             mode = ["n" "o" "x"];
             group = "+Comment";
           }
           {
-            __unkeyed-1 = "mr";
+            __unkeyed-1 = ",r";
             mode = ["n" "o" "x"];
             group = "+Return";
           }
           {
-            __unkeyed-1 = "mn";
+            __unkeyed-1 = ",n";
             mode = ["n" "o" "x"];
             group = "+Number";
           }
           {
-            __unkeyed-1 = "mx";
+            __unkeyed-1 = ",x";
             mode = ["n" "o" "x"];
             group = "+Regex";
           }
           {
-            __unkeyed-1 = "mt";
+            __unkeyed-1 = ",t";
             mode = ["n" "o" "x"];
             group = "+Statement";
           }
           {
-            __unkeyed-1 = "mc";
+            __unkeyed-1 = ",c";
             mode = ["n" "o" "x"];
             group = "+Class";
           }
           {
-            __unkeyed-1 = "mf";
+            __unkeyed-1 = ",f";
             mode = ["n" "o" "x"];
             group = "+Function";
           }
           {
-            __unkeyed-1 = "ml";
+            __unkeyed-1 = ",l";
             mode = ["n" "o" "x"];
             group = "+Loop";
           }
           {
-            __unkeyed-1 = "ms";
+            __unkeyed-1 = ",s";
             mode = ["n" "o" "x"];
             group = "+Scope";
           }
           {
-            __unkeyed-1 = "mz";
+            __unkeyed-1 = ",z";
             mode = ["n" "o" "x"];
             group = "+Fold";
           }
           {
-            __unkeyed-1 = "mi";
+            __unkeyed-1 = ",i";
             mode = ["n" "o" "x"];
             group = "+Conditional";
           }
           {
-            __unkeyed-1 = "mp";
+            __unkeyed-1 = ",p";
             mode = ["n" "o" "x"];
             group = "+Parameter";
           }
           {
-            __unkeyed-1 = "mo";
+            __unkeyed-1 = ",o";
             mode = ["n" "o" "x"];
             group = "+Swap";
           }
           {
-            __unkeyed-1 = "md";
+            __unkeyed-1 = ",d";
             mode = ["n" "o" "x"];
             group = "+Peek";
           }
@@ -866,13 +866,15 @@ in {
   keymaps = [
     {
       action = {
-        __raw = ''
-          function()
-            require('which-key').show("f")
-          end
-        '';
+        __raw =
+          # Lua
+          ''
+            function()
+              require('which-key').show("-")
+            end
+          '';
       };
-      key = "f";
+      key = "-";
       mode = ["n" "o" "x"];
       options = {
         silent = true;
@@ -882,11 +884,11 @@ in {
       action = {
         __raw = ''
           function()
-            require('which-key').show("m")
+            require('which-key').show(",")
           end
         '';
       };
-      key = "m";
+      key = ",";
       mode = ["n" "o" "x"];
       options = {
         silent = true;
@@ -900,7 +902,7 @@ in {
           end
         '';
       };
-      key = ",";
+      key = ";";
       mode = ["n" "o" "x"];
       options = {
         silent = true;
@@ -915,7 +917,7 @@ in {
           end
         '';
       };
-      key = "-";
+      key = "_";
       mode = ["n" "o" "x"];
       options = {
         silent = true;
