@@ -30,7 +30,7 @@
       (import ../config/ux/ergonomics/auto-save {inherit inputs pkgs lib;})
       (import ../config/ux/ergonomics/nvim-autopairs {inherit inputs pkgs lib;})
       (import ../config/ux/ergonomics/surround {inherit inputs pkgs lib;})
-      (import ../config/ux/sessions/auto-session {inherit inputs pkgs lib;})
+      (import ../config/ux/sessions {inherit inputs pkgs lib;})
     ];
     package = pkgs.neovim;
     colorscheme = "catppuccin";
