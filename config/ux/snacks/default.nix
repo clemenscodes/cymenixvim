@@ -447,10 +447,6 @@
             desc = "Delete all buffers except current";
           }
           {
-            __unkeyed-1 = "<leader>q";
-            desc = "Delete current buffer";
-          }
-          {
             __unkeyed-1 = "<leader><leader>";
             desc = "Toggle terminal";
           }
@@ -864,15 +860,6 @@
       options = {
         silent = true;
         desc = "Toggle Zen mode";
-      };
-    }
-    {
-      action = ":lua require('snacks').bufdelete.delete({ force = true, wipe = true })<CR>";
-      key = "<leader>q";
-      mode = "n";
-      options = {
-        silent = true;
-        desc = "Delete current buffer";
       };
     }
     {
