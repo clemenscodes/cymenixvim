@@ -84,33 +84,6 @@
       end
     end
 
-    local function clean()
-      local api = vim.api
-      local current_win = api.nvim_get_current_win()
-      local current_buf = api.nvim_get_current_buf()
-      local win_config = api.nvim_win_get_config(current_win)
-      local is_floating = win_config.relative ~= ""
-
-      if not is_floating and #api.nvim_list_wins() > 1 then
-        pcall(vim.cmd, 'only')
-      end
-
-      for _, buf in ipairs(api.nvim_list_bufs()) do
-        if buf ~= current_buf and api.nvim_buf_is_loaded(buf) then
-          local is_listed = api.nvim_buf_get_option(buf, 'buflisted')
-          local is_modifiable = api.nvim_buf_get_option(buf, 'modifiable')
-          local buftype = api.nvim_buf_get_option(buf, 'buftype')
-          if is_listed then
-            local cmd = is_modifiable and 'bdelete ' or 'bdelete! '
-            pcall(vim.cmd, cmd .. buf)
-          end
-        end
-      end
-
-      Snacks.bufdelete.other()
-      Snacks.zen()     
-    end
-
     local function close_all_floating_wins()
       for _, win in ipairs(vim.api.nvim_list_wins()) do
         local config = vim.api.nvim_win_get_config(win)
@@ -128,7 +101,7 @@
       auto_restore_last_session = vim.loop.cwd() == vim.loop.os_homedir(),
       args_allow_single_directory = true,
       args_allow_files_auto_save = false,
-      bypass_save_filetypes = { 'alpha', 'dashboard' },
+      bypass_save_filetypes = { 'alpha', 'dashboard', 'snacks_picker_list' },
       git_use_branch_name = true,
       git_auto_restore_on_branch_change = true,
       auto_create = function()
@@ -138,7 +111,6 @@
       pre_save_cmds = {close_all_floating_wins},
       pre_delete_cmds = {delete_session_breakpoints},
       post_save_cmds = {save_session_breakpoints},
-      post_open_cmds = {clean},
       post_restore_cmds = {open, restore_session_breakpoints},
       post_cwd_changed_cmds = {},
     }
