@@ -313,14 +313,5 @@
         desc = "Search";
       };
     }
-    {
-      action = ":";
-      key = "+";
-      mode = ["n"];
-      options = {
-        silent = true;
-        desc = "Commandline";
-      };
-    }
   ];
 }
