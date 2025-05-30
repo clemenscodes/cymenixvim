@@ -72,11 +72,11 @@ in {
         border = "rounded";
         floatingPreviewOpts = {};
         peekDefinitionCode = {
-          "fdf" = {
+          ",df" = {
             query = "@function.outer";
             desc = "Peek function definition";
           };
-          "fdc" = {
+          ",dc" = {
             query = "@calss.outer";
             desc = "Peek class definition";
           };
@@ -853,11 +853,6 @@ in {
             __unkeyed-1 = "-o";
             mode = ["n" "o" "x"];
             group = "+Swap";
-          }
-          {
-            __unkeyed-1 = "-d";
-            mode = ["n" "o" "x"];
-            group = "+Peek";
           }
         ];
       };
