@@ -100,7 +100,7 @@
       auto_save = true,
       auto_restore_last_session = vim.loop.cwd() == vim.loop.os_homedir(),
       args_allow_single_directory = true,
-      args_allow_files_auto_save = true,
+      args_allow_files_auto_save = false,
       bypass_save_filetypes = { 'alpha', 'dashboard' },
       git_use_branch_name = true,
       git_auto_restore_on_branch_change = true,
