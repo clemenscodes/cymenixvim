@@ -13,8 +13,10 @@
               command = ["${lib.getExe pkgs.nixfmt-rfc-style}"];
             };
             nix = {
+              maxMemoryMB = 8192;
               flake = {
                 autoArchive = true;
+                autoEvalInputs = true;
               };
             };
           };
