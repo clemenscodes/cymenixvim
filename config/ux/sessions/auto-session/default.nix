@@ -78,10 +78,23 @@
       vim.fn.delete(bp_path)
     end
 
+    local function close()
+      if vim.bo.filetype == "snacks_picker_list" then
+        Snacks.explorer()
+      end
+    end
+
     local function open()
       if vim.api.nvim_buf_get_name(0):match("COMMIT_EDITMSG") then
-        require('snacks').bufdelete.delete()
+        Snacks.bufdelete.delete()
       end
+      Snacks.explorer()
+    end
+
+    local function focus()
+      vim.defer_fn(function()
+        pcall(vim.cmd, "wincmd l")
+      end, 100)
     end
 
     local function close_all_floating_wins()
@@ -108,11 +121,11 @@
         local cmd = 'git rev-parse --is-inside-work-tree'
         return vim.fn.system(cmd) == 'true\n'
       end,
-      pre_save_cmds = {close_nvim_tree, close_all_floating_wins},
+      pre_save_cmds = {close, close_all_floating_wins},
       pre_delete_cmds = {delete_session_breakpoints},
-      post_save_cmds = {save_session_breakpoints},
-      post_open_cmds = {open},
-      post_restore_cmds = {open, restore_session_breakpoints},
+      post_save_cmds = {open, save_session_breakpoints, focus},
+      post_open_cmds = {open, focus},
+      post_restore_cmds = {open, restore_session_breakpoints, focus},
       post_cwd_changed_cmds = {},
     }
   '';

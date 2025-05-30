@@ -202,7 +202,7 @@
       mode = ["n" "o" "x"];
       options = {
         silent = true;
-        desc = "Go to other pair";
+        desc = "Find other pair";
       };
     }
     {
