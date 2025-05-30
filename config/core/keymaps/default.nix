@@ -198,7 +198,7 @@
     }
     {
       action = "%";
-      key = "q";
+      key = "<leader>q";
       mode = ["n" "o" "x"];
       options = {
         silent = true;
