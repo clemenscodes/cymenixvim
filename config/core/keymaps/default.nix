@@ -314,12 +314,12 @@
       };
     }
     {
-      action = ":lua ";
+      action = ":";
       key = "+";
       mode = ["n"];
       options = {
         silent = true;
-        desc = "Run lua";
+        desc = "Commandline";
       };
     }
   ];
