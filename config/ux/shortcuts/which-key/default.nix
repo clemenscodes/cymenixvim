@@ -1,7 +1,7 @@
 {...}: {
   opts = {
     timeout = true;
-    timeoutlen = 300;
+    timeoutlen = 200;
   };
   plugins = {
     which-key = {
@@ -19,10 +19,6 @@
           {
             __unkeyed-1 = "<leader>h";
             desc = "Clear highlights and search term";
-          }
-          {
-            __unkeyed-1 = "<leader>o";
-            desc = "Close all buffers except current";
           }
           {
             __unkeyed-1 = "<leader>t";

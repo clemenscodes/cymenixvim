@@ -456,10 +456,6 @@
             desc = "Toggle Zen mode";
           }
           {
-            __unkeyed-1 = "<leader>o";
-            desc = "Delete all buffers except current";
-          }
-          {
             __unkeyed-1 = "<leader><leader>";
             desc = "Toggle terminal";
           }
@@ -804,6 +800,10 @@
       action = {
         __raw = ''
           function()
+            if vim.bo.filetype == "snacks_picker_list" then
+              Snacks.explorer()
+            end
+
             local api = vim.api
             local current_win = api.nvim_get_current_win()
             local current_buf = api.nvim_get_current_buf()
@@ -819,12 +819,6 @@
                 local is_listed = api.nvim_buf_get_option(buf, 'buflisted')
                 local is_modifiable = api.nvim_buf_get_option(buf, 'modifiable')
                 local buftype = api.nvim_buf_get_option(buf, 'buftype')
-                local filetype = api.nvim_buf_get_option(buf, 'filetype')
-
-                if filetype == "snacks_picker_list" then
-                  Snacks.explorer()
-                end
-
                 if is_listed then
                   local cmd = is_modifiable and 'bdelete ' or 'bdelete! '
                   pcall(vim.cmd, cmd .. buf)
@@ -833,7 +827,6 @@
             end
 
             Snacks.bufdelete.other()
-
             vim.cmd("wa")
             vim.cmd("qa")
           end
@@ -869,12 +862,6 @@
                 local is_listed = api.nvim_buf_get_option(buf, 'buflisted')
                 local is_modifiable = api.nvim_buf_get_option(buf, 'modifiable')
                 local buftype = api.nvim_buf_get_option(buf, 'buftype')
-                local filetype = api.nvim_buf_get_option(buf, 'filetype')
-
-                if filetype == "snacks_picker_list" then
-                  Snacks.explorer()
-                end
-
                 if is_listed then
                   local cmd = is_modifiable and 'bdelete ' or 'bdelete! '
                   pcall(vim.cmd, cmd .. buf)

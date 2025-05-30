@@ -88,13 +88,7 @@
       if vim.api.nvim_buf_get_name(0):match("COMMIT_EDITMSG") then
         Snacks.bufdelete.delete()
       end
-      Snacks.explorer()
-    end
-
-    local function focus()
-      vim.defer_fn(function()
-        pcall(vim.cmd, "wincmd l")
-      end, 100)
+      Snacks.zen()
     end
 
     local function close_all_floating_wins()
@@ -123,9 +117,9 @@
       end,
       pre_save_cmds = {close, close_all_floating_wins},
       pre_delete_cmds = {delete_session_breakpoints},
-      post_save_cmds = {open, save_session_breakpoints, focus},
-      post_open_cmds = {open, focus},
-      post_restore_cmds = {open, restore_session_breakpoints, focus},
+      post_save_cmds = {open, save_session_breakpoints},
+      post_open_cmds = {open},
+      post_restore_cmds = {open, restore_session_breakpoints},
       post_cwd_changed_cmds = {},
     }
   '';
