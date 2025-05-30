@@ -1,6 +1,20 @@
 {pkgs, ...}: {
   extraPackages = [pkgs.universal-ctags];
   globals = {
+    tagbar_type_typescript = {
+      ctagsbin = "${pkgs.universal-ctags}/bin/ctags";
+      ctagstype = "typescript";
+      kinds = [
+        "c:classes"
+        "n:modules"
+        "f:function"
+        "v:variables"
+        "v:varlambdas"
+        "m:members"
+        "i:interfaces"
+        "e:enums"
+      ];
+    };
     tagbar_type_rust = {
       ctagsbin = "${pkgs.universal-ctags}/bin/ctags";
       ctagstype = "rust";
