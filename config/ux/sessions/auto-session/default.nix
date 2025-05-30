@@ -83,7 +83,7 @@
         Snacks.bufdelete.delete()
       end
       local api = vim.api
-      local current_win = api.nvim_get_current_win()
+      local current_win = api.nvim_get_current_win(), Snacks.zen
       local current_buf = api.nvim_get_current_buf()
       local win_config = api.nvim_win_get_config(current_win)
       local is_floating = win_config.relative ~= ""
