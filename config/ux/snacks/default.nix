@@ -278,6 +278,7 @@
                 end
               '';
             }
+            {section = "startup";}
           ];
         };
       };
