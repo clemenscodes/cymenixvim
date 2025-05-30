@@ -85,10 +85,6 @@
     end
 
     local function clean()
-      if vim.bo.filetype == "snacks_picker_list" then
-        Snacks.explorer()
-      end
-
       local api = vim.api
       local current_win = api.nvim_get_current_win()
       local current_buf = api.nvim_get_current_buf()
