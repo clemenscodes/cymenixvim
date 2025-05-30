@@ -34,6 +34,10 @@
         quickfile = {
           enabled = true;
         };
+        explorer = {
+          enabled = true;
+          replace_netrw = true;
+        };
         bufdelete = {
           enabled = true;
         };
