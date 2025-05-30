@@ -147,6 +147,7 @@
           };
         };
         picker = {
+
           actions = {
             calculate_file_truncate_width = {
               __raw = ''
@@ -191,6 +192,11 @@
                 width = 70;
                 min_width = 0;
                 row = 1;
+              };
+            };
+            sidebar = {
+              layout = {
+                width = 0.35;
               };
             };
           };
