@@ -79,10 +79,6 @@
     end
 
     local function close()
-      if vim.bo.filetype == "snacks_picker_list" then
-        Snacks.explorer()
-      end
-
       local api = vim.api
       local current_win = api.nvim_get_current_win()
       local current_buf = api.nvim_get_current_buf()
@@ -112,7 +108,6 @@
       if vim.api.nvim_buf_get_name(0):match("COMMIT_EDITMSG") then
         Snacks.bufdelete.delete()
       end
-      Snacks.zen()
     end
 
     local function close_all_floating_wins()
