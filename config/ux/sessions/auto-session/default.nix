@@ -123,8 +123,22 @@
       auto_restore = true,
       auto_save = true,
       auto_restore_last_session = vim.loop.cwd() == vim.loop.os_homedir(),
-      args_allow_single_directory = true,
-      args_allow_files_auto_save = false,
+      args_allow_single_directory = false,
+      args_allow_files_auto_save = function()
+        local supported = 0
+
+        local tabpages = vim.api.nvim_list_tabpages()
+        for _, tabpage in ipairs(tabpages) do
+          local windows = vim.api.nvim_tabpage_list_wins(tabpage)
+          for _, window in ipairs(windows) do
+            local buffer = vim.api.nvim_win_get_buf(window)
+            local file_name = vim.api.nvim_buf_get_name(buffer)
+            if vim.fn.filereadable(file_name) ~= 0 then supported = supported + 1 end
+          end
+        end
+        -- If we have 2 or more windows with supported buffers, save the session
+        return supported >= 2
+      end,
       bypass_save_filetypes = { 'alpha', 'dashboard', 'snacks_picker_list' },
       git_use_branch_name = true,
       git_auto_restore_on_branch_change = true,

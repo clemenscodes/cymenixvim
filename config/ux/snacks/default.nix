@@ -39,7 +39,7 @@
         };
         explorer = {
           enabled = true;
-          replace_netrw = false;
+          replace_netrw = true;
         };
         bufdelete = {
           enabled = true;
