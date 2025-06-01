@@ -38,7 +38,6 @@
         yaml = ["yamllint"];
       };
       linters = {
-        clippy.cmd = lib.getExe pkgs.rust-analyzer;
         cmakelint.cmd = lib.getExe' pkgs.cmake-format "cmake-lint";
         htmlhint.cmd = lib.getExe pkgs.htmlhint;
         jsonlint.cmd = lib.getExe pkgs.nodePackages.jsonlint;
