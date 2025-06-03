@@ -41,7 +41,6 @@
           function()
             local buf_size_limit = 1024 * 1024 -- 1MB size limit
             if vim.api.nvim_buf_get_offset(0, vim.api.nvim_buf_line_count(0)) > buf_size_limit then
-              require("ibl").setup_buffer(0, { enabled = false })
               vim.cmd("setlocal nonumber norelativenumber")
               vim.cmd("syntax off")
               vim.cmd("let g:loaded_matchparen = 1")
