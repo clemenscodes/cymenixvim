@@ -12,7 +12,7 @@
       return valid_bufs
     end
   '';
-  enableCmp = false;
+  enableCmp = true;
 in {
   plugins = {
     cmp_luasnip = {
