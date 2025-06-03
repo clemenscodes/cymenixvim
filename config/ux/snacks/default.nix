@@ -145,6 +145,11 @@
           };
         };
         picker = {
+          sources = {
+            explorer = {
+              
+            };
+          };
           actions = {
             calculate_file_truncate_width = {
               __raw = ''
@@ -588,14 +593,6 @@
       action = ''<cmd>lua Snacks.picker.registers()<cr>'';
       options = {
         desc = "Find registers";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>fS";
-      action = ''<CMD>lua Snacks.picker.spelling({layout = { preset = "select" }})<CR>'';
-      options = {
-        desc = "Find spelling suggestions";
       };
     }
     {
