@@ -1,8 +1,6 @@
 {pkgs, ...}: {
+  extraPlugins = [pkgs.vimPlugins.lazy-nvim];
   plugins = {
-    lazy = {
-      enable = true;
-    };
     snacks = {
       enable = true;
       settings = {
