@@ -1,4 +1,4 @@
-{...}: let
+{lib, ...}: let
   get_bufnrs.__raw = ''
     function()
       local buf_size_limit = 1024 * 1024 -- 1MB size limit
@@ -103,25 +103,20 @@ in {
             "cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace })";
         };
         completion = {
-          autocomplete =
+          autocomplete = [
             # Lua
             ''
               require('cmp.types').cmp.TriggerEvent.TextChanged
-            '';
+            ''
+          ];
         };
         preselect =
           # Lua
-          ''
-            cmp.PreselectMode.None,
-          '';
+          "cmp.PreselectMode.None";
         snippet = {
           expand =
             # Lua
-            ''
-              function(args)
-                require('luasnip').lsp_expand(args.body)
-              end
-            '';
+            "function(args) require('luasnip').lsp_expand(args.body) end";
         };
         window = {
           completion.__raw = ''cmp.config.window.bordered()'';
@@ -206,10 +201,28 @@ in {
         ];
         formatting = {
           format =
+            lib.mkForce
             # Lua
             ''
               require("lspkind").cmp_format({
-                before = require("tailwind-tools.cmp").lspkind_format
+                before = require("tailwind-tools.cmp").lspkind_format,
+                menu = {
+                  buffer = "",
+                  calc = "",
+                  cmdline = "",
+                  codeium = "󱜙",
+                  copilot = "",
+                  emoji = "󰞅",
+                  git = "",
+                  luasnip = "󰩫",
+                  neorg = "",
+                  nixpkgs_maintainers = "",
+                  nvim_lsp = "",
+                  nvim_lua = "",
+                  path = "",
+                  spell = "",
+                  treesitter = "󰔱"
+                }
               })
             '';
         };

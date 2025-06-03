@@ -170,9 +170,9 @@
                 -- Special context handling
                 local success, node = pcall(vim.treesitter.get_node)
                 if success and node and vim.tbl_contains({ 'comment', 'line_comment', 'block_comment' }, node:type()) then
-                  return { 'buffer', 'dictionary' }
+                  return { 'buffer', }
                 elseif vim.bo.filetype == 'gitcommit' then
-                  local git_sources = { 'buffer', 'dictionary' }
+                  local git_sources = { 'buffer', }
                   table.insert(git_sources, 'git')
                   table.insert(git_sources, 'conventional_commits')
                   return git_sources
