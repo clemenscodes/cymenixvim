@@ -1,6 +1,8 @@
 {pkgs, ...}: {
-  extraPlugins = [pkgs.vimPlugins.lazy-nvim];
   plugins = {
+    lazy = {
+      enable = true;
+    };
     snacks = {
       enable = true;
       settings = {
@@ -56,13 +58,6 @@
         };
         profiler = {
           enabled = true;
-        };
-        statuscolumn = {
-          enabled = true;
-          folds = {
-            open = true;
-            git_hl = true;
-          };
         };
         terminal = {
           enabled = true;
@@ -147,7 +142,6 @@
         picker = {
           sources = {
             explorer = {
-              
             };
           };
           actions = {
@@ -304,10 +298,6 @@
           {
             __unkeyed-1 = "<leader>";
             group = "+Snacks";
-          }
-          {
-            __unkeyed-1 = "<leader>f";
-            group = "Smart find files";
           }
           {
             __unkeyed-1 = "<leader>:";
@@ -469,14 +459,6 @@
   keymaps = [
     {
       mode = "n";
-      key = "<leader>f";
-      action = ''<cmd>lua Snacks.picker.smart()<cr>'';
-      options = {
-        desc = "Smart find files";
-      };
-    }
-    {
-      mode = "n";
       key = "<leader>:";
       action = ''<cmd>lua Snacks.picker.command_history()<cr>'';
       options = {
@@ -526,7 +508,7 @@
     {
       mode = "n";
       key = "<leader>ff";
-      action = ''<cmd>lua Snacks.picker.files()<cr>'';
+      action = ''<cmd>lua Snacks.picker.smart()<cr>'';
       options = {
         desc = "Find files";
       };

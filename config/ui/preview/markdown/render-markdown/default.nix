@@ -1,4 +1,5 @@
-{...}: {
+{pkgs, ...}: {
+  extraPackages = [pkgs.python313Packages.pylatexenc];
   plugins = {
     render-markdown = {
       enable = true;
