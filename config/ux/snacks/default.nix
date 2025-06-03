@@ -296,7 +296,7 @@
       settings = {
         spec = [
           {
-            __unkeyed-1 = "<leader>";
+            __unkeyed-1 = "<leader>f";
             group = "+Snacks";
           }
           {
@@ -335,7 +335,6 @@
             __unkeyed-1 = "<leader>fk";
             desc = "Find keymaps";
           }
-
           {
             __unkeyed-1 = "<leader>fo";
             desc = "Find old files";
@@ -347,10 +346,6 @@
           {
             __unkeyed-1 = "<leader>fp";
             desc = "Find projects";
-          }
-          {
-            __unkeyed-1 = "<leader>fq";
-            desc = "Find quickfix";
           }
           {
             __unkeyed-1 = "<leader>fr";
@@ -559,14 +554,6 @@
       action = ''<cmd>lua Snacks.picker.projects()<cr>'';
       options = {
         desc = "Find projects";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>fq";
-      action = ''<cmd>lua Snacks.picker.qflist()<cr>'';
-      options = {
-        desc = "Find quickfix";
       };
     }
     {
