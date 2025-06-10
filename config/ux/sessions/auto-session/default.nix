@@ -123,7 +123,7 @@
       auto_restore = true,
       auto_save = true,
       auto_restore_last_session = vim.loop.cwd() == vim.loop.os_homedir(),
-      args_allow_single_directory = false,
+      args_allow_single_directory = true,
       args_allow_files_auto_save = function()
         local supported = 0
 

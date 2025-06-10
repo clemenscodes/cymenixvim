@@ -38,7 +38,7 @@
           enabled = true;
         };
         explorer = {
-          enabled = true;
+          enabled = false;
           replace_netrw = true;
         };
         bufdelete = {
@@ -198,7 +198,7 @@
           };
         };
         dashboard = {
-          enable = true;
+          enable = false;
           sections = [
             {
               header = ''
