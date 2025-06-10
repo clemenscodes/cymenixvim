@@ -126,7 +126,7 @@
       args_allow_files_auto_save = false,
       git_use_branch_name = true,
       git_auto_restore_on_branch_change = true,
-      auto_restore_last_session = vim.loop.cwd() == vim.loop.os_homedir(),
+      auto_restore_last_session = false,
       bypass_save_filetypes = { 'alpha', 'dashboard' },
       auto_create = function()
         local cmd = 'git rev-parse --is-inside-work-tree'
