@@ -43,6 +43,12 @@ in {
         rust
         norg
         norg-meta
+        c
+        cpp
+        meson
+        ninja
+        cmake
+        make
       ];
       settings = {
         highlight = {
