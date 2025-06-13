@@ -9,6 +9,11 @@
         clangd = {
           enable = true;
           autostart = true;
+          package = null;
+          rootMarkers = [
+            ".git"
+            "nx.json"
+          ];
           cmd = [
             "clangd"
             "--pretty"

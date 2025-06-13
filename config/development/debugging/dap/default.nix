@@ -59,6 +59,17 @@
       };
       configurations = {
         rust = [];
+        cpp = [
+          {
+            type = "codelldb";
+            request = "launch";
+            name = "C++";
+            program = "\${file}";
+            cwd = "\${workspaceFolder}";
+            stdio = ["input.txt" "log.txt"];
+            stopOnEntry = false;
+          }
+        ];
         typescript = [
           {
             type = "pwa-node";
