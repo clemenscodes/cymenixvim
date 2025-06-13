@@ -59,17 +59,16 @@
       };
       configurations = let
         configForCpp = {
+          name = "C/C++";
           type = "codelldb";
           request = "launch";
-          name = "C++";
           program.__raw = ''
             function()
               return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
             end
           '';
           cwd = "\${workspaceFolder}";
-          stdio = ["input.txt" "log.txt"];
-          stopOnEntry = true;
+          stopOnEntry = false;
         };
       in {
         rust = [];
