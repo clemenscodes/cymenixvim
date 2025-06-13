@@ -64,7 +64,7 @@
           request = "launch";
           program.__raw = ''
             function()
-              return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+              return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/build/', 'file')
             end
           '';
           cwd = "\${workspaceFolder}";
