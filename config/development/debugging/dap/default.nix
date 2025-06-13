@@ -57,30 +57,24 @@
           };
         };
       };
-      configurations = {
+      configurations = let
+        configForCpp = {
+          type = "codelldb";
+          request = "launch";
+          name = "C++";
+          program.__raw = ''
+            function()
+              return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+            end
+          '';
+          cwd = "\${workspaceFolder}";
+          stdio = ["input.txt" "log.txt"];
+          stopOnEntry = true;
+        };
+      in {
         rust = [];
-        c = [
-          {
-            type = "codelldb";
-            request = "launch";
-            name = "C++";
-            program = "\${file}";
-            cwd = "\${workspaceFolder}";
-            stdio = ["input.txt" "log.txt"];
-            stopOnEntry = false;
-          }
-        ];
-        cpp = [
-          {
-            type = "codelldb";
-            request = "launch";
-            name = "C++";
-            program = "\${file}";
-            cwd = "\${workspaceFolder}";
-            stdio = ["input.txt" "log.txt"];
-            stopOnEntry = false;
-          }
-        ];
+        c = [configForCpp];
+        cpp = [configForCpp];
         typescript = [
           {
             type = "pwa-node";
