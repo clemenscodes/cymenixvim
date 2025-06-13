@@ -6,43 +6,45 @@
     };
     overseer = {
       enable = true;
-      task_list = {
-        bindings = {
-          "<C-e>" = "Edit";
-          "<C-f>" = "OpenFloat";
-          "<M-h>" = "DecreaseDetail";
-          "<M-j>" = "ScrollOutputDown";
-          "<M-k>" = "ScrollOutputUp";
-          "<M-l>" = "IncreaseDetail";
-          "<C-q>" = "OpenQuickFix";
-          "<C-s>" = "OpenSplit";
-          "<C-v>" = "OpenVsplit";
-          "<CR>" = "RunAction";
-          "?" = "ShowHelp";
-          H = "DecreaseAllDetail";
-          L = "IncreaseAllDetail";
-          "[" = "DecreaseWidth";
-          "]" = "IncreaseWidth";
-          "g?" = "ShowHelp";
-          o = "Open";
-          p = "TogglePreview";
-          q = "Close";
-          "{" = "PrevTask";
-          "}" = "NextTask";
+      settings = {
+        task_list = {
+          bindings = {
+            "<C-e>" = "Edit";
+            "<C-f>" = "OpenFloat";
+            "<M-h>" = "DecreaseDetail";
+            "<M-j>" = "ScrollOutputDown";
+            "<M-k>" = "ScrollOutputUp";
+            "<M-l>" = "IncreaseDetail";
+            "<C-q>" = "OpenQuickFix";
+            "<C-s>" = "OpenSplit";
+            "<C-v>" = "OpenVsplit";
+            "<CR>" = "RunAction";
+            "?" = "ShowHelp";
+            H = "DecreaseAllDetail";
+            L = "IncreaseAllDetail";
+            "[" = "DecreaseWidth";
+            "]" = "IncreaseWidth";
+            "g?" = "ShowHelp";
+            o = "Open";
+            p = "TogglePreview";
+            q = "Close";
+            "{" = "PrevTask";
+            "}" = "NextTask";
+          };
+          max_height = [
+            40
+            0.1
+          ];
+          max_width = [
+            100
+            0.2
+          ];
+          min_height = 40;
+          min_width = [
+            40
+            0.1
+          ];
         };
-        max_height = [
-          40
-          0.1
-        ];
-        max_width = [
-          100
-          0.2
-        ];
-        min_height = 40;
-        min_width = [
-          40
-          0.1
-        ];
       };
     };
     which-key = {
