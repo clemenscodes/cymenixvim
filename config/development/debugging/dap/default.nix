@@ -59,6 +59,17 @@
       };
       configurations = {
         rust = [];
+        c = [
+          {
+            type = "codelldb";
+            request = "launch";
+            name = "C++";
+            program = "\${file}";
+            cwd = "\${workspaceFolder}";
+            stdio = ["input.txt" "log.txt"];
+            stopOnEntry = false;
+          }
+        ];
         cpp = [
           {
             type = "codelldb";
