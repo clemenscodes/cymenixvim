@@ -18,7 +18,7 @@
         },
     })
     require("lint").linters_by_ft = {
-      python = { "ruff" },
+      python = { "ruff" }
     }
     require("dap-python").setup("uv")
     local lsp = require('lspconfig')

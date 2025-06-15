@@ -28,8 +28,8 @@ in {
             return vim.fn.getcwd()
           end,
         }),
-        require("neotest-gtest").setup({})
-        require("neotest-python").setup({})
+        require("neotest-gtest").setup({}),
+        require("neotest-python").setup({}),
       }
     }
   '';
