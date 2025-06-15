@@ -6,9 +6,11 @@
   extraPlugins = [
     pkgs.vimPlugins.nvim-nio
     pkgs.vimPlugins.nvim-dap-vscode-js
-    pkgs.vimPlugins.nvim-dap-python
   ];
   plugins = {
+    dap-python = {
+      enable = true;
+    };
     dap-ui = {
       enable = true;
       settings = {
@@ -243,7 +245,7 @@
       };
     };
   };
-  extraConfigLuaPre =
+  extraConfigLuaPost =
     /*
     lua
     */
@@ -274,7 +276,6 @@
 
       local dap = require("dap")
       local dap_vscode_js = require("dap-vscode-js")
-      require('dap-python').setup("uv")
       local languages = { "javascript" }
 
       dap_vscode_js.setup({

@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   extraPlugins = [pkgs.vimPlugins.auto-session];
-  extraConfigLuaPost = ''
+  extraConfigLuaPre = ''
     local function get_breakpoints_path()
       local Lib = require('auto-session.lib')
       local session_dir = require('auto-session').get_root_dir()
