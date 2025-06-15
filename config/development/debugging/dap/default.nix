@@ -6,6 +6,7 @@
   extraPlugins = [
     pkgs.vimPlugins.nvim-nio
     pkgs.vimPlugins.nvim-dap-vscode-js
+    pkgs.vimPlugins.nvim-dap-python
   ];
   plugins = {
     dap-ui = {
@@ -44,11 +45,6 @@
     dap = {
       enable = true;
       adapters = {
-        executables = {
-          python = {
-            command = "${pkgs.python313Packages.debugpy}/bin/debugpy-adapter";
-          };
-        };
         servers = {
           codelldb = let
             port = 13000;
@@ -77,16 +73,6 @@
         };
       in {
         rust = [];
-        python = [
-          {
-            type = "python";
-            request = "launch";
-            name = "Python";
-            program = "\${file}";
-            pythonPath = "python";
-            cwd.__raw = "vim.fn.getcwd()";
-          }
-        ];
         c = [configForCpp];
         cpp = [configForCpp];
         typescript = [
@@ -288,6 +274,7 @@
 
       local dap = require("dap")
       local dap_vscode_js = require("dap-vscode-js")
+      require('dap-python').setup("uv")
       local languages = { "javascript" }
 
       dap_vscode_js.setup({
