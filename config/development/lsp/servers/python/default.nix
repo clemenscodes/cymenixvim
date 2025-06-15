@@ -1,4 +1,9 @@
 {pkgs, ...}: {config, ...}: {
+  plugins = {
+    dap-python = {
+      enable = true;
+    };
+  };
   extraConfigLuaPost = ''
     require("conform").setup({
         formatters_by_ft = {
@@ -15,6 +20,7 @@
     require("lint").linters_by_ft = {
       python = { "ruff" },
     }
+    require("dap-python").setup("uv")
     local lsp = require('lspconfig')
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true

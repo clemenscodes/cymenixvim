@@ -49,6 +49,7 @@ in {
         ninja
         cmake
         make
+        python
       ];
       settings = {
         highlight = {

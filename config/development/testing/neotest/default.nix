@@ -29,6 +29,7 @@ in {
           end,
         }),
         require("neotest-gtest").setup({})
+        require("neotest-python").setup({})
       }
     }
   '';
@@ -36,6 +37,7 @@ in {
     pkgs.vimPlugins.neotest
     pkgs.vimPlugins.neotest-jest
     pkgs.vimPlugins.neotest-gtest
+    pkgs.vimPlugins.neotest-python
     neotest-java
   ];
   keymaps = [
