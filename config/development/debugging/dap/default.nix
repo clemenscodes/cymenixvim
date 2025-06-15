@@ -242,7 +242,7 @@
       };
     };
   };
-  extraConfigLuaPost =
+  extraConfigLuaPre =
     /*
     lua
     */

@@ -2,8 +2,8 @@
   plugins = {
     tiny-inline-diagnostic = {
       enable = true;
-      lazyLoad = {
-        settings = lib.mkIf config.plugins.lz-n.enable {
+      lazyLoad = lib.mkIf config.plugins.lz-n.enable  {
+        settings = {
           multilines = {
             enabled = true;
           };

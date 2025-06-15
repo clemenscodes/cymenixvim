@@ -1,5 +1,8 @@
-{pkgs, ...}: {
+{pkgs, ...}: {config, ...}: {
   plugins = {
+    lazy = {
+      enable = !config.plugins.lz-n.enable;
+    };
     snacks = {
       enable = true;
       settings = {

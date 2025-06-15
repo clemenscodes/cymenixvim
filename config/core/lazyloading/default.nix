@@ -11,5 +11,5 @@
     ''
   );
 
-  plugins.lz-n.enable = true;
+  plugins.lz-n.enable = false;
 }
