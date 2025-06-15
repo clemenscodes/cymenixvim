@@ -13,6 +13,7 @@
     imports = [
       (import ../config/core {inherit inputs pkgs lib;})
       (import ../config/development {inherit inputs pkgs lib;})
+      (import ../config/development/lsp/servers/c {inherit inputs pkgs lib;})
       (import ../config/ui/theme {inherit inputs pkgs lib;})
       (import ../config/ui/icons {inherit inputs pkgs lib;})
       (import ../config/ui/explorer {inherit inputs pkgs lib;})

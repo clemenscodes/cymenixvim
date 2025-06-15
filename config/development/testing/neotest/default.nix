@@ -28,12 +28,14 @@ in {
             return vim.fn.getcwd()
           end,
         }),
+        require("neotest-gtest").setup({})
       }
     }
   '';
   extraPlugins = [
     pkgs.vimPlugins.neotest
     pkgs.vimPlugins.neotest-jest
+    pkgs.vimPlugins.neotest-gtest
     neotest-java
   ];
   keymaps = [

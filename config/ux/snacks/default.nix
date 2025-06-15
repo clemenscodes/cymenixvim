@@ -35,7 +35,7 @@
           enabled = true;
         };
         explorer = {
-          enabled = true;
+          enabled = false;
           replace_netrw = true;
         };
         bufdelete = {
@@ -195,7 +195,7 @@
           };
         };
         dashboard = {
-          enable = true;
+          enable = false;
           sections = [
             {
               header = ''
@@ -294,7 +294,7 @@
         spec = [
           {
             __unkeyed-1 = "<leader>f";
-            group = "+Snacks";
+            group = "+Find";
           }
           {
             __unkeyed-1 = "<leader>:";
@@ -358,7 +358,7 @@
           }
           {
             __unkeyed-1 = "<leader>fg";
-            desc = "Live grep";
+            desc = "Live grep project files";
           }
           {
             __unkeyed-1 = "<leader>fG";
@@ -574,7 +574,7 @@
       key = "<leader>fu";
       action = "<cmd>lua Snacks.picker.undo()<cr>";
       options = {
-        desc = "Undo History";
+        desc = "Find undo history";
       };
     }
     {

@@ -36,9 +36,11 @@
         json = ["jsonlint"];
         nix = ["nix"];
         yaml = ["yamllint"];
+        c = [ "clangtidy" ];
+        cpp = [ "clangtidy" ];
+        cmake = [ "cmakelint" ];
       };
       linters = {
-        cmakelint.cmd = lib.getExe' pkgs.cmake-format "cmake-lint";
         htmlhint.cmd = lib.getExe pkgs.htmlhint;
         jsonlint.cmd = lib.getExe pkgs.nodePackages.jsonlint;
         luacheck.cmd = lib.getExe pkgs.luaPackages.luacheck;

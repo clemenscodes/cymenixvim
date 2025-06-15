@@ -57,8 +57,23 @@
           };
         };
       };
-      configurations = {
+      configurations = let
+        configForCpp = {
+          name = "C/C++";
+          type = "codelldb";
+          request = "launch";
+          program.__raw = ''
+            function()
+              return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/build/', 'file')
+            end
+          '';
+          cwd = "\${workspaceFolder}";
+          stopOnEntry = false;
+        };
+      in {
         rust = [];
+        c = [configForCpp];
+        cpp = [configForCpp];
         typescript = [
           {
             type = "pwa-node";

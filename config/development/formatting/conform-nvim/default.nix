@@ -39,9 +39,14 @@
           css = ["prettierd"];
           html = ["prettierd"];
           json = ["prettierd"];
-          yaml = ["prettierd"];
+          xml = ["xmlformat" "xmllint"];
+          toml = ["taplo"];
           graphql = ["prettierd"];
           markdown = ["prettierd"];
+          c = ["clang_format"];
+          cmake = ["cmake-format"];
+          yaml = ["yamlfmt"];
+          cpp = ["clang_format"];
         };
       };
     };
