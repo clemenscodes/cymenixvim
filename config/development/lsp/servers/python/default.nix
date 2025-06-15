@@ -8,8 +8,5 @@
         };
       };
     };
-    dap-python = {
-      enable = true;
-    };
   };
 }

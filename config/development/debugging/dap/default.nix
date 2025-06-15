@@ -44,6 +44,12 @@
     dap = {
       enable = true;
       adapters = {
+        executables = {
+          python = {
+            command = "${lib.getExe (pkgs.python3.withPackages (ps: [ ps.debugpy ]))}";
+            args = ["-m" "debugpy.adapter"];
+          };
+        };
         servers = {
           codelldb = let
             port = 13000;
@@ -72,6 +78,16 @@
         };
       in {
         rust = [];
+        python = [
+          {
+            type = "python";
+            request = "launch";
+            name = "Python";
+            program = "\${file}";
+            pythonPath = "python";
+            cwd.__raw = "vim.fn.getcwd()";
+          }
+        ];
         c = [configForCpp];
         cpp = [configForCpp];
         typescript = [

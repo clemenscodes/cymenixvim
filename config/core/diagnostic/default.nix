@@ -24,6 +24,7 @@
       update_in_insert = true;
       severity_sort = true;
       virtual_text = false;
+      virtual_lines = true;
 
       float = {
         border = "rounded";
