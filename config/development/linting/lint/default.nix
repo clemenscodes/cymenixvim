@@ -38,6 +38,7 @@
         yaml = ["yamllint"];
         c = [ "clangtidy" ];
         cpp = [ "clangtidy" ];
+        python = ["ruff"];
         cmake = [ "cmakelint" ];
       };
       linters = {

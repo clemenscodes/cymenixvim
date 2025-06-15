@@ -43,6 +43,11 @@
           toml = ["taplo"];
           graphql = ["prettierd"];
           markdown = ["prettierd"];
+          python = [
+            "ruff_fix"
+            "ruff_format"
+            "ruff_organize_imports"
+          ];
           c = ["clang_format"];
           cmake = ["cmake-format"];
           yaml = ["yamlfmt"];
