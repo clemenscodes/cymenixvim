@@ -1,4 +1,5 @@
 {pkgs, ...}: {config, ...}: {
+  extraPackages = [pkgs.pyright];
   plugins = {
     lsp = {
       servers = {
