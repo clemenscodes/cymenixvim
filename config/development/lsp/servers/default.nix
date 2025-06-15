@@ -20,5 +20,6 @@
     (import ./nix {inherit inputs pkgs lib;})
     (import ./nx {inherit inputs pkgs lib;})
     (import ./lua {inherit inputs pkgs lib;})
+    (import ./python {inherit inputs pkgs lib;})
   ];
 }

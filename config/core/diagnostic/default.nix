@@ -1,10 +1,29 @@
 {...}: {
+  keymaps = [
+    {
+      action = ":lua vim.diagnostic.goto_next({ float = false })";
+      key = "<leader>nn";
+      mode = ["n" "o" "x"];
+      options = {
+        silent = true;
+        desc = "Move to next diagnostic";
+      };
+    }
+    {
+      action = ":lua vim.diagnostic.goto_prev({ float = false })";
+      key = "<leader>nb";
+      mode = ["n" "o" "x"];
+      options = {
+        silent = true;
+        desc = "Move to next diagnostic";
+      };
+    }
+  ];
   diagnostic = {
     settings = {
       update_in_insert = true;
       severity_sort = true;
       virtual_text = false;
-      virtual_lines = true;
 
       float = {
         border = "rounded";

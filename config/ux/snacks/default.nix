@@ -1,8 +1,5 @@
 {pkgs, ...}: {
   plugins = {
-    lazy = {
-      enable = true;
-    };
     snacks = {
       enable = true;
       settings = {
