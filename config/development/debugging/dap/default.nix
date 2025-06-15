@@ -46,8 +46,7 @@
       adapters = {
         executables = {
           python = {
-            command = "python";
-            args = ["-m" "debugpy.adapter"];
+            command = "${pkgs.python313Packages.debugpy}/bin/debugpy-adapter";
           };
         };
         servers = {
