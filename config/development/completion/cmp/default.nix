@@ -1,5 +1,5 @@
 {...}: {
-  extraConfigLuaPost = ''
+  extraConfigLuaPre = ''
     do
       require('cmp-npm').setup({
         ignore = {},

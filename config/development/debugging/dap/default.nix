@@ -46,7 +46,7 @@
       adapters = {
         executables = {
           python = {
-            command = "${lib.getExe (pkgs.python3.withPackages (ps: [ ps.debugpy ]))}";
+            command = "python";
             args = ["-m" "debugpy.adapter"];
           };
         };
