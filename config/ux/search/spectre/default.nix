@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {config, ...}: {
   extraPlugins = [pkgs.vimPlugins.nvim-spectre];
   extraConfigLuaPost = ''
     require('spectre').setup({

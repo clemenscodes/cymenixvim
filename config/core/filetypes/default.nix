@@ -1,9 +1,13 @@
 {...}: {
   filetype = {
+    extension = {
+      ignore = "gitignore";
+      rasi = "scss";
+      prototools = "toml";
+    };
     pattern = {
-      ".*/hyprland%.conf" = "hyprlang";
-      ".prototools" = "toml";
-      ".rasi" = "rasi";
+      ".*/hypr/.*%.conf" = "hyprlang";
+      "flake.lock" = "json";
     };
   };
 }

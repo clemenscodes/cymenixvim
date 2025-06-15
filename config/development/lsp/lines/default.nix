@@ -6,6 +6,6 @@
 }: {
   imports = [
     (import ./lsp_lines {inherit inputs pkgs lib;})
-    (import ./tiny-inline-diagnostic {inherit inputs pkgs lib;})
+    (import ./tiny-inline-diagnostics {inherit inputs pkgs lib;})
   ];
 }
