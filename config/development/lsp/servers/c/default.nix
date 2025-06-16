@@ -34,12 +34,10 @@
       ];
     };
   };
-
+  lsp.servers.asm_lsp = {
+    enable = true;
+  };
   plugins = {
-    lsp.servers.asm_lsp = {
-      enable = true;
-      packageFallback = true;
-    };
     clangd-extensions = {
       enable = true;
       enableOffsetEncodingWorkaround = true;
