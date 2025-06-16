@@ -43,6 +43,8 @@ in {
         rust
         norg
         norg-meta
+        asm
+        nasm
         c
         cpp
         meson
