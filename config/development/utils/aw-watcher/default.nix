@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   plugins = {
     aw-watcher = {
       enable = true;
