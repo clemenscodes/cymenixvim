@@ -1,7 +1,19 @@
 {...}: {
+  plugins = {
+    which-key = {
+      settings = {
+        spec = [
+          {
+            __unkeyed-1 = "<leader>n";
+            group = "+Diagnostics";
+          }
+        ];
+      };
+    };
+  };
   keymaps = [
     {
-      action = ":lua vim.diagnostic.goto_next({ float = false })";
+      action = ":lua vim.diagnostic.goto_next({ float = false })<CR>";
       key = "<leader>nn";
       mode = ["n" "o" "x"];
       options = {
@@ -10,7 +22,7 @@
       };
     }
     {
-      action = ":lua vim.diagnostic.goto_prev({ float = false })";
+      action = ":lua vim.diagnostic.goto_prev({ float = false })<CR>";
       key = "<leader>nb";
       mode = ["n" "o" "x"];
       options = {
