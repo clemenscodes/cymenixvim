@@ -43,13 +43,22 @@ in {
         rust
         norg
         norg-meta
+        asm
+        nasm
+        objc
+        objdump
+        disassembly
         c
         cpp
         meson
+        llvm
+        linkerscript
+        lalrpop
         ninja
         cmake
         make
         python
+        hyprlang
       ];
       settings = {
         highlight = {

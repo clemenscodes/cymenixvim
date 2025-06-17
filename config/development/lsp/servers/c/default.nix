@@ -34,6 +34,9 @@
       ];
     };
   };
+  lsp.servers.asm_lsp = {
+    enable = true;
+  };
   plugins = {
     clangd-extensions = {
       enable = true;
