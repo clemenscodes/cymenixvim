@@ -21,23 +21,31 @@ in {
         html
         css
         scss
+        rasi
         javascript
         typescript
+        tsx
         angular
         editorconfig
         comment
         bash
+        jq
         json
+        json5
+        jsonc
+        jsdoc
         markdown
         markdown_inline
         nix
         xml
+        csv
+        tsv
         typst
         latex
         yaml
+        toml
         dockerfile
         regex
-        svelte
         tsx
         vue
         rust
@@ -48,6 +56,7 @@ in {
         objc
         objdump
         disassembly
+        strace
         c
         cpp
         meson
@@ -59,6 +68,13 @@ in {
         make
         python
         hyprlang
+        sql
+        prisma
+        udev
+        lua
+        luadoc
+        java
+        javadoc
       ];
       settings = {
         highlight = {
