@@ -7,6 +7,7 @@
   imports = [
     (import ./compiler {inherit inputs pkgs lib;})
     (import ./completion {inherit inputs pkgs lib;})
+    (import ./database {inherit inputs pkgs lib;})
     (import ./debugging {inherit inputs pkgs lib;})
     (import ./formatting {inherit inputs pkgs lib;})
     (import ./indentation {inherit inputs pkgs lib;})

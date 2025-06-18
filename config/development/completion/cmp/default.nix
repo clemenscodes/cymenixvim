@@ -6,6 +6,12 @@
         only_semantic_versions = true,
       })
       local cmp = require('cmp')
+      cmp.setup.filetype({ 'sql', 'mysql', 'postgresql' }, {
+        ["sources"] = {
+          { ["name"] = "vim-dadbod-completion" },
+          { ["name"] = "buffer" },
+        }
+      })
       cmp.setup({
         ["completion"] = {
           ["autocomplete"] = {
@@ -57,7 +63,6 @@
           }),
         },
         ["sources"] = {
-          { ["name"] = "npm", priority = 2000 },
           {
             ["name"] = "nvim_lsp",
             ["entryFilter"] = function(entry, ctx)
@@ -68,6 +73,8 @@
           { ["name"] = "path" },
           { ["name"] = "crates" },
           { ["name"] = "lua" },
+          { ["name"] = "vim-dadbod-completion" },
+          { ["name"] = "npm" },
         }
       })
     end
