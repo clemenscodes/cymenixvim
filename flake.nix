@@ -27,6 +27,9 @@
     nx-nvim = {
       url = "github:clemenscodes/nx.nvim";
     };
+    rustowl = {
+      url = "github:nix-community/rustowl";
+    };
     modes-nvim = {
       url = "github:mvllow/modes.nvim/v0.3.0";
       flake = false;
@@ -64,6 +67,7 @@
             doCheck = false;
           };
         })
+        inputs.rustowl.overlays.default
       ];
     };
     inherit (pkgs) lib;
