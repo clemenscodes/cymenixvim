@@ -9,17 +9,5 @@
     vim-dadbod-ui = {
       enable = true;
     };
-    which-key = {
-      settings = {
-        spec = [
-          {
-            __unkeyed-1 = "<leader>D";
-            group = "+Database";
-          }
-        ];
-      };
-    };
   };
-  keymaps = [
-  ];
 }
