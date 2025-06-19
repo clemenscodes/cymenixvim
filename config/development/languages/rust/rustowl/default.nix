@@ -1,6 +1,8 @@
-{pkgs, ...}: {
-  extraPackages = [pkgs.rustowl];
-  extraPlugins = [pkgs.rustowl-nvim];
+{inputs, ...}: let
+  system = "x86_64-linux";
+in {
+  extraPackages = [inputs.rustowl.packages.${system}.rustowl];
+  extraPlugins = [inputs.rustowl.packages.${system}.rustowl-nvim];
   extraConfigLuaPost = ''
     require('rustowl').setup({
       auto_attach = true, -- Auto attach the RustOwl LSP client when opening a Rust file

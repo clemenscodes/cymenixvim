@@ -67,7 +67,6 @@
             doCheck = false;
           };
         })
-        inputs.rustowl.overlays.default
       ];
     };
     inherit (pkgs) lib;
