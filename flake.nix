@@ -28,7 +28,7 @@
       url = "github:clemenscodes/nx.nvim";
     };
     rustowl = {
-      url = "github:nix-community/rustowl";
+      url = "github:nix-community/rustowl-flake";
     };
     modes-nvim = {
       url = "github:mvllow/modes.nvim/v0.3.0";
