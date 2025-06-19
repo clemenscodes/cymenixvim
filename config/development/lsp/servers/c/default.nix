@@ -41,6 +41,13 @@
     clangd-extensions = {
       enable = true;
       enableOffsetEncodingWorkaround = true;
+      lazyLoad.settings.cmd = [
+        "ClangdAST"
+        "ClangdTypeHierarchy"
+        "ClangdSymbolInfo"
+        "ClangdMemoryUsage"
+        "ClangdSwitchSourceHeader"
+      ];
       settings = {
         inlay_hints = {
           inline = false;

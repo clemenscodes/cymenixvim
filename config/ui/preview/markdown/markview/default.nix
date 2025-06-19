@@ -16,6 +16,8 @@ in {
   plugins = {
     markview = {
       enable = true;
+
+      lazyLoad.settings.ft = filetypes;
       settings = {
         preview = {
           inherit filetypes;

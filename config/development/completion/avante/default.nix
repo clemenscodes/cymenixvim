@@ -5,6 +5,7 @@
   plugins = {
     avante = {
       enable = true; # Enable the avante.nvim plugin
+      lazyLoad.settings.event = ["DeferredUIEnter"];
       package = pkgs.vimPlugins.avante-nvim.overrideAttrs (oldAttrs: {
         # Fetch the plugin source from GitHub
         src = pkgs.fetchFromGitHub {

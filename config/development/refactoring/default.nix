@@ -1,8 +1,29 @@
-{...}: {
+{lib, ...}: {config, ...}: {
   plugins = {
     refactoring = {
       enable = true;
       enableTelescope = true;
+      lazyLoad = {
+        settings = {
+          before = lib.mkIf (config.plugins.telescope.enable && config.plugins.lz-n.enable) {
+            __raw = ''
+              require('lz.n').trigger_load('telescope')
+            '';
+          };
+          cmd = "Refactor";
+          keys = lib.mkIf config.plugins.telescope.enable [
+            {
+              __unkeyed-1 = "<leader>fR";
+              __unkeyed-2.__raw = ''
+                function()
+                  require('telescope').extensions.refactoring.refactors()
+                end
+              '';
+              desc = "Refactoring";
+            }
+          ];
+        };
+      };
     };
     which-key = {
       settings = {

@@ -13,6 +13,14 @@
   plugins = {
     toggleterm = {
       enable = true;
+      lazyLoad = {
+        settings = {
+          cmd = "ToggleTerm";
+          keys = [
+            "<leader>tt"
+          ];
+        };
+      };
       settings = {
         direction = "float";
         closeOnExit = false;

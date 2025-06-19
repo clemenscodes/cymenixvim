@@ -2,6 +2,7 @@
   plugins = {
     bufferline = {
       enable = true;
+      lazyLoad.settings.event = "DeferredUIEnter";
       settings = {
         options = {
           themable = true;

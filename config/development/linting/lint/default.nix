@@ -23,6 +23,7 @@
   plugins = {
     lint = {
       enable = true;
+      lazyLoad.settings.event = "DeferredUIEnter";
       lintersByFt = {
         sh = ["shellcheck"];
         bash = ["shellcheck"];
@@ -36,10 +37,10 @@
         json = ["jsonlint"];
         nix = ["nix"];
         yaml = ["yamllint"];
-        c = [ "clangtidy" ];
-        cpp = [ "clangtidy" ];
+        c = ["clangtidy"];
+        cpp = ["clangtidy"];
         python = ["ruff"];
-        cmake = [ "cmakelint" ];
+        cmake = ["cmakelint"];
       };
       linters = {
         htmlhint.cmd = lib.getExe pkgs.htmlhint;

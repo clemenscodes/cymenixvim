@@ -1,12 +1,42 @@
-{...}: {
+{lib, ...}: {config, ...}: {
   plugins = {
     compiler = {
       enable = true;
+      lazyLoad = {
+        settings = {
+          before.__raw = lib.mkIf config.plugins.lz-n.enable ''
+            function()
+              require('lz.n').trigger_load('overseer.nvim')
+            end
+          '';
+          cmd = [
+            "CompilerOpen"
+            "CompilerRedo"
+            "CompilerStop"
+            "CompilerToggleResults"
+          ];
+        };
+      };
       settings = {};
     };
     overseer = {
       enable = true;
       settings = {
+        lazyLoad.settings.cmd = [
+          "OverseerOpen"
+          "OverseerClose"
+          "OverseerToggle"
+          "OverseerSaveBundle"
+          "OverseerLoadBundle"
+          "OverseerDeleteBundle"
+          "OverseerRunCmd"
+          "OverseerRun"
+          "OverseerInfo"
+          "OverseerBuild"
+          "OverseerQuickAction"
+          "OverseerTaskAction"
+          "OverseerClearCache"
+        ];
         task_list = {
           bindings = {
             "<C-e>" = "Edit";

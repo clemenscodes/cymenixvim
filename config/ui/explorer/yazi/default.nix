@@ -2,6 +2,13 @@
   plugins = {
     yazi = {
       enable = true;
+      lazyLoad = {
+        settings = {
+          cmd = [
+            "Yazi"
+          ];
+        };
+      };
     };
     which-key = {
       settings = {

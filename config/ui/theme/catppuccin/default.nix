@@ -4,6 +4,7 @@
       flavour = "macchiato";
     in {
       enable = true;
+      lazyLoad.enable = config.plugins.lz-n.enable;
       settings = {
         inherit flavour;
         background = {
@@ -26,6 +27,9 @@
           telescope = {
             enabled = true;
           };
+          neotest = true;
+          markdown = true;
+          overseer = true;
           cmp = true;
           rainbow_delimiters = true;
           native_lsp = {
@@ -33,7 +37,20 @@
             inlay_hints = {
               background = true;
             };
+            virtual_text = {
+              errors = ["italic"];
+              hints = ["italic"];
+              warnings = ["italic"];
+              information = ["italic"];
+            };
+            underlines = {
+              errors = ["underline"];
+              hints = ["underline"];
+              warnings = ["underline"];
+              information = ["underline"];
+            };
           };
+          navic = true;
           nvimtree = true;
           dap = {
             enabled = true;

@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {config, ...}: {
   extraPackages = [
     pkgs.ripgrep
     pkgs.fd
@@ -11,6 +15,13 @@
   plugins = {
     telescope = {
       enable = true;
+
+      lazyLoad.settings.cmd =
+        ["Telescope"]
+        ++ lib.optionals config.plugins.noice.enable [
+          "Noice telescope"
+        ];
+
       extensions = {
         fzf-native = {
           enable = true;

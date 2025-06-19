@@ -2,6 +2,9 @@
   plugins = {
     devdocs = {
       enable = true;
+      lazyLoad.settings.cmd = [
+        "DevDocs"
+      ];
     };
     which-key = {
       settings = {
