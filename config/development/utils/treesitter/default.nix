@@ -75,6 +75,7 @@ in {
         luadoc
         java
         javadoc
+        glsl
       ];
       settings = {
         highlight = {
