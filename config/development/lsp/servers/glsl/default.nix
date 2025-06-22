@@ -2,7 +2,7 @@
   plugins = {
     lsp = {
       servers = {
-        glsl_analyzer = {
+        glslls= {
           enable = true;
         };
       };
