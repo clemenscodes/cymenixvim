@@ -49,6 +49,7 @@
             "ruff_organize_imports"
           ];
           c = ["clang_format"];
+          glsl = ["clang_format"];
           cmake = ["cmake-format"];
           yaml = ["yamlfmt"];
           cpp = ["clang_format"];
