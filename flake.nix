@@ -51,6 +51,31 @@
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default
         (final: prev: {
+          luajitPackages = prev.luajitPackages.overrideScope (self: super: {
+            neotest = super.neotest.overrideAttrs (_: {
+              doCheck = false;
+            });
+          });
+          vimPlugins =
+            prev.vimPlugins
+            // {
+              neotest = prev.vimUtils.buildVimPlugin {
+                inherit (prev.vimPlugins.neotest) version pname;
+                src = final.luajitPackages.neotest;
+              };
+              neotest-python = prev.vimUtils.buildVimPlugin {
+                inherit (prev.vimPlugins.neotest-python) version pname src;
+                doCheck = false;
+              };
+              neotest-jest = prev.vimUtils.buildVimPlugin {
+                inherit (prev.vimPlugins.neotest-jest) version pname src;
+                doCheck = false;
+              };
+              neotest-gtest = prev.vimUtils.buildVimPlugin {
+                inherit (prev.vimPlugins.neotest-gtest) version pname src;
+                doCheck = false;
+              };
+            };
           telescope-manix = inputs.telescope-manix.packages.${system}.telescope-manix.overrideAttrs (oldAttrs: {
             doCheck = false;
           });
@@ -81,6 +106,8 @@
       ${system} = {
         inherit cymenixvim development cardano minimal;
         inherit (pkgs) telescope-manix modes-nvim;
+        inherit (pkgs.luajitPackages) neotest;
+        inherit pkgs;
         default = self.packages.${system}.minimal;
       };
     };
