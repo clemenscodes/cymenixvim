@@ -8,4 +8,5 @@ pkgs.vimUtils.buildVimPlugin {
     rev = "01d42c2d27a9f6396b24063ba3714ec9f71c7c80";
     hash = "sha256-W0lmSnmYhQRqQ3LVn/LWhWTpoeocGZNmvjsR6OsW21w=";
   };
+  buildInputs = [pkgs.luajitPackages.neotest];
 }
