@@ -1,10 +1,10 @@
 {
-  inputs,
-  pkgs,
-  lib,
+  # inputs,
+  # pkgs,
+  # lib,
   ...
 }: {
   imports = [
-    (import ./auto-session {inherit inputs pkgs lib;})
+    # (import ./auto-session {inherit inputs pkgs lib;})
   ];
 }

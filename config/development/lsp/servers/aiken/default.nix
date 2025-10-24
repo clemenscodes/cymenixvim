@@ -18,7 +18,7 @@ in {
         lua
         */
         ''
-          require('lspconfig')["aiken"].setup({
+          vim.lsp.config.aiken.setup({
             cmd = { "aiken", "lsp" },
             file_types = { "aiken" },
           })

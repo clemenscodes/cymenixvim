@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   extraPackages = [pkgs.eslint_d];
   extraConfigLuaPost = ''
-    local lsp = require('lspconfig')
+    local lsp = vim.lsp.config
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
     lsp.eslint.setup {
@@ -10,7 +10,7 @@
         if fname:match("/node_modules/") then
           return nil
         end
-        return require('lspconfig.util').root_pattern(".git", "nx.json")(fname)
+        return lsp.util.root_pattern(".git", "nx.json")(fname)
       end,
       on_attach = function(client, bufnr)
         local filepath = vim.api.nvim_buf_get_name(bufnr)

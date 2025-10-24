@@ -48,45 +48,22 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
+      config = {
+        allowBroken = true;
+      };
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default
-        
         (final: prev: {
-          luajitPackages = prev.luajitPackages.overrideScope (self: super: {
-            neotest = super.neotest.overrideAttrs (_: {
-              doCheck = false;
-            });
-          });
-          vimPlugins =
-            prev.vimPlugins
-            // {
-              neotest = prev.vimUtils.buildVimPlugin {
-                inherit (prev.vimPlugins.neotest) version pname;
-                src = final.luajitPackages.neotest;
-                buildInputs = [final.luajitPackages.neotest];
-              };
-              neotest-python = prev.vimUtils.buildVimPlugin {
-                inherit (prev.vimPlugins.neotest-python) version pname src;
+          lua = prev.lua.override {
+            packageOverrides = final': prev': {
+              neotest = prev'.neotest.overrideAttrs (oa: {
                 doCheck = false;
-                buildInputs = [
-                  final.luajitPackages.neotest
-                ];
-              };
-              neotest-jest = prev.vimUtils.buildVimPlugin {
-                inherit (prev.vimPlugins.neotest-jest) version pname src;
-                doCheck = false;
-                buildInputs = [
-                  final.luajitPackages.neotest
-                ];
-              };
-              neotest-gtest = prev.vimUtils.buildVimPlugin {
-                inherit (prev.vimPlugins.neotest-gtest) version pname src;
-                doCheck = false;
-                buildInputs = [
-                  final.luajitPackages.neotest
-                ];
-              };
+              });
             };
+          };
+          neovim-unwrapped = prev.neovim-unwrapped.overrideAttrs {
+            lua = final.lua;
+          };
           telescope-manix = inputs.telescope-manix.packages.${system}.telescope-manix.overrideAttrs (oldAttrs: {
             doCheck = false;
           });

@@ -5,7 +5,7 @@
     version = "1.10.1";
     sha256 = "sha256-tC6qU9E1dtF9tfuLKAcipq6eNtr5X0JivG6W1Msgcl8=";
   };
-  neotest-java = import ./neotest-java {inherit pkgs;};
+  # neotest-java = import ./neotest-java {inherit pkgs;};
 in {
   extraConfigLuaPost = ''
     require('neotest').setup {
@@ -18,9 +18,9 @@ in {
       },
       adapters = {
         require('rustaceanvim.neotest'),
-        require('neotest-java')({
-          junit_jar = "${junit_jar}/share/java/junit-platform-console-standalone-1.10.1.jar"
-        }),
+        -- require('neotest-java')({
+        --   junit_jar = "${junit_jar}/share/java/junit-platform-console-standalone-1.10.1.jar"
+        -- }),
         require('neotest-jest')({
           jestCommand = "jest --json --colors --silent --detectOpenHandles",
           jestConfigFile = "jest.config.ts",
@@ -59,7 +59,7 @@ in {
     pkgs.vimPlugins.neotest-jest
     pkgs.vimPlugins.neotest-gtest
     pkgs.vimPlugins.neotest-python
-    neotest-java
+    # neotest-java
   ];
   keymaps = [
     {

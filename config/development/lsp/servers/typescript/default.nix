@@ -2,7 +2,7 @@
   extraPlugins = [pkgs.vimPlugins.nvim-vtsls];
   extraPackages = [pkgs.vtsls];
   extraConfigLuaPost = ''
-    require('lspconfig').vtsls.setup({
+    vim.lsp.config.vtsls.setup({
       root_dir = vim.fn.getcwd(),
       settings = {
         typescript = {

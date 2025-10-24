@@ -3,7 +3,7 @@
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
     root_dir = vim.fn.getcwd()
-    require'lspconfig'.cssls.setup {
+    vim.lsp.config.cssls.setup {
       capabilities = capabilities,
       root_dir = root_dir,
       settings = {
