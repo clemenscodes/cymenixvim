@@ -99,7 +99,7 @@ in {
       };
     };
     treesitter-textobjects = {
-      enable = true;
+      enable = false;
       lspInterop = {
         enable = true;
         border = "rounded";
@@ -145,12 +145,12 @@ in {
           };
           ",so" = {
             query = "@local.scope";
-            queryGroup = "locals";
+            query_group = "locals";
             desc = "Next local scope";
           };
           ",zo" = {
             query = "@fold";
-            queryGroup = "folds";
+            query_group = "folds";
             desc = "Next fold";
           };
           ",io" = {
@@ -277,12 +277,12 @@ in {
           };
           ",sO" = {
             query = "@local.scope";
-            queryGroup = "locals";
+            query_group = "locals";
             desc = "End of next local scope";
           };
           ",zO" = {
             query = "@fold";
-            queryGroup = "folds";
+            query_group = "folds";
             desc = "End of next fold";
           };
           ",iO" = {
@@ -409,12 +409,12 @@ in {
           };
           "-so" = {
             query = "@local.scope";
-            queryGroup = "locals";
+            query_group = "locals";
             desc = "Previous local scope";
           };
           "-zo" = {
             query = "@fold";
-            queryGroup = "folds";
+            query_group = "folds";
             desc = "Previous fold";
           };
           "-io" = {
@@ -541,12 +541,12 @@ in {
           };
           "-sO" = {
             query = "@local.scope";
-            queryGroup = "locals";
+            query_group = "locals";
             desc = "End of previous local scope";
           };
           "-zO" = {
             query = "@fold";
-            queryGroup = "folds";
+            query_group = "folds";
             desc = "End of previous fold";
           };
           "-iO" = {
