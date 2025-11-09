@@ -84,7 +84,6 @@
         inherit default minimal cardano;
         inherit (pkgs) telescope-manix modes-nvim;
         inherit (pkgs.luajitPackages) neotest;
-        inherit pkgs;
       };
     };
     formatter = {
