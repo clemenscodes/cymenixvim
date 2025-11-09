@@ -1,10 +1,8 @@
 {...}: {
-  plugins = {
-    lsp = {
-      servers = {
-        glslls= {
-          enable = true;
-        };
+  lsp = {
+    servers = {
+      glslls = {
+        enable = true;
       };
     };
   };

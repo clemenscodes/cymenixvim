@@ -9,9 +9,6 @@
     (import ./servers {inherit inputs pkgs lib;})
   ];
   plugins = {
-    lsp = {
-      enable = true;
-    };
     lspkind = {
       enable = true;
       settings = {

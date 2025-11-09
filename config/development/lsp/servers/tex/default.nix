@@ -1,10 +1,8 @@
 {...}: {
-  plugins = {
-    lsp = {
-      servers = {
-        texlab = {
-          enable = true;
-        };
+  lsp = {
+    servers = {
+      texlab = {
+        enable = true;
       };
     };
   };

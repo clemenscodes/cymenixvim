@@ -1,11 +1,9 @@
 {...}: {
-  plugins = {
-    lsp = {
-      servers = {
-        cmake = {
-          enable = true;
-          extraOptions = {};
-        };
+  lsp = {
+    servers = {
+      cmake = {
+        enable = true;
+        config = {};
       };
     };
   };

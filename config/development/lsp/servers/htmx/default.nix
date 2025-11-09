@@ -1,9 +1,9 @@
 {...}: {
-  plugins = {
-    lsp = {
-      servers = {
-        htmx = {
-          enable = true;
+  lsp = {
+    servers = {
+      htmx = {
+        enable = true;
+        config = {
           filetypes = ["html"];
         };
       };

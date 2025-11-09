@@ -6,11 +6,6 @@
     snacks = {
       enable = true;
       settings = {
-        animate = {
-          enabled = true;
-          duration = 10;
-          fps = 180;
-        };
         image = {
           enabled = true;
           formats = [
@@ -30,9 +25,6 @@
             "webm"
             "pdf"
           ];
-        };
-        scroll = {
-          enabled = true;
         };
         quickfile = {
           enabled = true;
@@ -838,43 +830,4 @@
     pkgs.mermaid-cli
     pkgs.sqlite
   ];
-  extraConfigLuaPost = ''
-    local scroll_group = vim.api.nvim_create_augroup("SmartScrollSnacks", { clear = true })
-
-    local function smart_scroll(direction)
-      local cur, top, bot = vim.fn.line("."), vim.fn.line("w0"), vim.fn.line("w$")
-      local scrolloff = vim.o.scrolloff
-      local near_top = (cur == top + scrolloff)
-      local near_bot = (cur == bot - scrolloff)
-
-      if near_top or near_bot then
-        if Snacks.scroll.enabled then
-          Snacks.scroll.disable()
-          vim.api.nvim_create_autocmd("CursorMoved", {
-            group = scroll_group,
-            callback = Snacks.scroll.enable,
-            once = true,
-          })
-        end
-      else
-        if not Snacks.scroll.enabled then
-          Snacks.scroll.enable()
-        end
-      end
-
-      if vim.v.count == 0 then
-        return direction == "up" and "gk" or "gj"
-      else
-        return direction == "up" and "k" or "j"
-      end
-    end
-
-    for _, mode in ipairs({ "n", "o", "x" }) do
-      for _, key in ipairs({ { "k", "up" }, { "j", "down" } }) do
-        vim.keymap.set(mode, key[1], function()
-          return smart_scroll(key[2])
-        end, { expr = true, silent = true })
-      end
-    end
-  '';
 }

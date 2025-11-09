@@ -3,12 +3,12 @@
   lib,
   ...
 }: {
-  plugins = {
-    lsp = {
-      servers = {
-        tailwindcss = {
-          enable = true;
-          package = null;
+  lsp = {
+    servers = {
+      tailwindcss = {
+        enable = true;
+        package = null;
+        config = {
           autostart = true;
           cmd = ["tailwindcss-language-server" "--stdio"];
           filetypes = lib.mkForce ["html" "htmlangular" "css" "tsx" "typescript"];

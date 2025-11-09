@@ -1,9 +1,9 @@
 {...}: {
-  plugins = {
-    lsp = {
-      servers = {
-        emmet_ls = {
-          enable = true;
+  lsp = {
+    servers = {
+      emmet_ls = {
+        enable = true;
+        config = {
           filetypes = [
             "typescript"
             "html"

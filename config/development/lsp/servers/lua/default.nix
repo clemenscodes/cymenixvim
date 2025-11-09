@@ -9,11 +9,11 @@
         enabled = true;
       };
     };
-    lsp = {
-      servers = {
-        lua_ls = {
-          enable = true;
-        };
+  };
+  lsp = {
+    servers = {
+      lua_ls = {
+        enable = true;
       };
     };
   };

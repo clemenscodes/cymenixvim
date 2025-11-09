@@ -1,10 +1,8 @@
 {...}: {
-  plugins = {
-    lsp = {
-      servers = {
-        marksman = {
-          enable = true;
-        };
+  lsp = {
+    servers = {
+      marksman = {
+        enable = true;
       };
     };
   };

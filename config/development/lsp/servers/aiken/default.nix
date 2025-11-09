@@ -9,20 +9,12 @@
     };
   };
 in {
-  extraPackages = [pkgs.aiken];
   extraPlugins = [aiken-nvim];
-  plugins = {
-    lsp = {
-      postConfig =
-        /*
-        lua
-        */
-        ''
-          vim.lsp.config.aiken.setup({
-            cmd = { "aiken", "lsp" },
-            file_types = { "aiken" },
-          })
-        '';
+  lsp = {
+    servers = {
+      aiken = {
+        activate = true;
+      };
     };
   };
 }
