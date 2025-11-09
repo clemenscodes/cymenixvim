@@ -1,10 +1,10 @@
 {
-  inputs,
-  pkgs,
-  lib,
+  # inputs,
+  # pkgs,
+  # lib,
   ...
 }: {
   imports = [
-    (import ./cinnamon {inherit inputs pkgs lib;})
+    # (import ./cinnamon {inherit inputs pkgs lib;})
   ];
 }

@@ -26,6 +26,12 @@
             "pdf"
           ];
         };
+        animate = {
+          enabled = false;
+        };
+        scroll = {
+          enabled = false;
+        };
         quickfile = {
           enabled = true;
         };
