@@ -4,7 +4,7 @@
       enable = !config.plugins.lz-n.enable;
     };
     snacks = {
-      enable = true;
+      enable = false;
       settings = {
         image = {
           enabled = true;
