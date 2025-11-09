@@ -1,88 +1,60 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
-  lsp = {
-    servers = {
-      tailwindcss = {
-        enable = true;
-        package = null;
-        config = {
-          autostart = true;
-          cmd = ["tailwindcss-language-server" "--stdio"];
-          filetypes = lib.mkForce ["html" "htmlangular" "css" "tsx" "typescript"];
-          rootMarkers = [".git" "nx.json"];
+{lib, ...}: {
+  plugins = {
+    tailwind-tools = {
+      enable = true;
+      settings = {
+        cmp = {
+          highlight = "foreground";
+        };
+        conceal = {
+          enabled = false;
+          min_length = null;
+          symbol = "󱏿 ";
+          highlight = {
+            fg = "#38BDF8";
+          };
+        };
+        document_color = {
+          enabled = true;
+          kind = "inline";
+          inline_symbol = "󰝤 ";
+          debounce = 200;
+        };
+        extension = {
+          queries = [];
+          patterns = {
+            rust = ["class=[\"']([^\"']+)[\"']"];
+            javascript = ["clsx%(([^)]+)%)"];
+          };
+        };
+        server = {
+          override = true;
+          settings = {
+            experimental = {
+              classRegex = [
+                "tw\\('([^']*)'\\)"
+                "[[class=\"([^\"]*)]]"
+                "class=\\s+\"([^\"]*)"
+              ];
+            };
+          };
+          on_attach = lib.nixvim.mkRaw ''
+            function(client, bufnr) end
+          '';
+          root_dir = lib.nixvim.mkRaw ''
+            function(fname)
+              return vim.fn.getcwd()
+            end
+          '';
+        };
+        telescope = {
+          utilities = {
+            callback = lib.nixvim.mkRaw ''
+              function(name, class) end
+            '';
+          };
         };
       };
     };
   };
-  extraPlugins = [pkgs.vimPlugins.tailwind-tools-nvim];
-  extraPackages = [pkgs.tailwindcss-language-server];
-  extraConfigLuaPost = ''
-    require('tailwind-tools').setup({
-      server = {
-        override = true, -- setup the server from the plugin if true
-        settings = { -- shortcut for `settings.tailwindCSS`
-          experimental = {
-            classRegex = {
-              "tw\\('([^']*)'\\)",
-              [[class="([^"]*)]],
-              'class=\\s+"([^"]*)'
-            }
-          },
-          -- includeLanguages = {
-          --   elixir = "phoenix-heex",
-          --   heex = "phoenix-heex",
-          -- },
-        },
-        on_attach = function(client, bufnr) end, -- callback executed when the language server gets attached to a buffer
-        root_dir = function(fname)
-          return vim.fn.getcwd()
-        end, -- overrides the default function for resolving the root directory
-      },
-      document_color = {
-        enabled = true, -- can be toggled by commands
-        kind = "inline", -- "inline" | "foreground" | "background"
-        inline_symbol = "󰝤 ", -- only used in inline mode
-        debounce = 200, -- in milliseconds, only applied in insert mode
-      },
-      conceal = {
-        enabled = false, -- can be toggled by commands
-        min_length = nil, -- only conceal classes exceeding the provided length
-        symbol = "󱏿", -- only a single character is allowed
-        highlight = { -- extmark highlight options, see :h 'highlight'
-          fg = "#38BDF8",
-        },
-      },
-      keymaps = {
-        smart_increment = { -- increment tailwindcss units using <C-a> and <C-x>
-          enabled = true,
-          units = {  -- see lua/tailwind/units.lua to see all the defaults
-            {
-              prefix = "border",
-              values = { "2", "4", "6", "8" },
-            },
-            -- ...
-          }
-        }
-      },
-      cmp = {
-        highlight = "foreground", -- color preview style, "foreground" | "background"
-      },
-      telescope = {
-        utilities = {
-          callback = function(name, class) end, -- callback used when selecting an utility class in telescope
-        },
-      },
-      -- see the extension section to learn more
-      extension = {
-        queries = {}, -- a list of filetypes having custom `class` queries
-        patterns = { -- a map of filetypes to Lua pattern lists
-          rust = { "class=[\"']([^\"']+)[\"']" },
-          javascript = { "clsx%(([^)]+)%)" },
-        },
-      },
-    })
-  '';
 }
