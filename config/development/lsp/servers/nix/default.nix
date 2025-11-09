@@ -7,7 +7,7 @@
     servers = {
       nil_ls = {
         enable = true;
-        settings = {
+        config = {
           settings = {
             formatting = {
               command = ["${lib.getExe pkgs.nixfmt-rfc-style}"];

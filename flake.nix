@@ -54,16 +54,6 @@
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default
         (final: prev: {
-          lua = prev.lua.override {
-            packageOverrides = final': prev': {
-              neotest = prev'.neotest.overrideAttrs (oa: {
-                doCheck = false;
-              });
-            };
-          };
-          neovim-unwrapped = prev.neovim-unwrapped.overrideAttrs {
-            lua = final.lua;
-          };
           telescope-manix = inputs.telescope-manix.packages.${system}.telescope-manix.overrideAttrs (oldAttrs: {
             doCheck = false;
           });
@@ -85,18 +75,14 @@
     inherit (pkgs) lib;
     mkNvim = inputs.nixvim.legacyPackages.${system}.makeNixvim;
     profiles = import ./profiles {inherit inputs pkgs lib;};
-    cymenixvim = mkNvim profiles.default;
-    development = mkNvim profiles.development;
-    cardano = mkNvim profiles.cardano;
-    minimal = mkNvim profiles.minimal;
+    inherit (mkNvim profiles) default minimal cardano;
   in {
     packages = {
       ${system} = {
-        inherit cymenixvim development cardano minimal;
+        inherit default minimal cardano;
         inherit (pkgs) telescope-manix modes-nvim;
         inherit (pkgs.luajitPackages) neotest;
         inherit pkgs;
-        default = self.packages.${system}.minimal;
       };
     };
     formatter = {

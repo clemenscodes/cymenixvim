@@ -16,4 +16,7 @@
     (import ./options {inherit inputs pkgs lib;})
     (import ./performance {inherit inputs pkgs lib;})
   ];
+  extraConfigLuaPre = ''
+    vim.deprecate = function() end
+  '';
 }

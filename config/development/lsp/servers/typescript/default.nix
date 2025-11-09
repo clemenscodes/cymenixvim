@@ -2,21 +2,6 @@
   extraPlugins = [pkgs.vimPlugins.nvim-vtsls];
   extraPackages = [pkgs.vtsls];
   extraConfigLuaPost = ''
-    vim.lsp.config.vtsls.setup({
-      root_dir = vim.fn.getcwd(),
-      settings = {
-        typescript = {
-          inlayHints = {
-            parameterNames = { enabled = "literals" },
-            parameterTypes = { enabled = true },
-            variableTypes = { enabled = true },
-            propertyDeclarationTypes = { enabled = true },
-            functionLikeReturnTypes = { enabled = true },
-            enumMemberValues = { enabled = true },
-          }
-        },
-      }
-    })
     require('vtsls').config({
       -- customize handlers for commands
       handlers = {

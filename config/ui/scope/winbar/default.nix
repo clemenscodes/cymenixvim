@@ -47,8 +47,10 @@
     };
     navbuddy = {
       enable = true;
-      lsp = {
-        autoAttach = true;
+      settings = {
+        lsp = {
+          autoAttach = true;
+        };
       };
     };
     which-key = {

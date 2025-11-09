@@ -10,15 +10,7 @@
     (import ./ui {inherit inputs pkgs lib;})
     (import ./ux {inherit inputs pkgs lib;})
   ];
-  package = pkgs.neovim-unwrapped.overrideAttrs {
-    lua = pkgs.lua.override {
-      packageOverrides = final': prev': {
-        neotest = prev'.neotest.overrideAttrs (oa: {
-          doCheck = false;
-        });
-      };
-    };
-  };
+  package = pkgs.neovim;
   enableMan = true;
   vimAlias = false;
   viAlias = false;
