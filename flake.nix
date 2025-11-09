@@ -75,7 +75,9 @@
     inherit (pkgs) lib;
     mkNvim = inputs.nixvim.legacyPackages.${system}.makeNixvim;
     profiles = import ./profiles {inherit inputs pkgs lib;};
-    inherit (mkNvim profiles) default minimal cardano;
+    default = mkNvim profiles.default;
+    minimal = mkNvim profiles.minimal;
+    cardano = mkNvim profiles.cardano;
   in {
     packages = {
       ${system} = {
