@@ -34,7 +34,6 @@
         markdown = ["markdownlint"];
         rust = ["clippy"];
         lua = ["luacheck"];
-        json = ["jsonlint"];
         nix = ["nix"];
         yaml = ["yamllint"];
         c = ["clangtidy"];
@@ -44,7 +43,6 @@
       };
       linters = {
         htmlhint.cmd = lib.getExe pkgs.htmlhint;
-        jsonlint.cmd = lib.getExe pkgs.nodePackages.jsonlint;
         luacheck.cmd = lib.getExe pkgs.luaPackages.luacheck;
         eslint_d.cmd = lib.getExe pkgs.eslint_d;
         markdownlint.cmd = lib.getExe pkgs.markdownlint-cli;
