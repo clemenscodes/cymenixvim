@@ -32,7 +32,6 @@ in {
         jq
         json
         json5
-        jsonc
         jsdoc
         markdown
         markdown_inline
