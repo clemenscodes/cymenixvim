@@ -21,7 +21,6 @@
       (import ../config/ui/noice {inherit inputs pkgs lib;})
       (import ../config/ui/status {inherit inputs pkgs lib;})
       (import ../config/ui/preview {inherit inputs pkgs lib;})
-      (import ../config/ui/syntax/rainbow-delimiters {inherit inputs pkgs lib;})
       (import ../config/ui/tabs {inherit inputs pkgs lib;})
       (import ../config/ui/tags {inherit inputs pkgs lib;})
       (import ../config/ui/scope {inherit inputs pkgs lib;})
