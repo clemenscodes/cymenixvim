@@ -2,7 +2,7 @@
   extraPackages = [
     pkgs.prettierd
     pkgs.stylua
-    pkgs.alejandra
+    pkgs.nixfmt
     pkgs.rustfmt
     pkgs.haskellPackages.cabal-fmt
   ];
@@ -30,7 +30,7 @@
       enable = true;
       settings = {
         formatters_by_ft = {
-          nix = ["alejandra"];
+          nix = ["nixfmt"];
           rust = ["rustfmt"];
           javascript = ["prettierd"];
           typescript = ["prettierd"];
