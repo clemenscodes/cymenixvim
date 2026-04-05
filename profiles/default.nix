@@ -29,7 +29,6 @@
       (import ../config/ux/snacks {inherit inputs pkgs lib;})
       (import ../config/ux/terminal {inherit inputs pkgs lib;})
       (import ../config/ux/organization {inherit inputs pkgs lib;})
-      (import ../config/ux/ergonomics/project-nvim {inherit inputs pkgs lib;})
       (import ../config/ux/ergonomics/auto-save {inherit inputs pkgs lib;})
       (import ../config/ux/ergonomics/nvim-autopairs {inherit inputs pkgs lib;})
       (import ../config/ux/ergonomics/surround {inherit inputs pkgs lib;})

@@ -43,9 +43,7 @@
                   */
                   ''
                     function()
-                      vim.cmd[[
-                        Telescope projects
-                      ]]
+                      Snacks.picker.projects()
                     end
                   '';
                 opts = {

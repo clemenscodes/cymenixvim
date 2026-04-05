@@ -677,9 +677,8 @@
 
             for _, buf in ipairs(api.nvim_list_bufs()) do
               if buf ~= current_buf and api.nvim_buf_is_loaded(buf) then
-                local is_listed = api.nvim_buf_get_option(buf, 'buflisted')
-                local is_modifiable = api.nvim_buf_get_option(buf, 'modifiable')
-                local buftype = api.nvim_buf_get_option(buf, 'buftype')
+                local is_listed = vim.bo[buf].buflisted
+                local is_modifiable = vim.bo[buf].modifiable
                 if is_listed then
                   local cmd = is_modifiable and 'bdelete ' or 'bdelete! '
                   pcall(vim.cmd, cmd .. buf)
@@ -720,9 +719,8 @@
 
             for _, buf in ipairs(api.nvim_list_bufs()) do
               if buf ~= current_buf and api.nvim_buf_is_loaded(buf) then
-                local is_listed = api.nvim_buf_get_option(buf, 'buflisted')
-                local is_modifiable = api.nvim_buf_get_option(buf, 'modifiable')
-                local buftype = api.nvim_buf_get_option(buf, 'buftype')
+                local is_listed = vim.bo[buf].buflisted
+                local is_modifiable = vim.bo[buf].modifiable
                 if is_listed then
                   local cmd = is_modifiable and 'bdelete ' or 'bdelete! '
                   pcall(vim.cmd, cmd .. buf)
@@ -776,9 +774,8 @@
 
             for _, buf in ipairs(api.nvim_list_bufs()) do
               if buf ~= current_buf and api.nvim_buf_is_loaded(buf) then
-                local is_listed = api.nvim_buf_get_option(buf, 'buflisted')
-                local is_modifiable = api.nvim_buf_get_option(buf, 'modifiable')
-                local buftype = api.nvim_buf_get_option(buf, 'buftype')
+                local is_listed = vim.bo[buf].buflisted
+                local is_modifiable = vim.bo[buf].modifiable
                 if is_listed then
                   local cmd = is_modifiable and 'bdelete ' or 'bdelete! '
                   pcall(vim.cmd, cmd .. buf)
