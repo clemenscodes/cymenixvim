@@ -24,9 +24,6 @@
     telescope-manix = {
       url = "github:mrcjkb/telescope-manix";
     };
-    nx-nvim = {
-      url = "github:clemenscodes/nx.nvim";
-    };
     rustowl = {
       url = "github:nix-community/rustowl-flake";
     };
@@ -50,6 +47,7 @@
       inherit system;
       config = {
         allowBroken = true;
+        allowUnfree = true;
       };
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default

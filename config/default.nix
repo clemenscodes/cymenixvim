@@ -10,6 +10,7 @@
     (import ./ui {inherit inputs pkgs lib;})
     (import ./ux {inherit inputs pkgs lib;})
   ];
+  nixpkgs.config.allowUnfree = true;
   package = pkgs.neovim;
   enableMan = true;
   vimAlias = false;
