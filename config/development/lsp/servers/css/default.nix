@@ -1,7 +1,7 @@
 {...}: {
   lsp = {
     servers = {
-      cssls= {
+      cssls = {
         enable = true;
       };
     };
