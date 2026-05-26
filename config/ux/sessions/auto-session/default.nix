@@ -83,7 +83,7 @@
         Snacks.bufdelete.delete()
       end
       local api = vim.api
-      local current_win = api.nvim_get_current_win(), Snacks.zen
+      local current_win = api.nvim_get_current_win()
       local current_buf = api.nvim_get_current_buf()
       local win_config = api.nvim_win_get_config(current_win)
       local is_floating = win_config.relative ~= ""
@@ -94,9 +94,8 @@
 
       for _, buf in ipairs(api.nvim_list_bufs()) do
         if buf ~= current_buf and api.nvim_buf_is_loaded(buf) then
-          local is_listed = api.nvim_buf_get_option(buf, 'buflisted')
-          local is_modifiable = api.nvim_buf_get_option(buf, 'modifiable')
-          local buftype = api.nvim_buf_get_option(buf, 'buftype')
+          local is_listed = vim.bo[buf].buflisted
+          local is_modifiable = vim.bo[buf].modifiable
           if is_listed then
             local cmd = is_modifiable and 'bdelete ' or 'bdelete! '
             pcall(vim.cmd, cmd .. buf)
@@ -152,7 +151,7 @@
             desc = "Restore session";
           }
           {
-            __unkeyed-r = "<leader>cl";
+            __unkeyed-1 = "<leader>cl";
             desc = "Search session";
           }
           {

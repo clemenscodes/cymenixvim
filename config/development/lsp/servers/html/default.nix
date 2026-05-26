@@ -2,7 +2,7 @@
   lsp = {
     servers = {
       html = {
-        activate = true;
+        enable = true;
       };
     };
   };

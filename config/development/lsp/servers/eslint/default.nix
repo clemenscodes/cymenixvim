@@ -2,7 +2,7 @@
   lsp = {
     servers = {
       eslint = {
-        activate = true;
+        enable = true;
       };
     };
   };

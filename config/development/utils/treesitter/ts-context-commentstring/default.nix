@@ -15,7 +15,7 @@ in {
     lua
     */
     ''
-      require('ts_context_commentstring').setup {}
+      require('ts_context_commentstring').setup { enable_autocmd = false }
     '';
   plugins = {
     comment = {

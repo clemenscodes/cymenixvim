@@ -13,7 +13,7 @@ in {
   lsp = {
     servers = {
       aiken = {
-        activate = true;
+        enable = true;
       };
     };
   };
