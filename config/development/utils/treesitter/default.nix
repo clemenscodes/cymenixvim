@@ -80,11 +80,6 @@ in {
         highlight = {
           additional_vim_regex_highlighting = true;
           enable = true;
-          disable = ''
-            function(lang, bufnr)
-              return vim.api.nvim_buf_line_count(bufnr) > 10000
-            end
-          '';
         };
         incremental_selection = {
           enable = true;
