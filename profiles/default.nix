@@ -8,8 +8,10 @@
     imports = [
       (import ../config {inherit inputs pkgs lib;})
     ];
+    nixpkgs.source = inputs.nixpkgs;
   };
   minimal = {...}: {
+    nixpkgs.source = inputs.nixpkgs;
     imports = [
       (import ../config/core {inherit inputs pkgs lib;})
       (import ../config/development {inherit inputs pkgs lib;})
@@ -42,5 +44,6 @@
       (import ../config {inherit inputs pkgs lib;})
       (import ../config/development/lsp/servers/aiken {inherit inputs pkgs lib;})
     ];
+    nixpkgs.source = inputs.nixpkgs;
   };
 }
